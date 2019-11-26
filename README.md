@@ -6,6 +6,26 @@
 
 ## Hypothesis
 
+## The experiment
+To test our Hypothesis we will set up an experiment with Grpc and a Rest API.
+These experiments has to adhere to the following.
+
+**Rules**
+* To ensure accurate measurements, the results must be obtained from the same computer.
+* Multiple data structures should be tested.
+* The setup for both Apis has to be as similar as possible.
+* The time used for measuring should be obtained from the client.
+
+**Set up**
+* to adhere to the multiple data structures rule, there will be a database which will feed us, single instances of an object, and feed us multiple instances of an object which we can turn into a list.
+* Each API will have 2 methods to call. 
+    * one for a single instance which takes a parameter of Id.
+    * one for a collection of instances, more specifically a 100 instances.
+* Each API will be tested with a client written in C# as a console app.
+    * Time will be measured with a .NET Stopwatch.
+    * the stopwatch will begin when the method is called and end when the API returns the full data.
+* To get an average time, each operation will be executed 100 times. this result with be the one we conclude on.
+
 ## REST
 
 ### What is REST
@@ -22,6 +42,9 @@ The key features to take note of when using rest:
     * We invoke a method on the server via HTTP operations
     * GET - POST - PUT - DELETE
     * We believe them to be rather self explanatory but if you wanna read more about HTTP operations you can do so [here](https://www.restapitutorial.com/lessons/httpmethods.html)
+
+
+
 
  
 
