@@ -46,13 +46,13 @@ namespace GrpcServer.Database
         }
 
         //Get (id)
-        public SmallPayload GetSmallPayload(PayloadId id)
+        public SmallPayload GetSmallPayload(PayloadId payloadId)
         {
             string query = $"SELECT id, " +
                 $"string_value_one, string_value_two, string_value_three, " +
                 $"int_value_one, int_value_two, int_value_three, " +
                 $"double_value_one, double_value_two, double_value_three " +
-                $"FROM Payload_Small WHERE 1 WHERE id = '{id}';";
+                $"FROM Payload_Small WHERE id = '{payloadId.Id}';";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -75,7 +75,7 @@ namespace GrpcServer.Database
             return sp;
         }
 
-        public MediumPayload GetMediumPayload(PayloadId id)
+        public MediumPayload GetMediumPayload(PayloadId payloadId)
         {
             string query = $"SELECT pm.id, pm.string_value, pm.int_value, pm.double_value, " +
                 $"small_payload_one_id, ps1.string_value_one, ps1.string_value_two, ps1.string_value_three, ps1.int_value_one, ps1.int_value_two, ps1.int_value_three, ps1.double_value_one, ps1.double_value_two, ps1.double_value_three, " +
@@ -90,7 +90,7 @@ namespace GrpcServer.Database
                 $"INNER JOIN Payload_Small ps3 ON pm.small_payload_three_id = ps3.id " +
                 $"INNER JOIN Payload_Small ps4 ON pm.small_payload_four_id = ps4.id " +
                 $"INNER JOIN Payload_Small ps5 ON pm.small_payload_five_id = ps5.id " +
-                $"INNER JOIN Payload_Small ps6 ON pm.small_payload_six_id = ps6.id WHERE 1 id = '{id}';";
+                $"INNER JOIN Payload_Small ps6 ON pm.small_payload_six_id = ps6.id WHERE 1 id = '{payloadId.Id}';";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();

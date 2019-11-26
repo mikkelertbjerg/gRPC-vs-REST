@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option csharp_namespace = "GrpcServer";
 
-service Payload {
+service PayloadService {
 	rpc GetSmallPayload (PayloadId) returns (SmallPayload);
 	rpc GetMediumPayload (PayloadId) returns (MediumPayload);
 	rpc GetLargePayload (PayloadId) returns (LargePayload);

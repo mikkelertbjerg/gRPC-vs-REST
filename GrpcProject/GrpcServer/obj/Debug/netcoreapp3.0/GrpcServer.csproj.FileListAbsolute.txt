@@ -69,3 +69,4 @@ C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcServer\obj\Debug\netc
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcServer\obj\Debug\netcoreapp3.0\GrpcServer.csproj.CopyComplete
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcServer\obj\Debug\netcoreapp3.0\GrpcServer.dll
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcServer\obj\Debug\netcoreapp3.0\GrpcServer.pdb
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcServer\obj\Debug\netcoreapp3.0\GrpcServer.csprojAssemblyReference.cache

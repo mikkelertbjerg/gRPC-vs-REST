@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace GrpcServer.Services
 {
-    public class PayloadsService : Payload.PayloadBase
+    public class PayloadsService : PayloadService.PayloadServiceBase
     {
         private readonly ILogger<PayloadsService> _logger;
         private readonly DatabaseConnection _db;

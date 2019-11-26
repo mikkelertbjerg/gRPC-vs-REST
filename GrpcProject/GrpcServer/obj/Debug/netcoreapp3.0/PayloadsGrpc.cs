@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace GrpcServer {
-  public static partial class Payload
+  public static partial class PayloadService
   {
-    static readonly string __ServiceName = "Payload";
+    static readonly string __ServiceName = "PayloadService";
 
     static readonly grpc::Marshaller<global::GrpcServer.PayloadId> __Marshaller_PayloadId = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.PayloadId.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.SmallPayload> __Marshaller_SmallPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.SmallPayload.Parser.ParseFrom);
@@ -96,9 +96,9 @@ namespace GrpcServer {
       get { return global::GrpcServer.PayloadsReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Payload</summary>
-    [grpc::BindServiceMethod(typeof(Payload), "BindService")]
-    public abstract partial class PayloadBase
+    /// <summary>Base class for server-side implementations of PayloadService</summary>
+    [grpc::BindServiceMethod(typeof(PayloadService), "BindService")]
+    public abstract partial class PayloadServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::GrpcServer.SmallPayload> GetSmallPayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
       {
@@ -154,7 +154,7 @@ namespace GrpcServer {
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(PayloadBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(PayloadServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetSmallPayload, serviceImpl.GetSmallPayload)
@@ -173,7 +173,7 @@ namespace GrpcServer {
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, PayloadBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, PayloadServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetSmallPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload>(serviceImpl.GetSmallPayload));
       serviceBinder.AddMethod(__Method_GetMediumPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.MediumPayload>(serviceImpl.GetMediumPayload));

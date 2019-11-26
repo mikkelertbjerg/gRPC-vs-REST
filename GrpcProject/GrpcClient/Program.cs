@@ -1,4 +1,5 @@
 ﻿using Grpc.Net.Client;
+using Grpc.Core;
 using GrpcServer;
 using System;
 using System.Collections.Generic;
@@ -11,66 +12,72 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
-            SmallPayload sp;
+            Random rng = new Random();
             Stopwatch stopwatch = new Stopwatch();
+
+            SmallPayload sp;
+            
             TimeSpan ts;
             TimeSpan dts;
             string elapsedTime;
 
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var payloadClient = Payload.PayloadClient();
+            var payloadClient = new PayloadService.PayloadServiceClient(channel);
 
-            ////Hacky way to open the connection
-            //await textClient.GetTextAsync(new TextId { Id = 0 });
+            //Hacky way to open the connection
+            await payloadClient.GetSmallPayloadAsync(new PayloadId { Id = 1 });
 
-            ////Start testing
-            //Console.WriteLine("Starting 100 'GetAllText()' calls");
+            //GetSmallPayload
+            
 
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    stopwatch.Start();
-            //    using (var requestAllTexts = textClient.GetAllTexts(new EmptyRequest()))
-            //    {
-            //        while (await requestAllTexts.ResponseStream.MoveNext())
-            //        {
-            //            t = requestAllTexts.ResponseStream.Current;
-            //        }
-            //    }
-            //    stopwatch.Stop();
-            //}
+            Console.WriteLine("Calling 'GetSmallPayload(Payload id)' 100 times");
 
-            //ts = stopwatch.Elapsed;
-            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            //ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-            //Console.WriteLine("Total run time (100 Calls): " + elapsedTime);
-            //dts = ts.Divide(100);
-            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            //dts.Hours, dts.Minutes, dts.Seconds, dts.Milliseconds);
-            //Console.WriteLine("Average run time: " + elapsedTime);
+            for (int i = 0; i < 100; i++)
+            {
+                stopwatch.Start();
+                await payloadClient.GetSmallPayloadAsync(new PayloadId { Id = i });
+                stopwatch.Stop();
+            }
 
-            ////Prepare next test
-            //Random rng = new Random();
+            ts = stopwatch.Elapsed;
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine("Total run time (100 Calls): " + elapsedTime);
+            dts = ts.Divide(100);
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            dts.Hours, dts.Minutes, dts.Seconds, dts.Milliseconds);
+            Console.WriteLine("Average run time: " + elapsedTime);
 
-            //Console.WriteLine("Starting 100 'GetText(TextId id)' calls");
+            
 
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    int randomId = rng.Next(101);
-            //    stopwatch.Start();
-            //    await textClient.GetTextAsync(new TextId { Id = randomId });
-            //    stopwatch.Stop();
-            //}
+            //GetAllSmallPayloads
+            Console.WriteLine("Calling 'GetAllSmallPayloads()' 100 times");
 
-            //ts = stopwatch.Elapsed;
-            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            //ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-            //Console.WriteLine("Total run time (100 Calls): " + elapsedTime);
-            //ts.Divide(100);
-            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            //dts.Hours, dts.Minutes, dts.Seconds, dts.Milliseconds);
-            //Console.WriteLine("Average run time: " + elapsedTime);
+            for (int i = 0; i < 100; i++)
+            {
+                stopwatch.Start();
+                using (var requestAllSmallPayloads = payloadClient.GetAllSmallPayloads(new EmptyRequest()))
+                {
+                    while (await requestAllSmallPayloads.ResponseStream.MoveNext())
+                    {
+                        sp = requestAllSmallPayloads.ResponseStream.Current;
+                    }
+                }
+                stopwatch.Stop();
+            }
 
-            //Console.ReadLine();
+            ts = stopwatch.Elapsed;
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine("Total run time (100 Calls): " + elapsedTime);
+            dts = ts.Divide(100);
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            dts.Hours, dts.Minutes, dts.Seconds, dts.Milliseconds);
+            Console.WriteLine("Average run time: " + elapsedTime);
+
+            Console.ReadLine();
+
+
         }
     }
 }

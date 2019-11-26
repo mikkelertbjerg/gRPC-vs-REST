@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace GrpcServer {
-  public static partial class Payload
+  public static partial class PayloadService
   {
-    static readonly string __ServiceName = "Payload";
+    static readonly string __ServiceName = "PayloadService";
 
     static readonly grpc::Marshaller<global::GrpcServer.PayloadId> __Marshaller_PayloadId = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.PayloadId.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.SmallPayload> __Marshaller_SmallPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.SmallPayload.Parser.ParseFrom);
@@ -96,95 +96,154 @@ namespace GrpcServer {
       get { return global::GrpcServer.PayloadsReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of Payload</summary>
-    [grpc::BindServiceMethod(typeof(Payload), "BindService")]
-    public abstract partial class PayloadBase
+    /// <summary>Client for PayloadService</summary>
+    public partial class PayloadServiceClient : grpc::ClientBase<PayloadServiceClient>
     {
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.SmallPayload> GetSmallPayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
+      /// <summary>Creates a new client for PayloadService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      public PayloadServiceClient(grpc::ChannelBase channel) : base(channel)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+      /// <summary>Creates a new client for PayloadService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      public PayloadServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      protected PayloadServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      protected PayloadServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.MediumPayload> GetMediumPayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.SmallPayload GetSmallPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetSmallPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.LargePayload> GetLargePayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.SmallPayload GetSmallPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return CallInvoker.BlockingUnaryCall(__Method_GetSmallPayload, null, options, request);
       }
-
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.HugePayload> GetHugePayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.SmallPayload> GetSmallPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetSmallPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.EnormousPayload> GetEnormousPayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.SmallPayload> GetSmallPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return CallInvoker.AsyncUnaryCall(__Method_GetSmallPayload, null, options, request);
       }
-
-      public virtual global::System.Threading.Tasks.Task GetAllSmallPayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.SmallPayload> responseStream, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.MediumPayload GetMediumPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetMediumPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-      public virtual global::System.Threading.Tasks.Task GetAllMediumPayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.MediumPayload> responseStream, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.MediumPayload GetMediumPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return CallInvoker.BlockingUnaryCall(__Method_GetMediumPayload, null, options, request);
       }
-
-      public virtual global::System.Threading.Tasks.Task GetAllLargePayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.LargePayload> responseStream, grpc::ServerCallContext context)
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.MediumPayload> GetMediumPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetMediumPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-      public virtual global::System.Threading.Tasks.Task GetAllHugePayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.HugePayload> responseStream, grpc::ServerCallContext context)
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.MediumPayload> GetMediumPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return CallInvoker.AsyncUnaryCall(__Method_GetMediumPayload, null, options, request);
       }
-
-      public virtual global::System.Threading.Tasks.Task GetAllEnormousPayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.EnormousPayload> responseStream, grpc::ServerCallContext context)
+      public virtual global::GrpcServer.LargePayload GetLargePayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetLargePayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
-    }
-
-    /// <summary>Creates service definition that can be registered with a server</summary>
-    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(PayloadBase serviceImpl)
-    {
-      return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetSmallPayload, serviceImpl.GetSmallPayload)
-          .AddMethod(__Method_GetMediumPayload, serviceImpl.GetMediumPayload)
-          .AddMethod(__Method_GetLargePayload, serviceImpl.GetLargePayload)
-          .AddMethod(__Method_GetHugePayload, serviceImpl.GetHugePayload)
-          .AddMethod(__Method_GetEnormousPayload, serviceImpl.GetEnormousPayload)
-          .AddMethod(__Method_GetAllSmallPayloads, serviceImpl.GetAllSmallPayloads)
-          .AddMethod(__Method_GetAllMediumPayloads, serviceImpl.GetAllMediumPayloads)
-          .AddMethod(__Method_GetAllLargePayloads, serviceImpl.GetAllLargePayloads)
-          .AddMethod(__Method_GetAllHugePayloads, serviceImpl.GetAllHugePayloads)
-          .AddMethod(__Method_GetAllEnormousPayloads, serviceImpl.GetAllEnormousPayloads).Build();
-    }
-
-    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
-    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
-    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
-    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, PayloadBase serviceImpl)
-    {
-      serviceBinder.AddMethod(__Method_GetSmallPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload>(serviceImpl.GetSmallPayload));
-      serviceBinder.AddMethod(__Method_GetMediumPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.MediumPayload>(serviceImpl.GetMediumPayload));
-      serviceBinder.AddMethod(__Method_GetLargePayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.LargePayload>(serviceImpl.GetLargePayload));
-      serviceBinder.AddMethod(__Method_GetHugePayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.HugePayload>(serviceImpl.GetHugePayload));
-      serviceBinder.AddMethod(__Method_GetEnormousPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.EnormousPayload>(serviceImpl.GetEnormousPayload));
-      serviceBinder.AddMethod(__Method_GetAllSmallPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.SmallPayload>(serviceImpl.GetAllSmallPayloads));
-      serviceBinder.AddMethod(__Method_GetAllMediumPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.MediumPayload>(serviceImpl.GetAllMediumPayloads));
-      serviceBinder.AddMethod(__Method_GetAllLargePayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.LargePayload>(serviceImpl.GetAllLargePayloads));
-      serviceBinder.AddMethod(__Method_GetAllHugePayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.HugePayload>(serviceImpl.GetAllHugePayloads));
-      serviceBinder.AddMethod(__Method_GetAllEnormousPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.EnormousPayload>(serviceImpl.GetAllEnormousPayloads));
+      public virtual global::GrpcServer.LargePayload GetLargePayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetLargePayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.LargePayload> GetLargePayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLargePayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.LargePayload> GetLargePayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetLargePayload, null, options, request);
+      }
+      public virtual global::GrpcServer.HugePayload GetHugePayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetHugePayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GrpcServer.HugePayload GetHugePayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetHugePayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.HugePayload> GetHugePayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetHugePayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.HugePayload> GetHugePayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetHugePayload, null, options, request);
+      }
+      public virtual global::GrpcServer.EnormousPayload GetEnormousPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEnormousPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GrpcServer.EnormousPayload GetEnormousPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetEnormousPayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.EnormousPayload> GetEnormousPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetEnormousPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.EnormousPayload> GetEnormousPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetEnormousPayload, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.SmallPayload> GetAllSmallPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllSmallPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.SmallPayload> GetAllSmallPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllSmallPayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.MediumPayload> GetAllMediumPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllMediumPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.MediumPayload> GetAllMediumPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllMediumPayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.LargePayload> GetAllLargePayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllLargePayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.LargePayload> GetAllLargePayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllLargePayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.HugePayload> GetAllHugePayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllHugePayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.HugePayload> GetAllHugePayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllHugePayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.EnormousPayload> GetAllEnormousPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllEnormousPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.EnormousPayload> GetAllEnormousPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllEnormousPayloads, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      protected override PayloadServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new PayloadServiceClient(configuration);
+      }
     }
 
   }
