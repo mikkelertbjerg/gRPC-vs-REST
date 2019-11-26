@@ -44,10 +44,23 @@ The key features to take note of when using rest:
     * We believe them to be rather self explanatory but if you wanna read more about HTTP operations you can do so [here](https://www.restapitutorial.com/lessons/httpmethods.html)
 
 
-## Testing af Rest API
+## Setting up the experiment for the REST API
 
-The architecture for this test looks at the following:
-![]()
+The architecture for this experiment is a simple one:
+![](Arch.png)
+
+The REST API exposes two endpoints, one for a single instance of an object and one for a collection of 100 instances of objects.
+
+the objects are of the class ObjectModel and contains 2 properties:
+* Id
+* Str_value
+
+all of this is saved in a database, hosted on a website belonging to a member of the experiment.
+
+both of these endpoints will be called a 100 times, from the client from which we can measure the results.
+
+The host computer is a **I7-9700k** which has 8 cores running 3.6/4.9 GHz
+
 
  
 
