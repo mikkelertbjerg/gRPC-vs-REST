@@ -1,0 +1,4 @@
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\RestForBlog2\RestClient\bin\Debug\netcoreapp3.0\RestClient.exe
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\RestForBlog2\RestClient\obj\Debug\netcoreapp3.0\RestClient.csprojAssemblyReference.cache
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\RestForBlog2\RestClient\obj\Debug\netcoreapp3.0\RestClient.AssemblyInfoInputs.cache
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\RestForBlog2\RestClient\obj\Debug\netcoreapp3.0\RestClient.AssemblyInfo.cs
