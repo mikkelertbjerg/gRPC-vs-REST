@@ -2,12 +2,12 @@
 
 ## Abstract
 
-## Resumé
+## Introduction
 
 ## Hypothesis
 
 ## REST
-
+"Følgende blog har peget på fordele/ulemper ved x, vi vil undersøge følgende n"
 ### Pros
 
 ### Cons
