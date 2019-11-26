@@ -28,7 +28,7 @@ These experiments has to adhere to the following.
 
 ## REST
 
-### What is REST
+### _What is REST_
 For this blog, we have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
 
 The key features to take note of when using rest:
@@ -44,7 +44,10 @@ The key features to take note of when using rest:
     * We believe them to be rather self explanatory but if you wanna read more about HTTP operations you can do so [here](https://www.restapitutorial.com/lessons/httpmethods.html)
 
 
+## Testing af Rest API
 
+The architecture for this test looks at the following:
+![]()
 
  
 
@@ -66,6 +69,10 @@ _Should include how to reproduce for yourself_
 ### Sample project and metrics
 _Should include how to reproduce for yourself_
 
+## possible errors
+
+Both the client and server was running on the same computer, potentially competing for resources. To fix this we encourage people who seek to reproduce our results to host their APIs before testing them, we unfortunately didn't have the possibility/foresight at the time of testing.
+
 ## Conclusion
 _Metrics comapred_
 _When to gRPCS_
@@ -73,4 +80,12 @@ _When to REST_
 
 ## References
 
+## Technology used
 
+[Grpc](https://grpc.io/)
+
+[.Net Web Api](https://dotnet.microsoft.com/apps/aspnet/apis)
+
+[.Net console app](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019)
+
+[MySql Database](https://www.mysql.com/)
