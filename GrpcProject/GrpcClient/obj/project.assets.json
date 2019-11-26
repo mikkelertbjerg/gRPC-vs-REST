@@ -280,11 +280,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcClient\\GrpcClient.csproj",
+      "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcClient\\GrpcClient.csproj",
       "projectName": "GrpcClient",
-      "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcClient\\GrpcClient.csproj",
+      "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcClient\\GrpcClient.csproj",
       "packagesPath": "C:\\Users\\mwe1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcClient\\obj\\",
+      "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

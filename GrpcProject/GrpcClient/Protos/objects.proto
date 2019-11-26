@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service Object {
+	rpc CreateObject (ObjectModel) returns (ObjectId);
+	rpc GetObject (ObjectId) returns (ObjectModel);
+	rpc GetAllObjects (EmptyRequest) returns (stream ObjectModel);
+	rpc UpdateObject (ObjectModel) returns (ObjectModel);
+	rpc DeleteObject (ObjectId) returns (AffectedRows);
+}
+
+message EmptyRequest {
+
+}
+
+message AffectedRows {
+	int32 affected_rows = 1;
+}
+
+message ObjectId {
+	int32 id = 1;
+}
+
+message ObjectModel {
+	string str_value = 1;
+	int32 int_value = 2;
+}
+

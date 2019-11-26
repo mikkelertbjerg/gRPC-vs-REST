@@ -5818,11 +5818,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
+      "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
       "projectName": "GrpcServer",
-      "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
+      "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
       "packagesPath": "C:\\Users\\mwe1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\SystemIntegration\\gRPC-Project\\GrpcProject\\GrpcServer\\obj\\",
+      "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

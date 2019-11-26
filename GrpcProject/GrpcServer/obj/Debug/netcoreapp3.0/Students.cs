@@ -24,25 +24,22 @@ namespace GrpcServer {
     static StudentsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVQcm90b3Mvc3R1ZGVudHMucHJvdG8iDgoMRW1wdHlSZXF1ZXN0IiEKDEV4",
-            "Y2VsUmVxdWVzdBIRCglmaWxlX3BhdGgYASABKAkiIAoSU3R1ZGVudExvb2t1",
-            "cE1vZGVsEgoKAmlkGAEgASgFIo8BCgxTdHVkZW50TW9kZWwSEgoKZmlyc3Rf",
-            "bmFtZRgBIAEoCRIRCglsYXN0X25hbWUYAiABKAkSDgoGZ2VuZGVyGAMgASgJ",
-            "EgsKA2FnZRgEIAEoBRIVCg1lbWFpbF9hZGRyZXNzGAUgASgJEhQKDHBob25l",
-            "X251bWJlchgGIAEoCRIOCgZzY2hvb2wYByABKAky5gEKB1N0dWRlbnQSNAoO",
-            "R2V0U3R1ZGVudEluZm8SEy5TdHVkZW50TG9va3VwTW9kZWwaDS5TdHVkZW50",
-            "TW9kZWwSMAoOR2V0QWxsU3R1ZGVudHMSDS5FbXB0eVJlcXVlc3QaDS5TdHVk",
-            "ZW50TW9kZWwwARI4ChBHZXRBbGxTdHVkZW50SWRzEg0uRW1wdHlSZXF1ZXN0",
-            "GhMuU3R1ZGVudExvb2t1cE1vZGVsMAESOQoXR2V0QWxsU3R1ZGVudHNGcm9t",
-            "RXhjZWwSDS5FeGNlbFJlcXVlc3QaDS5TdHVkZW50TW9kZWwwAUINqgIKR3Jw",
-            "Y1NlcnZlcmIGcHJvdG8z"));
+            "ChVQcm90b3Mvc3R1ZGVudHMucHJvdG8iDgoMRW1wdHlSZXF1ZXN0IiUKDEFm",
+            "ZmVjdGVkUm93cxIVCg1hZmZlY3RlZF9yb3dzGAEgASgFIhYKCE9iamVjdElk",
+            "EgoKAmlkGAEgASgFIjMKC09iamVjdE1vZGVsEhEKCXN0cl92YWx1ZRgBIAEo",
+            "CRIRCglpbnRfdmFsdWUYAiABKAUy3QEKBk9iamVjdBInCgxDcmVhdGVPYmpl",
+            "Y3QSDC5PYmplY3RNb2RlbBoJLk9iamVjdElkEiQKCUdldE9iamVjdBIJLk9i",
+            "amVjdElkGgwuT2JqZWN0TW9kZWwSLgoNR2V0QWxsT2JqZWN0cxINLkVtcHR5",
+            "UmVxdWVzdBoMLk9iamVjdE1vZGVsMAESKgoMVXBkYXRlT2JqZWN0EgwuT2Jq",
+            "ZWN0TW9kZWwaDC5PYmplY3RNb2RlbBIoCgxEZWxldGVPYmplY3QSCS5PYmpl",
+            "Y3RJZBoNLkFmZmVjdGVkUm93c0INqgIKR3JwY1NlcnZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.EmptyRequest), global::GrpcServer.EmptyRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.ExcelRequest), global::GrpcServer.ExcelRequest.Parser, new[]{ "FilePath" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.StudentLookupModel), global::GrpcServer.StudentLookupModel.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.StudentModel), global::GrpcServer.StudentModel.Parser, new[]{ "FirstName", "LastName", "Gender", "Age", "EmailAddress", "PhoneNumber", "School" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.AffectedRows), global::GrpcServer.AffectedRows.Parser, new[]{ "AffectedRows_" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.ObjectId), global::GrpcServer.ObjectId.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.ObjectModel), global::GrpcServer.ObjectModel.Parser, new[]{ "StrValue", "IntValue" }, null, null, null)
           }));
     }
     #endregion
@@ -150,11 +147,11 @@ namespace GrpcServer {
 
   }
 
-  public sealed partial class ExcelRequest : pb::IMessage<ExcelRequest> {
-    private static readonly pb::MessageParser<ExcelRequest> _parser = new pb::MessageParser<ExcelRequest>(() => new ExcelRequest());
+  public sealed partial class AffectedRows : pb::IMessage<AffectedRows> {
+    private static readonly pb::MessageParser<AffectedRows> _parser = new pb::MessageParser<AffectedRows>(() => new AffectedRows());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ExcelRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<AffectedRows> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -167,55 +164,55 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExcelRequest() {
+    public AffectedRows() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExcelRequest(ExcelRequest other) : this() {
-      filePath_ = other.filePath_;
+    public AffectedRows(AffectedRows other) : this() {
+      affectedRows_ = other.affectedRows_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ExcelRequest Clone() {
-      return new ExcelRequest(this);
+    public AffectedRows Clone() {
+      return new AffectedRows(this);
     }
 
-    /// <summary>Field number for the "file_path" field.</summary>
-    public const int FilePathFieldNumber = 1;
-    private string filePath_ = "";
+    /// <summary>Field number for the "affected_rows" field.</summary>
+    public const int AffectedRows_FieldNumber = 1;
+    private int affectedRows_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FilePath {
-      get { return filePath_; }
+    public int AffectedRows_ {
+      get { return affectedRows_; }
       set {
-        filePath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        affectedRows_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ExcelRequest);
+      return Equals(other as AffectedRows);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ExcelRequest other) {
+    public bool Equals(AffectedRows other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FilePath != other.FilePath) return false;
+      if (AffectedRows_ != other.AffectedRows_) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (FilePath.Length != 0) hash ^= FilePath.GetHashCode();
+      if (AffectedRows_ != 0) hash ^= AffectedRows_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,9 +226,9 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (FilePath.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(FilePath);
+      if (AffectedRows_ != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(AffectedRows_);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -241,8 +238,8 @@ namespace GrpcServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (FilePath.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FilePath);
+      if (AffectedRows_ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AffectedRows_);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -251,12 +248,12 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ExcelRequest other) {
+    public void MergeFrom(AffectedRows other) {
       if (other == null) {
         return;
       }
-      if (other.FilePath.Length != 0) {
-        FilePath = other.FilePath;
+      if (other.AffectedRows_ != 0) {
+        AffectedRows_ = other.AffectedRows_;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -269,8 +266,8 @@ namespace GrpcServer {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            FilePath = input.ReadString();
+          case 8: {
+            AffectedRows_ = input.ReadInt32();
             break;
           }
         }
@@ -279,11 +276,11 @@ namespace GrpcServer {
 
   }
 
-  public sealed partial class StudentLookupModel : pb::IMessage<StudentLookupModel> {
-    private static readonly pb::MessageParser<StudentLookupModel> _parser = new pb::MessageParser<StudentLookupModel>(() => new StudentLookupModel());
+  public sealed partial class ObjectId : pb::IMessage<ObjectId> {
+    private static readonly pb::MessageParser<ObjectId> _parser = new pb::MessageParser<ObjectId>(() => new ObjectId());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<StudentLookupModel> Parser { get { return _parser; } }
+    public static pb::MessageParser<ObjectId> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -296,21 +293,21 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentLookupModel() {
+    public ObjectId() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentLookupModel(StudentLookupModel other) : this() {
+    public ObjectId(ObjectId other) : this() {
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentLookupModel Clone() {
-      return new StudentLookupModel(this);
+    public ObjectId Clone() {
+      return new ObjectId(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -326,11 +323,11 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as StudentLookupModel);
+      return Equals(other as ObjectId);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(StudentLookupModel other) {
+    public bool Equals(ObjectId other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -380,7 +377,7 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(StudentLookupModel other) {
+    public void MergeFrom(ObjectId other) {
       if (other == null) {
         return;
       }
@@ -408,11 +405,11 @@ namespace GrpcServer {
 
   }
 
-  public sealed partial class StudentModel : pb::IMessage<StudentModel> {
-    private static readonly pb::MessageParser<StudentModel> _parser = new pb::MessageParser<StudentModel>(() => new StudentModel());
+  public sealed partial class ObjectModel : pb::IMessage<ObjectModel> {
+    private static readonly pb::MessageParser<ObjectModel> _parser = new pb::MessageParser<ObjectModel>(() => new ObjectModel());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<StudentModel> Parser { get { return _parser; } }
+    public static pb::MessageParser<ObjectModel> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -425,139 +422,69 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentModel() {
+    public ObjectModel() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentModel(StudentModel other) : this() {
-      firstName_ = other.firstName_;
-      lastName_ = other.lastName_;
-      gender_ = other.gender_;
-      age_ = other.age_;
-      emailAddress_ = other.emailAddress_;
-      phoneNumber_ = other.phoneNumber_;
-      school_ = other.school_;
+    public ObjectModel(ObjectModel other) : this() {
+      strValue_ = other.strValue_;
+      intValue_ = other.intValue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StudentModel Clone() {
-      return new StudentModel(this);
+    public ObjectModel Clone() {
+      return new ObjectModel(this);
     }
 
-    /// <summary>Field number for the "first_name" field.</summary>
-    public const int FirstNameFieldNumber = 1;
-    private string firstName_ = "";
+    /// <summary>Field number for the "str_value" field.</summary>
+    public const int StrValueFieldNumber = 1;
+    private string strValue_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FirstName {
-      get { return firstName_; }
+    public string StrValue {
+      get { return strValue_; }
       set {
-        firstName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        strValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "last_name" field.</summary>
-    public const int LastNameFieldNumber = 2;
-    private string lastName_ = "";
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 2;
+    private int intValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string LastName {
-      get { return lastName_; }
+    public int IntValue {
+      get { return intValue_; }
       set {
-        lastName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "gender" field.</summary>
-    public const int GenderFieldNumber = 3;
-    private string gender_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Gender {
-      get { return gender_; }
-      set {
-        gender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "age" field.</summary>
-    public const int AgeFieldNumber = 4;
-    private int age_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Age {
-      get { return age_; }
-      set {
-        age_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "email_address" field.</summary>
-    public const int EmailAddressFieldNumber = 5;
-    private string emailAddress_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EmailAddress {
-      get { return emailAddress_; }
-      set {
-        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "phone_number" field.</summary>
-    public const int PhoneNumberFieldNumber = 6;
-    private string phoneNumber_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PhoneNumber {
-      get { return phoneNumber_; }
-      set {
-        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "school" field.</summary>
-    public const int SchoolFieldNumber = 7;
-    private string school_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string School {
-      get { return school_; }
-      set {
-        school_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        intValue_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as StudentModel);
+      return Equals(other as ObjectModel);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(StudentModel other) {
+    public bool Equals(ObjectModel other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FirstName != other.FirstName) return false;
-      if (LastName != other.LastName) return false;
-      if (Gender != other.Gender) return false;
-      if (Age != other.Age) return false;
-      if (EmailAddress != other.EmailAddress) return false;
-      if (PhoneNumber != other.PhoneNumber) return false;
-      if (School != other.School) return false;
+      if (StrValue != other.StrValue) return false;
+      if (IntValue != other.IntValue) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
-      if (LastName.Length != 0) hash ^= LastName.GetHashCode();
-      if (Gender.Length != 0) hash ^= Gender.GetHashCode();
-      if (Age != 0) hash ^= Age.GetHashCode();
-      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
-      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
-      if (School.Length != 0) hash ^= School.GetHashCode();
+      if (StrValue.Length != 0) hash ^= StrValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -571,33 +498,13 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (FirstName.Length != 0) {
+      if (StrValue.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(FirstName);
+        output.WriteString(StrValue);
       }
-      if (LastName.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(LastName);
-      }
-      if (Gender.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Gender);
-      }
-      if (Age != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Age);
-      }
-      if (EmailAddress.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(EmailAddress);
-      }
-      if (PhoneNumber.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(PhoneNumber);
-      }
-      if (School.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(School);
+      if (IntValue != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(IntValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -607,26 +514,11 @@ namespace GrpcServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (FirstName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
+      if (StrValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StrValue);
       }
-      if (LastName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
-      }
-      if (Gender.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Gender);
-      }
-      if (Age != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Age);
-      }
-      if (EmailAddress.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
-      }
-      if (PhoneNumber.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
-      }
-      if (School.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(School);
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -635,30 +527,15 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(StudentModel other) {
+    public void MergeFrom(ObjectModel other) {
       if (other == null) {
         return;
       }
-      if (other.FirstName.Length != 0) {
-        FirstName = other.FirstName;
+      if (other.StrValue.Length != 0) {
+        StrValue = other.StrValue;
       }
-      if (other.LastName.Length != 0) {
-        LastName = other.LastName;
-      }
-      if (other.Gender.Length != 0) {
-        Gender = other.Gender;
-      }
-      if (other.Age != 0) {
-        Age = other.Age;
-      }
-      if (other.EmailAddress.Length != 0) {
-        EmailAddress = other.EmailAddress;
-      }
-      if (other.PhoneNumber.Length != 0) {
-        PhoneNumber = other.PhoneNumber;
-      }
-      if (other.School.Length != 0) {
-        School = other.School;
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -672,31 +549,11 @@ namespace GrpcServer {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            FirstName = input.ReadString();
+            StrValue = input.ReadString();
             break;
           }
-          case 18: {
-            LastName = input.ReadString();
-            break;
-          }
-          case 26: {
-            Gender = input.ReadString();
-            break;
-          }
-          case 32: {
-            Age = input.ReadInt32();
-            break;
-          }
-          case 42: {
-            EmailAddress = input.ReadString();
-            break;
-          }
-          case 50: {
-            PhoneNumber = input.ReadString();
-            break;
-          }
-          case 58: {
-            School = input.ReadString();
+          case 16: {
+            IntValue = input.ReadInt32();
             break;
           }
         }

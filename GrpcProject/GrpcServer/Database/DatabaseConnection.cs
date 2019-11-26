@@ -45,71 +45,42 @@ namespace GrpcServer.Database
             connection.Close();
         }
 
-        //Students
-        public StudentModel GetStudent(int id)
+        public ObjectModel GetObject(int id)
         {
-            string query = $"SELECT first_name, last_name, gender, age, email_address, phone, school FROM Students WHERE id = '{id}';";
+            string query = $"SELECT id, value FROM grpc_vs_rest WHERE id = '{id}';";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
-            StudentModel student = new StudentModel();
+            ObjectModel o = new ObjectModel();
             while (dataReader.Read())
             {
-                student.FirstName = dataReader.GetString(0);
-                student.LastName = dataReader.GetString(1);
-                student.Gender = dataReader.GetString(2);
-                student.Age = dataReader.GetInt32(3);
-                student.EmailAddress = dataReader.GetString(4);
-                student.PhoneNumber = dataReader.GetString(5);
-                student.School = dataReader.GetString(6);
+                o.Id = dataReader.GetInt32(0);
+                o.StrValue = dataReader.GetString(1);
+
             };
             dataReader.Close();
             this.CloseConnection();
-            return student;
+            return o;
         }
 
-        public List<StudentModel> GetAllStudents()
+        public List<ObjectModel> GetAllObjectModels()
         {
-            string query = "SELECT first_name, last_name, gender, age, email_address, phone, school FROM Students;";
+            string query = "SELECT id, value FROM grpc_vs_rest;";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
-            List<StudentModel> students = new List<StudentModel>();
+            List<ObjectModel> os = new List<ObjectModel>();
             while (dataReader.Read())
             {
-                students.Add(new StudentModel
+                os.Add(new ObjectModel
                 {
-                    FirstName = dataReader.GetString(0),
-                    LastName = dataReader.GetString(1),
-                    Gender = dataReader.GetString(2),
-                    Age = dataReader.GetInt32(3),
-                    EmailAddress = dataReader.GetString(4),
-                    PhoneNumber = dataReader.GetString(5),
-                    School = dataReader.GetString(6)
+                    Id = dataReader.GetInt32(0),
+                    StrValue = dataReader.GetString(1)
                 });
             };
             dataReader.Close();
             this.CloseConnection();
-            return students;
-        }
-
-        public List<StudentLookupModel> GetAllStudentIds()
-        {
-            string query = "SELECT id FROM Students;";
-            this.OpenConnection();
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            List<StudentLookupModel> studentLookupModels = new List<StudentLookupModel>();
-            while (dataReader.Read())
-            {
-                studentLookupModels.Add(new StudentLookupModel
-                {
-                    Id = dataReader.GetInt32(0)
-                });
-            }
-            dataReader.Close();
-            this.CloseConnection();
-            return studentLookupModels;
+            return os;
         }
     }
 }

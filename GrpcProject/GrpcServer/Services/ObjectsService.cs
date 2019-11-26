@@ -10,12 +10,12 @@ using Microsoft.Extensions.Logging;
 
 namespace GrpcServer.Services
 {
-    public class StudentsService : Student.StudentBase
+    public class ObjectsService : Student.StudentBase
     {
-        private readonly ILogger<StudentsService> _logger;
+        private readonly ILogger<ObjectsService> _logger;
         private readonly DatabaseConnection _db;
 
-        public StudentsService(ILogger<StudentsService> logger)
+        public ObjectsService(ILogger<ObjectsService> logger)
         {
             _logger = logger;
             _db = new DatabaseConnection();

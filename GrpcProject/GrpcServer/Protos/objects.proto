@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service Object {
+	rpc GetObject (ObjectId) returns (ObjectModel);
+	rpc GetAllObjects (EmptyRequest) returns (stream ObjectModel);
+}
+
+message EmptyRequest {
+
+}
+
+message ObjectId {
+	int32 id = 1;
+}
+
+message ObjectModel {
+	int32 id = 1;
+	string str_value = 2;
+	
+}
+
