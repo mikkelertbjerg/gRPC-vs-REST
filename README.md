@@ -25,6 +25,9 @@ _Should include how to reproduce for yourself_
 _Should include how to reproduce for yourself_
 
 ## Conclusion
+_Metrics comapred_
+_When to gRPCS_
+_When to REST_
 
 ## References
 
