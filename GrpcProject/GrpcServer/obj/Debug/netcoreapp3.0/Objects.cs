@@ -24,18 +24,17 @@ namespace GrpcServer {
     static ObjectsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRQcm90b3Mvb2JqZWN0cy5wcm90byIOCgxFbXB0eVJlcXVlc3QiFgoIT2Jq",
-            "ZWN0SWQSCgoCaWQYASABKAUiLAoLT2JqZWN0TW9kZWwSCgoCaWQYASABKAUS",
-            "EQoJc3RyX3ZhbHVlGAIgASgJMl4KBk9iamVjdBIkCglHZXRPYmplY3QSCS5P",
-            "YmplY3RJZBoMLk9iamVjdE1vZGVsEi4KDUdldEFsbE9iamVjdHMSDS5FbXB0",
-            "eVJlcXVlc3QaDC5PYmplY3RNb2RlbDABQg2qAgpHcnBjU2VydmVyYgZwcm90",
-            "bzM="));
+            "ChRQcm90b3Mvb2JqZWN0cy5wcm90byIOCgxFbXB0eVJlcXVlc3QiFAoGVGV4",
+            "dElkEgoKAmlkGAEgASgFIioKCVRleHRNb2RlbBIKCgJpZBgBIAEoBRIRCglz",
+            "dHJfdmFsdWUYAiABKAkyUgoEVGV4dBIeCgdHZXRUZXh0EgcuVGV4dElkGgou",
+            "VGV4dE1vZGVsEioKC0dldEFsbFRleHRzEg0uRW1wdHlSZXF1ZXN0GgouVGV4",
+            "dE1vZGVsMAFCDaoCCkdycGNTZXJ2ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.EmptyRequest), global::GrpcServer.EmptyRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.ObjectId), global::GrpcServer.ObjectId.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.ObjectModel), global::GrpcServer.ObjectModel.Parser, new[]{ "Id", "StrValue" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.TextId), global::GrpcServer.TextId.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.TextModel), global::GrpcServer.TextModel.Parser, new[]{ "Id", "StrValue" }, null, null, null)
           }));
     }
     #endregion
@@ -143,11 +142,11 @@ namespace GrpcServer {
 
   }
 
-  public sealed partial class ObjectId : pb::IMessage<ObjectId> {
-    private static readonly pb::MessageParser<ObjectId> _parser = new pb::MessageParser<ObjectId>(() => new ObjectId());
+  public sealed partial class TextId : pb::IMessage<TextId> {
+    private static readonly pb::MessageParser<TextId> _parser = new pb::MessageParser<TextId>(() => new TextId());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ObjectId> Parser { get { return _parser; } }
+    public static pb::MessageParser<TextId> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -160,21 +159,21 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectId() {
+    public TextId() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectId(ObjectId other) : this() {
+    public TextId(TextId other) : this() {
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectId Clone() {
-      return new ObjectId(this);
+    public TextId Clone() {
+      return new TextId(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -190,11 +189,11 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ObjectId);
+      return Equals(other as TextId);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ObjectId other) {
+    public bool Equals(TextId other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -244,7 +243,7 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ObjectId other) {
+    public void MergeFrom(TextId other) {
       if (other == null) {
         return;
       }
@@ -272,11 +271,11 @@ namespace GrpcServer {
 
   }
 
-  public sealed partial class ObjectModel : pb::IMessage<ObjectModel> {
-    private static readonly pb::MessageParser<ObjectModel> _parser = new pb::MessageParser<ObjectModel>(() => new ObjectModel());
+  public sealed partial class TextModel : pb::IMessage<TextModel> {
+    private static readonly pb::MessageParser<TextModel> _parser = new pb::MessageParser<TextModel>(() => new TextModel());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ObjectModel> Parser { get { return _parser; } }
+    public static pb::MessageParser<TextModel> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -289,22 +288,22 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectModel() {
+    public TextModel() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectModel(ObjectModel other) : this() {
+    public TextModel(TextModel other) : this() {
       id_ = other.id_;
       strValue_ = other.strValue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ObjectModel Clone() {
-      return new ObjectModel(this);
+    public TextModel Clone() {
+      return new TextModel(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -331,11 +330,11 @@ namespace GrpcServer {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as ObjectModel);
+      return Equals(other as TextModel);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ObjectModel other) {
+    public bool Equals(TextModel other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -394,7 +393,7 @@ namespace GrpcServer {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ObjectModel other) {
+    public void MergeFrom(TextModel other) {
       if (other == null) {
         return;
       }

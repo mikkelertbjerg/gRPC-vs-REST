@@ -2,6 +2,7 @@
 using Grpc.Net.Client;
 using GrpcServer;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace GrpcClient
@@ -10,83 +11,46 @@ namespace GrpcClient
     {
         static async Task Main(string[] args)
         {
-            StudentModel student;
-            StudentLookupModel sid;
-            string input;
+            TextModel t;
+            Stopwatch stopwatch = new Stopwatch();
+            TimeSpan ts;
+            string elapsedTime;
 
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var studentClient = new Student.StudentClient(channel);
+            var textClient = new Text.TextClient(channel);
 
-            Console.WriteLine("(1) INSPECT STUDENT\n(2) ALL STUDENTS\n(3) STUDENTS FROM FILE");
-            input = Console.ReadLine();
-            switch (input)
+            //Hacky way to open the connection
+            await textClient.GetTextAsync(new TextId { Id = 0 });
+
+            //Start testing
+            stopwatch.Start();
+            using (var requestAllTexts = textClient.GetAllTexts(new EmptyRequest()))
             {
-                case "1":
-                    Console.WriteLine("----- ALL STUDENT IDS -----");
-                    using (var requestAllStudentIds = studentClient.GetAllStudentIds(new EmptyRequest()))
-                    {
-                        while (await requestAllStudentIds.ResponseStream.MoveNext())
-                        {
-                            sid = requestAllStudentIds.ResponseStream.Current;
-                            Console.Write($"{sid.Id}, ");
-                        }
-                    }
-                    Console.WriteLine("\n---------------------------------\n");
-                    Console.WriteLine("SELECT STUDENT ID: ");
-                    int id = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    StudentLookupModel requestStudent = new StudentLookupModel { Id = id };
-                    student = await studentClient.GetStudentInfoAsync(requestStudent);
-
-                    Console.WriteLine($"Student with id: {requestStudent.Id}");
-                    Console.WriteLine("---------------------------------");
-                    Console.WriteLine($"Name: {student.FirstName} {student.LastName} " +
-                                $"\nGender: {student.Gender}" +
-                                $"\nAge: {student.Age}" +
-                                $"\nEmail: {student.EmailAddress}" +
-                                $"\nPhone: {student.PhoneNumber}" +
-                                $"\nSchool: {student.School}" +
-                                $"\n---------------------------------");
-                    Console.ReadLine();
-                    break;
-                case "2":
-                    Console.WriteLine("----- ALL STUDENTS -----");
-                    using (var requestAllStudents = studentClient.GetAllStudents(new EmptyRequest()))
-                    {
-                        while (await requestAllStudents.ResponseStream.MoveNext())
-                        {
-                            student = requestAllStudents.ResponseStream.Current;
-                            Console.WriteLine($"Name: {student.FirstName} {student.LastName} " +
-                                $"\nGender: {student.Gender}" +
-                                $"\nAge: {student.Age}" +
-                                $"\nEmail: {student.EmailAddress}" +
-                                $"\nPhone: {student.PhoneNumber}" +
-                                $"\nSchool: {student.School}" +
-                                $"\n---------------------------------");
-                        }
-                    }
-                    Console.ReadLine();
-                    break;
-                case "3":
-                    Console.WriteLine("Enter file path");
-                    string filePath = Console.ReadLine();
-                    ExcelRequest excelRequest = new ExcelRequest { FilePath = filePath };
-                    using (var requestStudentsFromExcel = studentClient.GetAllStudentsFromExcel(new ExcelRequest(excelRequest)))
-                    {
-                        while(await requestStudentsFromExcel.ResponseStream.MoveNext())
-                        {
-                            student = requestStudentsFromExcel.ResponseStream.Current;
-                            Console.WriteLine($"Name: {student.FirstName} {student.LastName} " +
-                                $"\nGender: {student.Gender}" +
-                                $"\nAge: {student.Age}" +
-                                $"\nEmail: {student.EmailAddress}" +
-                                $"\nPhone: {student.PhoneNumber}" +
-                                $"\nSchool: {student.School}" +
-                                $"\n---------------------------------");
-                        }
-                    }
-                        break;
+                while (await requestAllTexts.ResponseStream.MoveNext())
+                {
+                    t = requestAllTexts.ResponseStream.Current;
+                }
             }
+            stopwatch.Stop();
+            ts = stopwatch.Elapsed;
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine("RunTime: " + elapsedTime);
+
+
+            Random rng = new Random();
+            int randomId = rng.Next(101);
+            stopwatch.Reset();
+            stopwatch.Start();
+            Console.WriteLine($"Getting Text with id: {randomId}");
+            await textClient.GetTextAsync(new TextId { Id =  randomId});
+            stopwatch.Stop();
+            ts = stopwatch.Elapsed;
+            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine("RunTime: " + elapsedTime);
+
+            Console.ReadLine();
         }
     }
 }

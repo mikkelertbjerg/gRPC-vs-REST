@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.0/Texts.cs \
+obj\Debug\netcoreapp3.0/TextsGrpc.cs: Protos/texts.proto

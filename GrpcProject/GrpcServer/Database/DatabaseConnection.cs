@@ -45,34 +45,34 @@ namespace GrpcServer.Database
             connection.Close();
         }
 
-        public ObjectModel GetObject(int id)
+        public TextModel GetTextModel(int id)
         {
             string query = $"SELECT id, value FROM grpc_vs_rest WHERE id = '{id}';";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
-            ObjectModel o = new ObjectModel();
+            TextModel t = new TextModel();
             while (dataReader.Read())
             {
-                o.Id = dataReader.GetInt32(0);
-                o.StrValue = dataReader.GetString(1);
+                t.Id = dataReader.GetInt32(0);
+                t.StrValue = dataReader.GetString(1);
 
             };
             dataReader.Close();
             this.CloseConnection();
-            return o;
+            return t;
         }
 
-        public List<ObjectModel> GetAllObjectModels()
+        public List<TextModel> GetAllTextModels()
         {
             string query = "SELECT id, value FROM grpc_vs_rest;";
             this.OpenConnection();
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader dataReader = cmd.ExecuteReader();
-            List<ObjectModel> os = new List<ObjectModel>();
+            List<TextModel> ts = new List<TextModel>();
             while (dataReader.Read())
             {
-                os.Add(new ObjectModel
+                ts.Add(new TextModel
                 {
                     Id = dataReader.GetInt32(0),
                     StrValue = dataReader.GetString(1)
@@ -80,7 +80,7 @@ namespace GrpcServer.Database
             };
             dataReader.Close();
             this.CloseConnection();
-            return os;
+            return ts;
         }
     }
 }
