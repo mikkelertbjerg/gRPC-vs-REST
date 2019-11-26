@@ -1,0 +1,11 @@
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.exe
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.deps.json
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.runtimeconfig.json
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.runtimeconfig.dev.json
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.dll
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.pdb
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.csprojAssemblyReference.cache
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.AssemblyInfoInputs.cache
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.AssemblyInfo.cs
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.dll
+C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.pdb
