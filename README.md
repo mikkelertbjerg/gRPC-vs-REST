@@ -59,7 +59,7 @@ all of this is saved in a database, hosted on a website belonging to a member of
 
 both of these endpoints will be called a 100 times, from the client from which we can measure the results.
 
-The host computer is a **I7-9700k** which has 8 cores running 3.6/4.9 GHz
+The host computer is a **I7-9700k** which has 8 cores running _3.6/4.9 GHz_
 
 
  
