@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.0/Payloads.cs \
+obj\Debug\netcoreapp3.0/PayloadsGrpc.cs: Protos/payloads.proto

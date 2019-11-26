@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+service Payload {
+	rpc GetSmallPayload (PayloadId) returns (SmallPayload);
+	rpc GetMediumPayload (PayloadId) returns (MediumPayload);
+	rpc GetLargePayload (PayloadId) returns (LargePayload);
+	rpc GetHugePayload (PayloadId) returns (HugePayload);
+	rpc GetEnormousPayload (PayloadId) returns (EnormousPayload);
+	rpc GetAllSmallPayloads (EmptyRequest) returns (stream SmallPayload);
+	rpc GetAllMediumPayloads (EmptyRequest) returns (stream MediumPayload);
+	rpc GetAllLargePayloads (EmptyRequest) returns (stream LargePayload);
+	rpc GetAllHugePayloads (EmptyRequest) returns (stream HugePayload);
+	rpc GetAllEnormousPayloads (EmptyRequest) returns (stream EnormousPayload);
+}
+
+message EmptyRequest {
+
+}
+
+message PayloadId {
+	int32 id = 1;
+}
+
+message SmallPayload {
+	int32 id = 1;
+	string string_value_one = 2;
+	string string_value_two = 3;
+	string string_value_three = 4;
+	int32 int_value_one = 5;
+	int32 int_value_two = 6;
+	int32 int_value_three = 7;
+	double double_value_one = 8;
+	double double_value_two = 9;
+	double double_value_three = 10;
+}
+
+message MediumPayload {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	SmallPayload small_payload_one = 5;
+	SmallPayload small_payload_two = 6;
+	SmallPayload small_payload_three = 7;
+	SmallPayload small_payload_four = 8;
+	SmallPayload small_payload_five = 9;
+	SmallPayload small_payload_six = 10;
+}
+
+message LargePayload {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	MediumPayload medium_payload_one = 5;
+	MediumPayload mediuml_payload_two = 6;
+	MediumPayload medium_payload_three = 7;
+	MediumPayload medium_payload_four = 8;
+	MediumPayload medium_payload_five = 9;
+	MediumPayload medium_payload_six = 10;
+}
+
+message HugePayload {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	LargePayload large_payload_one = 5;
+	LargePayload large_payload_two = 6;
+	LargePayload large_payload_three = 7;
+	LargePayload large_payload_four = 8;
+	LargePayload large_payload_five = 9;
+	LargePayload large_payload_six = 10;
+}
+
+message EnormousPayload {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	HugePayload huge_payload_one = 5;
+	HugePayload huge_payload_two = 6;
+	HugePayload huge_payload_three = 7;
+	HugePayload huge_payload_four = 8;
+	HugePayload huge_payload_five = 9;
+	HugePayload huge_payload_six = 10;
+}
+
