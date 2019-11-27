@@ -187,7 +187,7 @@ _AP computer science grad._
 
 _Currently pursuing a bachelor in software development._
 
-can be contacted on MAIL
+can be contacted on Mikkelertbjerg@gmail.com
 
 **Nikolai Dyring Jensen**
 
