@@ -61,16 +61,7 @@ both of these endpoints will be called a 100 times, from the client from which w
 
 The host computer is a **I7-9700k** which has 8 cores running _3.6/4.9 GHz_
 
-
- 
-
-
-
-### Pros
-
-### Cons
-
-### Sample project and metrics
+## Sample project and metrics
 _Should include how to reproduce for yourself_
 
 ## gRPC
