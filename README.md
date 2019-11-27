@@ -129,7 +129,7 @@ This was run locally it is possible that the results would be different if they 
 
 When we put the two charts next to each other its easy to see which one has an edge, albeit being it a small one.
 
-![](Compare.png)
+![](compare.png)
 
 Our Hypothesis claimed that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
