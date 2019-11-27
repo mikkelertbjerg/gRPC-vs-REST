@@ -4,7 +4,9 @@
 In a world with an ever growing amount of application utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependant on eachother, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
 
 ## Introduction
-According to _[this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da)_, gRPC is roughly 7 times faster than a REST API, when fetching data. We intend to put this to the test, with extensive testing of our own, everything programmed by us and running in a controlled environment.
+**gRPC is a supperior techonology to REST!**
+
+Atleast that is what [this](https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711), [this](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4), [this](https://www.yonego.com/nl/why-milliseconds-matter/#gref) and [this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) blog claims. According to all of the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
 
 ### Problem statement
 *Is gRPC faster than REST?*
@@ -13,7 +15,7 @@ According to _[this blog](https://medium.com/@EmperorRXF/evaluating-performance-
 *We will assume that gRPC is able to send and recieve requests faster than a tradiational REST.*
 
 ## The experiment
-To test our Hypothesis we will set up an experiment with gRPC and a Rest API.
+To test our Hypothesis we will set up an experiment with gRPC and a REST API.
 These experiments has to adhere to the following:
 
 **Rules**
@@ -49,33 +51,31 @@ The key features to take note of when using rest:
  * Both server and client are aware of methods available.
 
 **Statelessness**
- * Stateless means that the server is not required to know the current state of the client and vice versa.
+ * [Stateless](https://restfulapi.net/statelessness/) means that the server is not required to know the current state of the client and vice versa.
  * Either end can understand any method calls, without knowing the previous called methods.
- * You can read more about statelessness [here](https://restfulapi.net/statelessness/).
     
 **Invocation**
-* We invoke a method on the server via HTTP operations
+* We invoke a method on the server via [HTTP operations](https://www.restapitutorial.com/lessons/httpmethods.html)
    * GET
    * POST
    * PUT
    * DELETE
-* If you want to read more about HTTP operations you can do so [here](https://www.restapitutorial.com/lessons/httpmethods.html)
 
 ## Setting up the experiment for the REST API
 The architecture for this experiment is a simple one:
 ![](Arch.png)
 
 ## Sample project and metrics
-If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
+If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
 ## gRPC
 ### _*what is gRPC?*_
-gRPC is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers. You can read more about gRPC [Here](https://grpc.io/).
+[gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
 Some of the key features we would like to highlight:
 
 **HTTP/2 support**
-HTTP/2 is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works. You can read more about HTTP/2 [here](https://en.wikipedia.org/wiki/HTTP/2).
+[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works.
 
 **Language independant**
 gRPC is language independant, which means it doesn't matter which language you develop in. The framework supports a handfull of [popular languages](https://packages.grpc.io/). This is quite an advantage when you're developing microservices, which might have services developed in different languages and frameworks.
@@ -84,7 +84,7 @@ gRPC is language independant, which means it doesn't matter which language you d
 gRPC is strictly [contract first](https://en.wikipedia.org/wiki/Design_by_contract) which is a design approach that works esecially well in larger development teams. It also excells when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file](https://developers.google.com/protocol-buffers), which is also where gRPC gains some of its speed from, seeing as .proto files are...
 
 **Strongly typed**
-As a biproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serialzing](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) structured data. 
+As a biproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serialzing](https://en.wikipedia.org/wiki/Serialization) structured data. 
 
 ## Setting up the gRPC project
 For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies back to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
@@ -103,9 +103,28 @@ _When to gRPCS_
 _When to REST_
 
 ## References
+**gRPC v REST**
+https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
+https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
+https://www.yonego.com/nl/why-milliseconds-matter/#gref
+https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
+
+**REST**
+https://blog.ndepend.com/rest-vs-restful/
+https://restfulapi.net/statelessness/
+https://www.restapitutorial.com/lessons/httpmethods.html
+
+**gRPC**
+https://grpc.io/
+https://packages.grpc.io/
+https://developers.google.com/protocol-buffers
+
+**Wiki**
+https://en.wikipedia.org/wiki/HTTP/2
+https://en.wikipedia.org/wiki/Design_by_contract
+https://en.wikipedia.org/wiki/Serialization
 
 ## Technology used
-
 [gRPC](https://gRPC.io/)
 
 [.Net Web Api](https://dotnet.microsoft.com/apps/aspnet/apis)
