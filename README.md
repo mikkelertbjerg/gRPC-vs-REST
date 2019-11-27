@@ -33,6 +33,7 @@ These experiments has to adhere to the following:
 * To get an average time, each operation will be executed 100 times. this result with be the one we conclude on.
 
 **Specs**
+
 I7-9700k, 8 core, _3.6/4.9 GHz_
 
 
