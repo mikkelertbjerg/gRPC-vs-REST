@@ -13,7 +13,7 @@ namespace TestClient
         {
             get => _url;
             set => _url = value;
-        }    
+        }
 
 
         public void Initialize()
@@ -24,7 +24,7 @@ namespace TestClient
 
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            
+
         }
 
         public void RunPayload(int payloadLevel)
@@ -72,7 +72,43 @@ namespace TestClient
                     break;
             }
 
-            
+
+        }
+
+        public void RunSpecificPayload(int payloadLevel)
+        {
+            HttpResponseMessage response;
+            switch (payloadLevel)
+            {
+                case 1:
+                    response = Client.GetAsync(_url + "SmallPayload/" + payloadLevel.ToString()).Result;
+                    Console.WriteLine($"Sending REST Request.");
+                    if (response != null)
+                    {
+                        Console.WriteLine("Received REST response.");
+                    }
+                    break;
+                case 2:
+
+                    response = Client.GetAsync(_url + "MediumPayload/" + payloadLevel.ToString()).Result;
+                    Console.WriteLine($"Sending REST Request.");
+                    if (response != null)
+                    {
+                        Console.WriteLine("Received REST response.");
+                    }
+                    break;
+                case 3:
+                    response = Client.GetAsync(_url + "LargePayload/" + payloadLevel.ToString()).Result;
+                    Console.WriteLine($"Sending REST Request.");
+                    if (response != null)
+                    {
+                        Console.WriteLine("Received REST response.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("N/A Level selected.");
+                    break;
+            }
         }
 
 
