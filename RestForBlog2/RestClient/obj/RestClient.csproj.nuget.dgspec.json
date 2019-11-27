@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj": {}
+    "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj": {
+    "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj",
+        "projectUniqueName": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj",
         "projectName": "RestClient",
-        "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj",
-        "packagesPath": "C:\\Users\\mwe1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\RestForBlog2\\RestClient\\obj\\",
+        "projectPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\RestForBlog2\\RestClient\\RestClient.csproj",
+        "packagesPath": "C:\\Users\\nikod\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\RestForBlog2\\RestClient\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mwe1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikod\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
