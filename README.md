@@ -108,35 +108,25 @@ _When to REST_
 
 ## References
 ### gRPC v REST
-https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
-
-https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
-
-https://www.yonego.com/nl/why-milliseconds-matter/#gref
-
-https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
+1. https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
+2. https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
+3. https://www.yonego.com/nl/why-milliseconds-matter/#gref
+4. https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
 
 ### REST
-https://blog.ndepend.com/rest-vs-restful/
-
-https://restfulapi.net/statelessness/
-
-https://www.restapitutorial.com/lessons/httpmethods.html
+1. https://blog.ndepend.com/rest-vs-restful/
+2. https://restfulapi.net/statelessness/
+3. https://www.restapitutorial.com/lessons/httpmethods.html
 
 ### gRPC
-https://grpc.io/
-
-https://packages.grpc.io/
-
-https://developers.google.com/protocol-buffers
+1. https://grpc.io/
+2. https://packages.grpc.io/
+3. https://developers.google.com/protocol-buffers
 
 ### Wiki
-
-https://en.wikipedia.org/wiki/HTTP/2
-
-https://en.wikipedia.org/wiki/Design_by_contract
-
-https://en.wikipedia.org/wiki/Serialization
+1. https://en.wikipedia.org/wiki/HTTP/2
+2. https://en.wikipedia.org/wiki/Design_by_contract
+3. https://en.wikipedia.org/wiki/Serialization
 
 ## Technology used
 
