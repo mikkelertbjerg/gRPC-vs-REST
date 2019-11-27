@@ -107,8 +107,7 @@ _When to gRPCS_
 _When to REST_
 
 ## References
-**gRPC v REST**
-
+### gRPC v REST
 https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
 
 https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
@@ -117,23 +116,21 @@ https://www.yonego.com/nl/why-milliseconds-matter/#gref
 
 https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
 
-**REST**
-
+### REST
 https://blog.ndepend.com/rest-vs-restful/
 
 https://restfulapi.net/statelessness/
 
 https://www.restapitutorial.com/lessons/httpmethods.html
 
-**gRPC**
-
+### gRPC
 https://grpc.io/
 
 https://packages.grpc.io/
 
 https://developers.google.com/protocol-buffers
 
-**Wiki**
+### Wiki
 
 https://en.wikipedia.org/wiki/HTTP/2
 
