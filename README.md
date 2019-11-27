@@ -73,7 +73,7 @@ If you want to replicate this experiment yourself, database setup can be found [
 
 Running our setup yielded us these results:
 
-![](RestResults.png)
+![Rest Results](Graphics/REST_%20Average%20time%20in%20seconds%2C%20per%20request_response.svg)
 
 As can be seen in the results above, the difference between small payload single instance and a single instance of a large payloads are small compared to daily tasks. A small single payload being exactly 1.98 mean response time and a large being 2.64 seconds. But in relation to each other its a 33% increase in response time. 
 
