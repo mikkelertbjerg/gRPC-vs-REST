@@ -71,16 +71,16 @@ The architecture for this experiment is a simple one:
 ## Sample project and metrics
 If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
-Running our setup yielded us these results:
+Running our setup yielded these results:
 
-![Rest Results](Graphics/REST_%20Average%20time%20per%20request_response%2C%20100%20calls.png)
+![Rest Results](Graphics/rest_average.png)
 
-As seen in the results above, the difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of  and a large being 2.64 seconds. But in relation to each other its a 33% increase in response time. 
+The difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of 0.0198 whilst a single large payload has a mean response time of 0.0206 seconds. But in relation to each other its a 33% increase in response time. 
 
 To put this into perspective a small payload contains 9 values of data.
-A large payload contains (6*9)^2 or 2916 values. This means that we have requested 32300% more data and it only took 33% longer.
+A large payload contains (3+(6*9))*6+3 or 345 values. This means that we have requested 3733,33% more data and it only took 4.04% longer.
 
-When we compare collections the difference becomes very apparent. A small collection payload took exactly 2.56 seconds and a large took 10.06 seconds, That is an increase of 293%. It is apparent that when it comes to moving large collections of data over the REST API, it takes a considerate amount of time compared to smaller collections.
+When we compare collections, the difference becomes very apparent. A small collection payload averaged at 0.0256 seconds and a large averaged at 0.1006 seconds, That is an increase of 293%. It is apparent that when it comes to moving large collections of data over the REST API, it takes a considerate amount of time compared to smaller collections.
 
 ## gRPC
 ### What is gRPC?
@@ -113,25 +113,26 @@ For the gRPC architecture we use the same as the rest, we have a client and a se
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
 Running our setup yielded us these results:
-![gRPC Results](Graphics/gRPC_%20Average%20time%20per%20request_response%2C%20100%20calls.png)
+![gRPC Results](Graphics/grpc_average.png)
 
-The difference between a small single payload and a large single payload, is about 0.48. Specifically the small payload took 2.30 seconds and the large took 2.78 seconds, that is an increase of 20.87%. 
+The average difference between a single small payload and a single large payload, is 0.0048. Specifically the small payload took 0.02303 seconds and the large took 0.02789 seconds, that is an increase of 21.1%. 
 
-Collections paint a different picture, a small payload collection took 2.389 seconds to complete, while a collection of large payloads took 10.40 seconds to complete. The difference between the large and small collection being 10 seconds or a 337% increase. 
+Collections paint a different picture, a small payload collection took on average 0.02389 seconds to complete, while a collection of large payloads took 0.10405 seconds to complete. The difference between the large and small collection being 10 milliseconds or a 335.54% increase. 
 
 
 ## possible errors
-Both the client and server was running on the same computer, potentially competing for resources. We ask people who seek to reproduce our results, to keep this fact in mind. 
+* Both the client and server was running on the same computer, potentially competing for resources.
+* We have been able to get better results if we disabled server side logging in the gRPC project.
 
 This was run locally it is possible that the results would be different if they were run against a server on the internet.
 
 ## Conclusion
 
-When we put the two charts next to each other its easy to see which one has an edge, albeit being it a small one.
+When we put the two charts next to each other, it's easy to see which one has an edge, albeit being a small one.
 
-![Comparism of results](Graphics/Average%20time%20per%20request_response%2C%20100%20calls.png)
+![Comparism of results](Graphics/average_grpc_rest.png)
 
-Our Hypothesis claimed that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
+We hypothesized that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
 Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
 
