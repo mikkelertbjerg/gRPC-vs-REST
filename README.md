@@ -108,27 +108,41 @@ _When to REST_
 
 ## References
 **gRPC v REST**
+
 https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
+
 https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
+
 https://www.yonego.com/nl/why-milliseconds-matter/#gref
+
 https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
 
 **REST**
+
 https://blog.ndepend.com/rest-vs-restful/
+
 https://restfulapi.net/statelessness/
+
 https://www.restapitutorial.com/lessons/httpmethods.html
 
 **gRPC**
+
 https://grpc.io/
+
 https://packages.grpc.io/
+
 https://developers.google.com/protocol-buffers
 
 **Wiki**
+
 https://en.wikipedia.org/wiki/HTTP/2
+
 https://en.wikipedia.org/wiki/Design_by_contract
+
 https://en.wikipedia.org/wiki/Serialization
 
 ## Technology used
+
 [gRPC](https://gRPC.io/)
 
 [.Net Web Api](https://dotnet.microsoft.com/apps/aspnet/apis)
