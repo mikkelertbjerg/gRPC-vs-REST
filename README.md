@@ -166,6 +166,9 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 2. <https://en.wikipedia.org/wiki/Design_by_contract>
 3. <https://en.wikipedia.org/wiki/Serialization>
 
+### Others
+1. https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/
+
 ## Technology used
 
 [gRPC](https://gRPC.io/)
@@ -193,7 +196,7 @@ _Currently pursuing a bachelor in software development._
 
 can be contacted on Nikodyring@gmail.com
 
-**Nikolaj Sjøholm Christiansen**
+**Nikolai Sjøholm Christiansen**
 
 _AP computer science grad._
 
