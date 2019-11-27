@@ -66,7 +66,7 @@ The key features to take note of when using rest:
 
 ## Setting up the experiment for the REST API
 The architecture for this experiment is a simple one:
-![](Arch.png)
+![Rest Architecture](Graphics/rest_architecture.png)
 
 ## Sample project and metrics
 If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
