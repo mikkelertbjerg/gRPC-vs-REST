@@ -16,8 +16,6 @@ namespace GrpcServer {
     static readonly grpc::Marshaller<global::GrpcServer.SmallPayload> __Marshaller_SmallPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.SmallPayload.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.MediumPayload> __Marshaller_MediumPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.MediumPayload.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.LargePayload> __Marshaller_LargePayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.LargePayload.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::GrpcServer.HugePayload> __Marshaller_HugePayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.HugePayload.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::GrpcServer.EnormousPayload> __Marshaller_EnormousPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.EnormousPayload.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.EmptyRequest.Parser.ParseFrom);
 
     static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload> __Method_GetSmallPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload>(
@@ -41,20 +39,6 @@ namespace GrpcServer {
         __Marshaller_PayloadId,
         __Marshaller_LargePayload);
 
-    static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.HugePayload> __Method_GetHugePayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.HugePayload>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "GetHugePayload",
-        __Marshaller_PayloadId,
-        __Marshaller_HugePayload);
-
-    static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.EnormousPayload> __Method_GetEnormousPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.EnormousPayload>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "GetEnormousPayload",
-        __Marshaller_PayloadId,
-        __Marshaller_EnormousPayload);
-
     static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.SmallPayload> __Method_GetAllSmallPayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.SmallPayload>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
@@ -75,20 +59,6 @@ namespace GrpcServer {
         "GetAllLargePayloads",
         __Marshaller_EmptyRequest,
         __Marshaller_LargePayload);
-
-    static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.HugePayload> __Method_GetAllHugePayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.HugePayload>(
-        grpc::MethodType.ServerStreaming,
-        __ServiceName,
-        "GetAllHugePayloads",
-        __Marshaller_EmptyRequest,
-        __Marshaller_HugePayload);
-
-    static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.EnormousPayload> __Method_GetAllEnormousPayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.EnormousPayload>(
-        grpc::MethodType.ServerStreaming,
-        __ServiceName,
-        "GetAllEnormousPayloads",
-        __Marshaller_EmptyRequest,
-        __Marshaller_EnormousPayload);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -115,16 +85,6 @@ namespace GrpcServer {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.HugePayload> GetHugePayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServer.EnormousPayload> GetEnormousPayload(global::GrpcServer.PayloadId request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
       public virtual global::System.Threading.Tasks.Task GetAllSmallPayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.SmallPayload> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -140,16 +100,6 @@ namespace GrpcServer {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task GetAllHugePayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.HugePayload> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task GetAllEnormousPayloads(global::GrpcServer.EmptyRequest request, grpc::IServerStreamWriter<global::GrpcServer.EnormousPayload> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -160,13 +110,9 @@ namespace GrpcServer {
           .AddMethod(__Method_GetSmallPayload, serviceImpl.GetSmallPayload)
           .AddMethod(__Method_GetMediumPayload, serviceImpl.GetMediumPayload)
           .AddMethod(__Method_GetLargePayload, serviceImpl.GetLargePayload)
-          .AddMethod(__Method_GetHugePayload, serviceImpl.GetHugePayload)
-          .AddMethod(__Method_GetEnormousPayload, serviceImpl.GetEnormousPayload)
           .AddMethod(__Method_GetAllSmallPayloads, serviceImpl.GetAllSmallPayloads)
           .AddMethod(__Method_GetAllMediumPayloads, serviceImpl.GetAllMediumPayloads)
-          .AddMethod(__Method_GetAllLargePayloads, serviceImpl.GetAllLargePayloads)
-          .AddMethod(__Method_GetAllHugePayloads, serviceImpl.GetAllHugePayloads)
-          .AddMethod(__Method_GetAllEnormousPayloads, serviceImpl.GetAllEnormousPayloads).Build();
+          .AddMethod(__Method_GetAllLargePayloads, serviceImpl.GetAllLargePayloads).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -178,13 +124,9 @@ namespace GrpcServer {
       serviceBinder.AddMethod(__Method_GetSmallPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload>(serviceImpl.GetSmallPayload));
       serviceBinder.AddMethod(__Method_GetMediumPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.MediumPayload>(serviceImpl.GetMediumPayload));
       serviceBinder.AddMethod(__Method_GetLargePayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.LargePayload>(serviceImpl.GetLargePayload));
-      serviceBinder.AddMethod(__Method_GetHugePayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.HugePayload>(serviceImpl.GetHugePayload));
-      serviceBinder.AddMethod(__Method_GetEnormousPayload, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServer.PayloadId, global::GrpcServer.EnormousPayload>(serviceImpl.GetEnormousPayload));
       serviceBinder.AddMethod(__Method_GetAllSmallPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.SmallPayload>(serviceImpl.GetAllSmallPayloads));
       serviceBinder.AddMethod(__Method_GetAllMediumPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.MediumPayload>(serviceImpl.GetAllMediumPayloads));
       serviceBinder.AddMethod(__Method_GetAllLargePayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.LargePayload>(serviceImpl.GetAllLargePayloads));
-      serviceBinder.AddMethod(__Method_GetAllHugePayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.HugePayload>(serviceImpl.GetAllHugePayloads));
-      serviceBinder.AddMethod(__Method_GetAllEnormousPayloads, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcServer.EmptyRequest, global::GrpcServer.EnormousPayload>(serviceImpl.GetAllEnormousPayloads));
     }
 
   }

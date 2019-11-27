@@ -17,7 +17,6 @@ C:\Users\mwe1\Desktop\CPH0919\SystemIntegration\gRPC-Project\GrpcProject\GrpcCli
 C:\Users\mwe1\Desktop\CPH0919\SystemIntegration\gRPC-Project\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.csprojAssemblyReference.cache
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.AssemblyInfoInputs.cache
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.AssemblyInfo.cs
-C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.csprojAssemblyReference.cache
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\bin\Debug\netcoreapp3.0\GrpcClient.exe
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\bin\Debug\netcoreapp3.0\GrpcClient.deps.json
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\bin\Debug\netcoreapp3.0\GrpcClient.runtimeconfig.json
@@ -32,3 +31,4 @@ C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\bin\Debug\netc
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.csproj.CopyComplete
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.dll
 C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.pdb
+C:\Users\mwe1\Desktop\CPH0919\gRPC-vs-REST\GrpcProject\GrpcClient\obj\Debug\netcoreapp3.0\GrpcClient.csprojAssemblyReference.cache

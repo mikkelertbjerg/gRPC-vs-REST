@@ -22,8 +22,20 @@ namespace GrpcServer.Services
 
         public override Task<SmallPayload> GetSmallPayload(PayloadId request, ServerCallContext context)
         {
-            SmallPayload sp = _db.GetSmallPayload(request);
+            SmallPayload sp = _db.GetSmallPayload(request.Id);
             return Task.FromResult(sp);
+        }
+
+        public override Task<MediumPayload> GetMediumPayload(PayloadId request, ServerCallContext context)
+        {
+            MediumPayload mp = _db.GetMediumPayload(request.Id);
+            return Task.FromResult(mp);
+        }
+
+        public override Task<LargePayload> GetLargePayload(PayloadId request, ServerCallContext context)
+        {
+            LargePayload lp = _db.GetLargePayload(request.Id);
+            return Task.FromResult(lp);
         }
 
         public override async Task GetAllSmallPayloads(EmptyRequest request, IServerStreamWriter<SmallPayload> responseStream, ServerCallContext context)
@@ -33,6 +45,26 @@ namespace GrpcServer.Services
             foreach (SmallPayload sp in sps)
             {
                 await responseStream.WriteAsync(sp);
+            }
+        }
+
+        public override async Task GetAllMediumPayloads(EmptyRequest request, IServerStreamWriter<MediumPayload> responseStream, ServerCallContext context)
+        {
+            List<MediumPayload> mps = _db.GetAllMediumPayloads();
+
+            foreach (MediumPayload mp in mps)
+            {
+                await responseStream.WriteAsync(mp);
+            }
+        }
+
+        public override async Task GetAllLargePayloads(EmptyRequest request, IServerStreamWriter<LargePayload> responseStream, ServerCallContext context)
+        {
+            List<LargePayload> lps = _db.GetAllLargePayloads();
+
+            foreach (LargePayload lp in lps)
+            {
+                await responseStream.WriteAsync(lp);
             }
         }
     }
