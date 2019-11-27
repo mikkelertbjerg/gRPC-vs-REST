@@ -73,7 +73,7 @@ If you want to replicate this experiment yourself, database setup can be found [
 
 Running our setup yielded us these results:
 
-![Rest Results](Graphics/REST_%20Average%20time%20in%20seconds%2C%20per%20request_response.svg)
+![Rest Results](Graphics/REST_%20Average%20time%20per%20request_response%2C%20100%20calls.png)
 
 As seen in the results above, the difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of  and a large being 2.64 seconds. But in relation to each other its a 33% increase in response time. 
 
@@ -113,7 +113,7 @@ For the gRPC architecture we use the same as the rest, we have a client and a se
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
 Running our setup yielded us these results:
-![gRPC Results](Graphics/gRPC_%20Average%20time%20in%20seconds%2C%20per%20request_response.svg)
+![gRPC Results](Graphics/gRPC_%20Average%20time%20per%20request_response%2C%20100%20calls.png)
 
 The difference between a small single payload and a large single payload, is about 0.48. Specifically the small payload took 2.30 seconds and the large took 2.78 seconds, that is an increase of 20.87%. 
 
@@ -129,7 +129,7 @@ This was run locally it is possible that the results would be different if they 
 
 When we put the two charts next to each other its easy to see which one has an edge, albeit being it a small one.
 
-![Comparism of results](Graphics/Average%20time%20in%20seconds%2C%20per%20request_response.svg)
+![Comparism of results](Graphics/Average%20time%20per%20request_response%2C%20100%20calls.png)
 
 Our Hypothesis claimed that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
