@@ -107,13 +107,13 @@ As a biproduct of a strongly typed proto file, which is used as contract between
 ## Setting up the gRPC project
 For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies back to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
 
-![](grpcarc.png)
+![gRPC Architecture](Graphics/grpc_architecture.png)
 
 ### Sample project and metrics
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
 Running our setup yielded us these results:
-![](gRPCResults.png)
+![gRPC Results](Graphics/gRPC_%20Average%20time%20in%20seconds%2C%20per%20request_response.svg)
 
 The difference between a small single payload and a large single payload, is about 0.48. Specifically the small payload took 2.30 seconds and the large took 2.78 seconds, that is an increase of 20.87%. 
 
@@ -129,7 +129,7 @@ This was run locally it is possible that the results would be different if they 
 
 When we put the two charts next to each other its easy to see which one has an edge, albeit being it a small one.
 
-![](Compare.png)
+![Comparism of results](Graphics/Average%20time%20in%20seconds%2C%20per%20request_response.svg)
 
 Our Hypothesis claimed that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
