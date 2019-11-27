@@ -1,20 +1,20 @@
 # gRPC vs. REST
 
 ## Abstract
-In a world with an ever growing amount of application utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependant on eachother, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
+In a world with an ever growing amount of application utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependent on each other, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
 
 ## Introduction
-**gRPC is a supperior techonology to REST!** Atleast that is what [this](https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711), [this](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4), [this](https://www.yonego.com/nl/why-milliseconds-matter/#gref) and [this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) claims. According to all of the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
+**gRPC is a superior technology to REST!** At least that is what [this](https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711), [this](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4), [this](https://www.yonego.com/nl/why-milliseconds-matter/#gref) and [this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
 
 ### Problem statement
 *Is gRPC faster than REST?*
 
 ## Hypothesis
-*We will assume that gRPC is able to send and recieve requests faster than a tradiational REST.*
+*We will assume that gRPC is able to send and recieve requests faster than a traditional REST.*
 
 ## The experiment
 To test our Hypothesis we will set up an experiment with gRPC and a REST API.
-These experiments has to adhere to the following:
+These experiments have to adhere to the following:
 
 **Rules**
 * To ensure accurate measurements, the results must be obtained from the same computer.
@@ -38,8 +38,8 @@ These experiments has to adhere to the following:
 
 I7-9700k, 8 core, _4.6GHz_
 Samsung SSD 840 EVO 250GB
-NVIDIA GeForce GTX 20170
-2x8GB HyperX Fury 2666MHz DDR4 Memory
+NVIDIA GeForce GTX 1070
+2x8 GB HyperX Fury 2666MHz DDR4 Memory
 
 ## REST
 ### What is REST?
@@ -69,13 +69,13 @@ The architecture for this experiment is a simple one:
 ![Rest Architecture](Graphics/rest_architecture.png)
 
 ## Sample project and metrics
-If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
+If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and source code for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
 Running our setup yielded these results:
 
 ![Rest Results](Graphics/rest_average.png)
 
-The difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of 0.0198 whilst a single large payload has a mean response time of 0.0206 seconds. But in relation to each other its a 33% increase in response time. 
+The difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of 0.0198 whilst a single large payload has a mean response time of 0.0206 seconds. But in relation to each other it's a 33% increase in response time. 
 
 To put this into perspective a small payload contains 9 values of data.
 A large payload contains (3+(6*9))*6+3 or 345 values. This means that we have requested 3733,33% more data and it only took 4.04% longer.
@@ -86,7 +86,7 @@ When we compare collections, the difference becomes very apparent. A small colle
 ### What is gRPC?
 [gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
-Some of the key features we would like to highlight:
+Some key features we would like to highlight:
 
 **HTTP/2 support**
 
@@ -98,19 +98,19 @@ gRPC is language independant, which means it doesn't matter which language you d
 
 **Contract First**
 
-gRPC is strictly [contract first](https://en.wikipedia.org/wiki/Design_by_contract) which is a design approach that works esecially well in larger development teams. It also excells when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file](https://developers.google.com/protocol-buffers), which is also where gRPC gains some of its speed from, seeing as .proto files are...
+gRPC is strictly [contract first](https://en.wikipedia.org/wiki/Design_by_contract) which is a design approach that works esecially well in larger development teams. It also excels when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file](https://developers.google.com/protocol-buffers), which is also where gRPC gains some of its speed from, seeing as .proto files are...
 
 **Strongly typed**
 
-As a biproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serialzing](https://en.wikipedia.org/wiki/Serialization) structured data. 
+As a byproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serializing](https://en.wikipedia.org/wiki/Serialization) structured data. 
 
 ## Setting up the gRPC project
-For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies back to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
+For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
 
 ![gRPC Architecture](Graphics/grpc_architecture.png)
 
 ### Sample project and metrics
-If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
+If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and source code for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
 Running our setup yielded us these results:
 ![gRPC Results](Graphics/grpc_average.png)
@@ -130,13 +130,13 @@ This was run locally it is possible that the results would be different if they 
 
 When we put the two charts next to each other, it's easy to see which one has an edge, albeit being a small one.
 
-![Comparism of results](Graphics/average_grpc_rest.png)
+![Comparison of results](Graphics/average_grpc_rest.png)
 
 We hypothesized that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
 Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
 
-These results might not seem as much, but it has been [proven](https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/) that people on average don't wait around for data to load and will abandon a webpage or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
+These results might not seem as much, but it has been [proven](https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/) that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
 
 this prompts the question: **When to use gRPC and when to use REST**
 
