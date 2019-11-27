@@ -135,11 +135,14 @@ Our Hypothesis claimed that gRPC would be faster than rest, based on the numerou
 
 Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
 
+These results might not seem as much, but it has been [proven](https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/) that people on average don't wait around for data to load and will abandon a webpage or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
 
+this prompts the question: **When to use gRPC and when to use REST**
 
-_Metrics comapred_
-_When to gRPCS_
-_When to REST_
+We would argue that gRPC fit into a setting, where you need to have multiple programs or services talking to each other across different languages, especially when the tasks that needs to connected to an endpoint is an action that needs to be executed; one such action could be TurnOnTheWater().
+
+A rest on the other hand operates on the four aforementioned HTTP operations, these operations indicated data transfers of one sort or the other. While a rest can execute the same actions as gRPC, the action TurnOnTheWater() doesn't fit into what a REST API was designed for. We would instead use REST where we required data transfers and other typical CRUD mechanics.
+
 
 ## References
 ### gRPC v REST
