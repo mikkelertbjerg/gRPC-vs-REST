@@ -34,7 +34,10 @@ These experiments has to adhere to the following:
 
 **Specs**
 
-I7-9700k, 8 core, _3.6/4.9 GHz_
+I7-9700k, 8 core, _4.6GHz_
+Samsung SSD 840 EVO 250GB
+NVIDIA GeForce GTX 20170
+2x8GB HyperX Fury 2666MHz DDR4 Memory
 
 ## REST
 ### What is REST?
