@@ -113,11 +113,30 @@ For the gRPC architecture we use the same as the rest, we have a client and a se
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
 Running our setup yielded us these results:
+![](gRPCResults.png)
+
+The difference between a small single payload and a large single payload, is about 0.48. Specifically the small payload took 2.30 seconds and the large took 2.78 seconds, that is an increase of 20.87%. 
+
+Collections paint a different picture, a small payload collection took 2.389 seconds to complete, while a collection of large payloads took 10.40 seconds to complete. The difference between the large and small collection being 10 seconds or a 337% increase. 
+
 
 ## possible errors
 Both the client and server was running on the same computer, potentially competing for resources. We ask people who seek to reproduce our results, to keep this fact in mind. 
 
+This was run locally it is possible that the results would be different if they were run against a server on the internet.
+
 ## Conclusion
+
+When we put the two charts next to each other its easy to see which one has an edge, albeit being it a small one.
+
+![](compare.png)
+
+Our Hypothesis claimed that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
+
+Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
+
+
+
 _Metrics comapred_
 _When to gRPCS_
 _When to REST_
