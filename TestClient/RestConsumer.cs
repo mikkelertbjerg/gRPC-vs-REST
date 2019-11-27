@@ -6,8 +6,7 @@ namespace TestClient
 {
     public class RestConsumer
     {
-        private string _url = "https://jsonplaceholder.typicode.com/posts";
-        private string _urlParameters = "?api_key=123";
+        private string _url = "http://localhost:60264/api/values";
 
         public string URL
         {
@@ -15,11 +14,6 @@ namespace TestClient
             set => _url = value;
         }
 
-        public string URLParameters
-        {
-            get => _urlParameters;
-            set => _urlParameters = value;
-        }
 
         public void Initialize()
         {
@@ -31,7 +25,12 @@ namespace TestClient
             for (int i = 1; i < 101; i++)
             {
                 HttpResponseMessage response = httpClient.GetAsync(_url).Result;
+                
                 Console.WriteLine("Sending REST Request: " + i);
+                if (response != null)
+                {
+                    Console.WriteLine("Received REST Response: " + response.Content.ReadAsStringAsync().Result);
+                }
             }
         }
 
