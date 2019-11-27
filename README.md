@@ -135,3 +135,13 @@ _When to REST_
 [.Net console app](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019)
 
 [MySql Database](https://www.mysql.com/)
+
+## About the authors
+**Mikkel Wexøe Ertbjerg**
+
+
+**Nikolai Dyrring Jensem**
+
+
+**Nikolaj Sjøholm Christiansen**
+
