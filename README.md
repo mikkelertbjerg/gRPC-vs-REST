@@ -26,7 +26,9 @@ These experiments has to adhere to the following:
 * to adhere to the multiple data structures rule, there will be a database which will feed us, single instances of an object, and feed us multiple instances of objects we can turn into a list.
 * Each API will have six methods to call. 
     * three for a single instance which takes a parameter of Id.
+        * each one with a larger payload
     * three for a collection of 100 instances, which takes no parameters.
+        * each one with a larger payload
 * Each API will be tested with a client written in C# as a console app.
     * Time will be measured with .NET Stopwatch.
     * the stopwatch will begin when the method is called and end when the API returns the full data.
@@ -69,6 +71,17 @@ The architecture for this experiment is a simple one:
 ## Sample project and metrics
 If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
+Running our setup yielded us these results:
+
+![](RestResults.png)
+
+As can be seen in the results above, the difference between small payload single instance and a single instance of a large payloads are small compared to daily tasks. A small single payload being exactly 1.98 mean response time and a large being 2.64 seconds. But in relation to each other its a 33% increase in response time. 
+
+To put this into perspective a small payload contains 9 values of data.
+A large payload contains (6*9)^2 or 2916 values. This means that we have requested 32300% more data and it only took 33% longer.
+
+When we compare collections the difference becomes very apparent. A small collection payload took exactly 2.56 seconds and a large took 10.06 seconds, That is an increase of 293%. It is apparent that when it comes to moving large collections of data over the REST API, it takes a considerate amount of time compared to smaller collections.
+
 ## gRPC
 ### What is gRPC?
 [gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
@@ -98,6 +111,8 @@ For the gRPC architecture we use the same as the rest, we have a client and a se
 
 ### Sample project and metrics
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
+
+Running our setup yielded us these results:
 
 ## possible errors
 Both the client and server was running on the same computer, potentially competing for resources. We ask people who seek to reproduce our results, to keep this fact in mind. 
@@ -142,9 +157,24 @@ _When to REST_
 ## About the authors
 **Mikkel Wexøe Ertbjerg**
 
+_AP computer science grad._
 
-**Nikolai Dyrring Jensem**
+_Currently pursuing a bachelor in software development._
 
+can be contacted on MAIL
+
+**Nikolai Dyring Jensen**
+
+_AP computer science grad._
+
+_Currently pursuing a bachelor in software development._
+
+can be contacted on Nikodyring@gmail.com
 
 **Nikolaj Sjøholm Christiansen**
 
+_AP computer science grad._
+
+_Currently pursuing a bachelor in software development._
+
+can be contacted on Nikolaiviby3@gmail.com
