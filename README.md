@@ -100,7 +100,7 @@ _Should include how to reproduce for yourself_
 
 ## possible errors
 
-Both the client and server was running on the same computer, potentially competing for resources. To fix this we encourage people who seek to reproduce our results to host their APIs before testing them, we unfortunately didn't have the possibility/foresight at the time of testing.
+Both the client and server was running on the same computer, potentially competing for resources. We ask people who seek to reproduce our results, to keep this fact in mind. 
 
 ## Conclusion
 _Metrics comapred_
