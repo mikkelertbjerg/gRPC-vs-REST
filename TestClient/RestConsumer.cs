@@ -81,29 +81,28 @@ namespace TestClient
             switch (payloadLevel)
             {
                 case 1:
-                    response = Client.GetAsync(_url + "SmallPayload/" + payloadLevel.ToString()).Result;
-                    Console.WriteLine($"Sending REST Request.");
-                    if (response != null)
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
                     {
-                        Console.WriteLine("Received REST response.");
+                        response = Client.GetAsync(_url + "SmallPayload/" + payloadLevel.ToString()).Result;
                     }
+                    Console.WriteLine("Requested REST Service 100 times.");
                     break;
                 case 2:
-
-                    response = Client.GetAsync(_url + "MediumPayload/" + payloadLevel.ToString()).Result;
-                    Console.WriteLine($"Sending REST Request.");
-                    if (response != null)
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
                     {
-                        Console.WriteLine("Received REST response.");
+                        response = Client.GetAsync(_url + "MediumPayload/" + payloadLevel.ToString()).Result;
                     }
+                    Console.WriteLine("Requested REST Service 100 times.");
                     break;
                 case 3:
-                    response = Client.GetAsync(_url + "LargePayload/" + payloadLevel.ToString()).Result;
-                    Console.WriteLine($"Sending REST Request.");
-                    if (response != null)
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
                     {
-                        Console.WriteLine("Received REST response.");
+                        response = Client.GetAsync(_url + "LargePayload/" + payloadLevel.ToString()).Result;
                     }
+                    Console.WriteLine("Requested REST Service 100 times.");
                     break;
                 default:
                     Console.WriteLine("N/A Level selected.");
