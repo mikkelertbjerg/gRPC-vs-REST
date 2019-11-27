@@ -92,7 +92,7 @@ Some of the key features we would like to highlight:
 
 For the gRPC architecture we use pretty much the same as for the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies back to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
 
-![](grpcarchi.png)
+![](grpcArchi.png)
 
 
 
