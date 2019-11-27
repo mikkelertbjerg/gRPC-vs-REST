@@ -4,7 +4,7 @@
 In a world with an ever growing amount of Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependant on eachother, which means speed and stability is key. When gRPC claims faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
 
 ## Introduction
-
+According to _[this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da)_, gRPC is roughly 7 times faster than a REST API, when fetching data. We intend to put this to the test, with extensive testing of our own, everything programmed by us and running in a controlled environment.
 ### Problem statement
 *Is gRPC faster than REST*
 
@@ -12,7 +12,7 @@ In a world with an ever growing amount of Microservices, gRPC claims to be faste
 *We will assume that gRPC is able to send and recieve requests faster than a tradiational REST.*
 
 ## The experiment
-To test our Hypothesis we will set up an experiment with Grpc and a Rest API.
+To test our Hypothesis we will set up an experiment with gRPC and a Rest API.
 These experiments has to adhere to the following.
 
 **Rules**
@@ -31,9 +31,11 @@ These experiments has to adhere to the following.
     * the stopwatch will begin when the method is called and end when the API returns the full data.
 * To get an average time, each operation will be executed 100 times. this result with be the one we conclude on.
 
+
+
 ## REST
 
-### _What is REST_
+### _*What is REST*_
 For this blog, we have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
 
 The key features to take note of when using rest:
@@ -67,15 +69,38 @@ both of these endpoints will be called a 100 times, from the client from which w
 The host computer is a **I7-9700k** which has 8 cores running _3.6/4.9 GHz_
 
 ## Sample project and metrics
-_Should include how to reproduce for yourself_
+If you want to replicate this yourself, we have included the Github link below to all the relevant code, we have also included an sql schematic so that you can setup the database exactly like we had it.
+
+
 
 ## gRPC
 
-### Pros
+### _*what is gRPC?*_
 
-### Cons
+gRPC is an open sourced RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers. You can read more about gRPC [Here](https://grpc.io/).
+
+Some of the key features we would like to highlight:
+
+* **Framework over Http/2**
+    * What this means is that, gRPC is language independent. You could take a javascript project and have it implement methods from a C# project as if it was its own methods.
+* **Contract First**
+    * All programs implement a contract in the form of a protobuffer file, which contains the necessary information, a so called contract first principal. This principal allows teams to work in parallel on different projects implementing the contract.
+* **Strongly typed**
+    * gRPC is strongly typed which attributes to its speed; this is due to how it deals with [serialization](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da).
+
+## Setting up the gRPC project
+
+For the gRPC architecture we use pretty much the same as for the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies back to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
+
+![](grpcarchi.png)
+
+
+
+
 
 ### Sample project and metrics
+If you want to replicate this yourself, we have included the Github link below to all the relevant code, we have also included an sql schematic so that you can setup the database exactly like we had it.
+
 _Should include how to reproduce for yourself_
 
 ## possible errors
@@ -91,7 +116,7 @@ _When to REST_
 
 ## Technology used
 
-[Grpc](https://grpc.io/)
+[gRPC](https://gRPC.io/)
 
 [.Net Web Api](https://dotnet.microsoft.com/apps/aspnet/apis)
 
