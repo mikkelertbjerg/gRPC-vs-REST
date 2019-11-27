@@ -43,6 +43,7 @@ I7-9700k, 8 core, _3.6/4.9 GHz_
 We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
 
 The key features to take note of when using rest:
+
 **Separation of client and server** 
  * Server and client can be implemented independently without knowing each other-
  * Server code can be changed without affecting the client.
