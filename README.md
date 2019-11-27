@@ -36,10 +36,8 @@ These experiments has to adhere to the following:
 
 I7-9700k, 8 core, _3.6/4.9 GHz_
 
-
-
 ## REST
-### _*What is REST*_
+### What is REST?
 We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
 
 The key features to take note of when using rest:
@@ -69,7 +67,7 @@ The architecture for this experiment is a simple one:
 If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and sourcecode for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
 ## gRPC
-### _*What is gRPC?*_
+### What is gRPC?
 [gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
 Some of the key features we would like to highlight:
@@ -108,25 +106,25 @@ _When to REST_
 
 ## References
 ### gRPC v REST
-1. https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
-2. https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
-3. https://www.yonego.com/nl/why-milliseconds-matter/#gref
-4. https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
+1. <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711>
+2. <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>
+3. <https://www.yonego.com/nl/why-milliseconds-matter/#gref>
+4. <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da>
 
 ### REST
-1. https://blog.ndepend.com/rest-vs-restful/
-2. https://restfulapi.net/statelessness/
-3. https://www.restapitutorial.com/lessons/httpmethods.html
+1. <https://blog.ndepend.com/rest-vs-restful/>
+2. <https://restfulapi.net/statelessness/>
+3. <https://www.restapitutorial.com/lessons/httpmethods.html>
 
 ### gRPC
-1. https://grpc.io/
-2. https://packages.grpc.io/
-3. https://developers.google.com/protocol-buffers
+1. <https://grpc.io/>
+2. <https://packages.grpc.io/>
+3. <https://developers.google.com/protocol-buffers>
 
 ### Wiki
-1. https://en.wikipedia.org/wiki/HTTP/2
-2. https://en.wikipedia.org/wiki/Design_by_contract
-3. https://en.wikipedia.org/wiki/Serialization
+1. <https://en.wikipedia.org/wiki/HTTP/2>
+2. <https://en.wikipedia.org/wiki/Design_by_contract>
+3. <https://en.wikipedia.org/wiki/Serialization>
 
 ## Technology used
 
