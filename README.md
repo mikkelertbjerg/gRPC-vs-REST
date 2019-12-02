@@ -35,10 +35,12 @@ These experiments have to adhere to the following:
 * To minimize anomalies and outliers, each operation will be executed 100 times, and the average call speed will be evaluated.
 
 **Specs**
-
 I7-9700k, 8 core, _4.6GHz_
+
 Samsung SSD 840 EVO 250GB
+
 NVIDIA GeForce GTX 1070
+
 2x8 GB HyperX Fury 2666MHz DDR4 Memory
 
 ## REST
