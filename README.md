@@ -4,7 +4,7 @@
 In a world with an ever growing amount of application utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependent on each other, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
 
 ## Introduction
-**gRPC is a superior technology to REST!** At least that is what [this](https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711), [this](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4), [this](https://www.yonego.com/nl/why-milliseconds-matter/#gref) and [this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
+**gRPC is a superior technology to REST!** At least that is what [this][1], [this][2], [this][3] and [this blog][4] claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
 
 ### Problem statement
 *Is gRPC faster than REST?*
@@ -43,7 +43,7 @@ NVIDIA GeForce GTX 1070
 
 ## REST
 ### What is REST?
-We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
+We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.][5]
 
 The key features to take note of when using rest:
 
@@ -54,11 +54,11 @@ The key features to take note of when using rest:
  * Both server and client are aware of methods available.
 
 **Statelessness**
- * [Stateless](https://restfulapi.net/statelessness/) means that the server is not required to know the current state of the client and vice versa.
+ * [Stateless][6] means that the server is not required to know the current state of the client and vice versa.
  * Either end can understand any method calls, without knowing the previous called methods.
     
 **Invocation**
-* We invoke a method on the server via [HTTP operations](https://www.restapitutorial.com/lessons/httpmethods.html)
+* We invoke a method on the server via [HTTP operations][7]
    * GET
    * POST
    * PUT
@@ -84,25 +84,25 @@ When we compare collections, the difference becomes very apparent. A small colle
 
 ## gRPC
 ### What is gRPC?
-[gRPC][1] is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
+[gRPC][8] is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
 Some key features we would like to highlight:
 
 **HTTP/2 support**
 
-[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works.
+[HTTP/2][9] is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works.
 
 **Language independant**
 
-gRPC is language independant, which means it doesn't matter which language you develop in. The framework supports a handfull of [popular languages](https://packages.grpc.io/). This is quite an advantage when you're developing microservices, which might have services developed in different languages and frameworks.
+gRPC is language independant, which means it doesn't matter which language you develop in. The framework supports a handfull of [popular languages][10]. This is quite an advantage when you're developing microservices, which might have services developed in different languages and frameworks.
 
 **Contract First**
 
-gRPC is strictly [contract first](https://en.wikipedia.org/wiki/Design_by_contract) which is a design approach that works esecially well in larger development teams. It also excels when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file](https://developers.google.com/protocol-buffers), which is also where gRPC gains some of its speed from, seeing as .proto files are...
+gRPC is strictly [contract first][11] which is a design approach that works esecially well in larger development teams. It also excels when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file][12], which is also where gRPC gains some of its speed from, seeing as .proto files are...
 
 **Strongly typed**
 
-As a byproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serializing](https://en.wikipedia.org/wiki/Serialization) structured data. 
+As a byproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serializing][13] structured data. 
 
 ## Setting up the gRPC project
 For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
@@ -136,7 +136,7 @@ We hypothesized that gRPC would be faster than rest, based on the numerous blogs
 
 Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
 
-These results might not seem as much, but it has been [proven](https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/) that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
+These results might not seem as much, but it has been [proven][14] that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
 
 this prompts the question: **When to use gRPC and when to use REST**
 
@@ -146,29 +146,20 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 
 
 ## References
-### gRPC v REST
-1. <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711>
-2. <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>
-3. <https://www.yonego.com/nl/why-milliseconds-matter/#gref>
-4. <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da>
-
-### REST
-1. <https://blog.ndepend.com/rest-vs-restful/>
-2. <https://restfulapi.net/statelessness/>
-3. <https://www.restapitutorial.com/lessons/httpmethods.html>
-
-### gRPC
-1. [1]: https://grpc.io/
-2. <https://packages.grpc.io/>
-3. <https://developers.google.com/protocol-buffers>
-
-### Wiki
-1. <https://en.wikipedia.org/wiki/HTTP/2>
-2. <https://en.wikipedia.org/wiki/Design_by_contract>
-3. <https://en.wikipedia.org/wiki/Serialization>
-
-### Others
-1. https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/
+1. `blog` <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> [1]: https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
+2. `blog` <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4> [2]:https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
+3. `blog` <https://www.yonego.com/nl/why-milliseconds-matter/#gref> [3]: https://www.yonego.com/nl/why-milliseconds-matter/#gref
+4. `blog` <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da> [4]: https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
+5. `rest` <https://blog.ndepend.com/rest-vs-restful/> [5]: https://blog.ndepend.com/rest-vs-restful/
+6. `rest` <https://restfulapi.net/statelessness/> [6]: https://restfulapi.net/statelessness/
+7. `rest` <https://www.restapitutorial.com/lessons/httpmethods.html> [7]: https://www.restapitutorial.com/lessons/httpmethods.html
+8. `grpc` <https://grpc.io/> [8]: https://grpc.io/
+9. `wiki` <https://en.wikipedia.org/wiki/HTTP/2> [9]: https://en.wikipedia.org/wiki/HTTP/2
+10. `grpc` <https://packages.grpc.io/> [10]: https://packages.grpc.io/
+11. `wiki` <https://en.wikipedia.org/wiki/Design_by_contract> [11]: https://en.wikipedia.org/wiki/Design_by_contract
+12. `grpc` <https://developers.google.com/protocol-buffers> [12]: https://developers.google.com/protocol-buffers
+13. `wiki` <https://en.wikipedia.org/wiki/Serialization> [13]: https://en.wikipedia.org/wiki/Serialization
+14. `blog` <https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/> [14]: https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/
 
 ## Technology used
 
