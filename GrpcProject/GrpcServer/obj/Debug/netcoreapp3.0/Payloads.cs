@@ -46,15 +46,54 @@ namespace GrpcServer {
             "ChRtZWRpdW1fcGF5bG9hZF90aHJlZRgHIAEoCzIOLk1lZGl1bVBheWxvYWQS",
             "KwoTbWVkaXVtX3BheWxvYWRfZm91chgIIAEoCzIOLk1lZGl1bVBheWxvYWQS",
             "KwoTbWVkaXVtX3BheWxvYWRfZml2ZRgJIAEoCzIOLk1lZGl1bVBheWxvYWQS",
-            "KgoSbWVkaXVtX3BheWxvYWRfc2l4GAogASgLMg4uTWVkaXVtUGF5bG9hZDLD",
-            "AgoOUGF5bG9hZFNlcnZpY2USLAoPR2V0U21hbGxQYXlsb2FkEgouUGF5bG9h",
-            "ZElkGg0uU21hbGxQYXlsb2FkEi4KEEdldE1lZGl1bVBheWxvYWQSCi5QYXls",
-            "b2FkSWQaDi5NZWRpdW1QYXlsb2FkEiwKD0dldExhcmdlUGF5bG9hZBIKLlBh",
-            "eWxvYWRJZBoNLkxhcmdlUGF5bG9hZBI1ChNHZXRBbGxTbWFsbFBheWxvYWRz",
-            "Eg0uRW1wdHlSZXF1ZXN0Gg0uU21hbGxQYXlsb2FkMAESNwoUR2V0QWxsTWVk",
-            "aXVtUGF5bG9hZHMSDS5FbXB0eVJlcXVlc3QaDi5NZWRpdW1QYXlsb2FkMAES",
-            "NQoTR2V0QWxsTGFyZ2VQYXlsb2FkcxINLkVtcHR5UmVxdWVzdBoNLkxhcmdl",
-            "UGF5bG9hZDABQg2qAgpHcnBjU2VydmVyYgZwcm90bzM="));
+            "KgoSbWVkaXVtX3BheWxvYWRfc2l4GAogASgLMg4uTWVkaXVtUGF5bG9hZCJ3",
+            "CgtEZWVwUGF5bG9hZBIKCgJpZBgBIAEoBRIcCglkZXB0aF9vbmUYAiABKAsy",
+            "CS5EZXB0aE9uZRIcCglkZXB0aF90d28YAyABKAsyCS5EZXB0aFR3bxIgCgtk",
+            "ZXB0aF90aHJlZRgEIAEoCzILLkRlcHRoVGhyZWUieQoNRGVlcGVyUGF5bG9h",
+            "ZBIKCgJpZBgBIAEoBRIeCgpkZXB0aF9mb3VyGAIgASgLMgouRGVwdGhGb3Vy",
+            "Eh4KCmRlcHRoX2ZpdmUYAyABKAsyCi5EZXB0aEZpdmUSHAoJZGVwdGhfc2l4",
+            "GAQgASgLMgkuRGVwdGhTaXgigAEKDkRlZXBlc3RQYXlsb2FkEgoKAmlkGAEg",
+            "ASgFEiAKC2RlcHRoX3NldmVuGAIgASgLMgsuRGVwdGhTZXZlbhIgCgtkZXB0",
+            "aF9laWdodBgDIAEoCzILLkRlcHRoRWlnaHQSHgoKZGVwdGhfbmluZRgEIAEo",
+            "CzIKLkRlcHRoTmluZSJVCghEZXB0aE9uZRIKCgJpZBgBIAEoBRIUCgxzdHJp",
+            "bmdfdmFsdWUYAiABKAkSEQoJaW50X3ZhbHVlGAMgASgFEhQKDGRvdWJsZV92",
+            "YWx1ZRgEIAEoASJzCghEZXB0aFR3bxIKCgJpZBgBIAEoBRIUCgxzdHJpbmdf",
+            "dmFsdWUYAiABKAkSEQoJaW50X3ZhbHVlGAMgASgFEhQKDGRvdWJsZV92YWx1",
+            "ZRgEIAEoARIcCglkZXB0aF9vbmUYBSABKAsyCS5EZXB0aE9uZSJ1CgpEZXB0",
+            "aFRocmVlEgoKAmlkGAEgASgFEhQKDHN0cmluZ192YWx1ZRgCIAEoCRIRCglp",
+            "bnRfdmFsdWUYAyABKAUSFAoMZG91YmxlX3ZhbHVlGAQgASgBEhwKCWRlcHRo",
+            "X3R3bxgFIAEoCzIJLkRlcHRoVHdvIngKCURlcHRoRm91chIKCgJpZBgBIAEo",
+            "BRIUCgxzdHJpbmdfdmFsdWUYAiABKAkSEQoJaW50X3ZhbHVlGAMgASgFEhQK",
+            "DGRvdWJsZV92YWx1ZRgEIAEoARIgCgtkZXB0aF90aHJlZRgFIAEoCzILLkRl",
+            "cHRoVGhyZWUidgoJRGVwdGhGaXZlEgoKAmlkGAEgASgFEhQKDHN0cmluZ192",
+            "YWx1ZRgCIAEoCRIRCglpbnRfdmFsdWUYAyABKAUSFAoMZG91YmxlX3ZhbHVl",
+            "GAQgASgBEh4KCmRlcHRoX2ZvdXIYBSABKAsyCi5EZXB0aEZvdXIidQoIRGVw",
+            "dGhTaXgSCgoCaWQYASABKAUSFAoMc3RyaW5nX3ZhbHVlGAIgASgJEhEKCWlu",
+            "dF92YWx1ZRgDIAEoBRIUCgxkb3VibGVfdmFsdWUYBCABKAESHgoKZGVwdGhf",
+            "Zml2ZRgFIAEoCzIKLkRlcHRoRml2ZSJ1CgpEZXB0aFNldmVuEgoKAmlkGAEg",
+            "ASgFEhQKDHN0cmluZ192YWx1ZRgCIAEoCRIRCglpbnRfdmFsdWUYAyABKAUS",
+            "FAoMZG91YmxlX3ZhbHVlGAQgASgBEhwKCWRlcHRoX3NpeBgFIAEoCzIJLkRl",
+            "cHRoU2l4InkKCkRlcHRoRWlnaHQSCgoCaWQYASABKAUSFAoMc3RyaW5nX3Zh",
+            "bHVlGAIgASgJEhEKCWludF92YWx1ZRgDIAEoBRIUCgxkb3VibGVfdmFsdWUY",
+            "BCABKAESIAoLZGVwdGhfc2V2ZW4YBSABKAsyCy5EZXB0aFNldmVuIngKCURl",
+            "cHRoTmluZRIKCgJpZBgBIAEoBRIUCgxzdHJpbmdfdmFsdWUYAiABKAkSEQoJ",
+            "aW50X3ZhbHVlGAMgASgFEhQKDGRvdWJsZV92YWx1ZRgEIAEoARIgCgtkZXB0",
+            "aF9laWdodBgFIAEoCzILLkRlcHRoRWlnaHQy+gQKDlBheWxvYWRTZXJ2aWNl",
+            "EiwKD0dldFNtYWxsUGF5bG9hZBIKLlBheWxvYWRJZBoNLlNtYWxsUGF5bG9h",
+            "ZBIuChBHZXRNZWRpdW1QYXlsb2FkEgouUGF5bG9hZElkGg4uTWVkaXVtUGF5",
+            "bG9hZBIsCg9HZXRMYXJnZVBheWxvYWQSCi5QYXlsb2FkSWQaDS5MYXJnZVBh",
+            "eWxvYWQSNQoTR2V0QWxsU21hbGxQYXlsb2FkcxINLkVtcHR5UmVxdWVzdBoN",
+            "LlNtYWxsUGF5bG9hZDABEjcKFEdldEFsbE1lZGl1bVBheWxvYWRzEg0uRW1w",
+            "dHlSZXF1ZXN0Gg4uTWVkaXVtUGF5bG9hZDABEjUKE0dldEFsbExhcmdlUGF5",
+            "bG9hZHMSDS5FbXB0eVJlcXVlc3QaDS5MYXJnZVBheWxvYWQwARIqCg5HZXRE",
+            "ZWVwUGF5bG9hZBIKLlBheWxvYWRJZBoMLkRlZXBQYXlsb2FkEi4KEEdldERl",
+            "ZXBlclBheWxvYWQSCi5QYXlsb2FkSWQaDi5EZWVwZXJQYXlsb2FkEjAKEUdl",
+            "dERlZXBlc3RQYXlsb2FkEgouUGF5bG9hZElkGg8uRGVlcGVzdFBheWxvYWQS",
+            "MwoSR2V0QWxsRGVlcFBheWxvYWRzEg0uRW1wdHlSZXF1ZXN0GgwuRGVlcFBh",
+            "eWxvYWQwARI3ChRHZXRBbGxEZWVwZXJQYXlsb2FkcxINLkVtcHR5UmVxdWVz",
+            "dBoOLkRlZXBlclBheWxvYWQwARI5ChVHZXRBbGxEZWVwZXN0UGF5bG9hZHMS",
+            "DS5FbXB0eVJlcXVlc3QaDy5EZWVwZXN0UGF5bG9hZDABQg2qAgpHcnBjU2Vy",
+            "dmVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -62,7 +101,19 @@ namespace GrpcServer {
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.PayloadId), global::GrpcServer.PayloadId.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.SmallPayload), global::GrpcServer.SmallPayload.Parser, new[]{ "Id", "StringValueOne", "StringValueTwo", "StringValueThree", "IntValueOne", "IntValueTwo", "IntValueThree", "DoubleValueOne", "DoubleValueTwo", "DoubleValueThree" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.MediumPayload), global::GrpcServer.MediumPayload.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "SmallPayloadOne", "SmallPayloadTwo", "SmallPayloadThree", "SmallPayloadFour", "SmallPayloadFive", "SmallPayloadSix" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.LargePayload), global::GrpcServer.LargePayload.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "MediumPayloadOne", "MediumPayloadTwo", "MediumPayloadThree", "MediumPayloadFour", "MediumPayloadFive", "MediumPayloadSix" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.LargePayload), global::GrpcServer.LargePayload.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "MediumPayloadOne", "MediumPayloadTwo", "MediumPayloadThree", "MediumPayloadFour", "MediumPayloadFive", "MediumPayloadSix" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DeepPayload), global::GrpcServer.DeepPayload.Parser, new[]{ "Id", "DepthOne", "DepthTwo", "DepthThree" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DeeperPayload), global::GrpcServer.DeeperPayload.Parser, new[]{ "Id", "DepthFour", "DepthFive", "DepthSix" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DeepestPayload), global::GrpcServer.DeepestPayload.Parser, new[]{ "Id", "DepthSeven", "DepthEight", "DepthNine" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthOne), global::GrpcServer.DepthOne.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthTwo), global::GrpcServer.DepthTwo.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthOne" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthThree), global::GrpcServer.DepthThree.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthTwo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthFour), global::GrpcServer.DepthFour.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthThree" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthFive), global::GrpcServer.DepthFive.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthFour" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthSix), global::GrpcServer.DepthSix.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthFive" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthSeven), global::GrpcServer.DepthSeven.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthSix" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthEight), global::GrpcServer.DepthEight.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthSeven" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcServer.DepthNine), global::GrpcServer.DepthNine.Parser, new[]{ "Id", "StringValue", "IntValue", "DoubleValue", "DepthEight" }, null, null, null)
           }));
     }
     #endregion
@@ -1506,6 +1557,2888 @@ namespace GrpcServer {
               MediumPayloadSix = new global::GrpcServer.MediumPayload();
             }
             input.ReadMessage(MediumPayloadSix);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeepPayload : pb::IMessage<DeepPayload> {
+    private static readonly pb::MessageParser<DeepPayload> _parser = new pb::MessageParser<DeepPayload>(() => new DeepPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeepPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepPayload(DeepPayload other) : this() {
+      id_ = other.id_;
+      depthOne_ = other.depthOne_ != null ? other.depthOne_.Clone() : null;
+      depthTwo_ = other.depthTwo_ != null ? other.depthTwo_.Clone() : null;
+      depthThree_ = other.depthThree_ != null ? other.depthThree_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepPayload Clone() {
+      return new DeepPayload(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_one" field.</summary>
+    public const int DepthOneFieldNumber = 2;
+    private global::GrpcServer.DepthOne depthOne_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthOne DepthOne {
+      get { return depthOne_; }
+      set {
+        depthOne_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_two" field.</summary>
+    public const int DepthTwoFieldNumber = 3;
+    private global::GrpcServer.DepthTwo depthTwo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthTwo DepthTwo {
+      get { return depthTwo_; }
+      set {
+        depthTwo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_three" field.</summary>
+    public const int DepthThreeFieldNumber = 4;
+    private global::GrpcServer.DepthThree depthThree_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthThree DepthThree {
+      get { return depthThree_; }
+      set {
+        depthThree_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeepPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeepPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(DepthOne, other.DepthOne)) return false;
+      if (!object.Equals(DepthTwo, other.DepthTwo)) return false;
+      if (!object.Equals(DepthThree, other.DepthThree)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (depthOne_ != null) hash ^= DepthOne.GetHashCode();
+      if (depthTwo_ != null) hash ^= DepthTwo.GetHashCode();
+      if (depthThree_ != null) hash ^= DepthThree.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (depthOne_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DepthOne);
+      }
+      if (depthTwo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(DepthTwo);
+      }
+      if (depthThree_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DepthThree);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (depthOne_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthOne);
+      }
+      if (depthTwo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthTwo);
+      }
+      if (depthThree_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthThree);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeepPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.depthOne_ != null) {
+        if (depthOne_ == null) {
+          DepthOne = new global::GrpcServer.DepthOne();
+        }
+        DepthOne.MergeFrom(other.DepthOne);
+      }
+      if (other.depthTwo_ != null) {
+        if (depthTwo_ == null) {
+          DepthTwo = new global::GrpcServer.DepthTwo();
+        }
+        DepthTwo.MergeFrom(other.DepthTwo);
+      }
+      if (other.depthThree_ != null) {
+        if (depthThree_ == null) {
+          DepthThree = new global::GrpcServer.DepthThree();
+        }
+        DepthThree.MergeFrom(other.DepthThree);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (depthOne_ == null) {
+              DepthOne = new global::GrpcServer.DepthOne();
+            }
+            input.ReadMessage(DepthOne);
+            break;
+          }
+          case 26: {
+            if (depthTwo_ == null) {
+              DepthTwo = new global::GrpcServer.DepthTwo();
+            }
+            input.ReadMessage(DepthTwo);
+            break;
+          }
+          case 34: {
+            if (depthThree_ == null) {
+              DepthThree = new global::GrpcServer.DepthThree();
+            }
+            input.ReadMessage(DepthThree);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeeperPayload : pb::IMessage<DeeperPayload> {
+    private static readonly pb::MessageParser<DeeperPayload> _parser = new pb::MessageParser<DeeperPayload>(() => new DeeperPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeeperPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeeperPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeeperPayload(DeeperPayload other) : this() {
+      id_ = other.id_;
+      depthFour_ = other.depthFour_ != null ? other.depthFour_.Clone() : null;
+      depthFive_ = other.depthFive_ != null ? other.depthFive_.Clone() : null;
+      depthSix_ = other.depthSix_ != null ? other.depthSix_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeeperPayload Clone() {
+      return new DeeperPayload(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_four" field.</summary>
+    public const int DepthFourFieldNumber = 2;
+    private global::GrpcServer.DepthFour depthFour_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthFour DepthFour {
+      get { return depthFour_; }
+      set {
+        depthFour_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_five" field.</summary>
+    public const int DepthFiveFieldNumber = 3;
+    private global::GrpcServer.DepthFive depthFive_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthFive DepthFive {
+      get { return depthFive_; }
+      set {
+        depthFive_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_six" field.</summary>
+    public const int DepthSixFieldNumber = 4;
+    private global::GrpcServer.DepthSix depthSix_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthSix DepthSix {
+      get { return depthSix_; }
+      set {
+        depthSix_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeeperPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeeperPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(DepthFour, other.DepthFour)) return false;
+      if (!object.Equals(DepthFive, other.DepthFive)) return false;
+      if (!object.Equals(DepthSix, other.DepthSix)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (depthFour_ != null) hash ^= DepthFour.GetHashCode();
+      if (depthFive_ != null) hash ^= DepthFive.GetHashCode();
+      if (depthSix_ != null) hash ^= DepthSix.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (depthFour_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DepthFour);
+      }
+      if (depthFive_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(DepthFive);
+      }
+      if (depthSix_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DepthSix);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (depthFour_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthFour);
+      }
+      if (depthFive_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthFive);
+      }
+      if (depthSix_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthSix);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeeperPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.depthFour_ != null) {
+        if (depthFour_ == null) {
+          DepthFour = new global::GrpcServer.DepthFour();
+        }
+        DepthFour.MergeFrom(other.DepthFour);
+      }
+      if (other.depthFive_ != null) {
+        if (depthFive_ == null) {
+          DepthFive = new global::GrpcServer.DepthFive();
+        }
+        DepthFive.MergeFrom(other.DepthFive);
+      }
+      if (other.depthSix_ != null) {
+        if (depthSix_ == null) {
+          DepthSix = new global::GrpcServer.DepthSix();
+        }
+        DepthSix.MergeFrom(other.DepthSix);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (depthFour_ == null) {
+              DepthFour = new global::GrpcServer.DepthFour();
+            }
+            input.ReadMessage(DepthFour);
+            break;
+          }
+          case 26: {
+            if (depthFive_ == null) {
+              DepthFive = new global::GrpcServer.DepthFive();
+            }
+            input.ReadMessage(DepthFive);
+            break;
+          }
+          case 34: {
+            if (depthSix_ == null) {
+              DepthSix = new global::GrpcServer.DepthSix();
+            }
+            input.ReadMessage(DepthSix);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeepestPayload : pb::IMessage<DeepestPayload> {
+    private static readonly pb::MessageParser<DeepestPayload> _parser = new pb::MessageParser<DeepestPayload>(() => new DeepestPayload());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeepestPayload> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepestPayload() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepestPayload(DeepestPayload other) : this() {
+      id_ = other.id_;
+      depthSeven_ = other.depthSeven_ != null ? other.depthSeven_.Clone() : null;
+      depthEight_ = other.depthEight_ != null ? other.depthEight_.Clone() : null;
+      depthNine_ = other.depthNine_ != null ? other.depthNine_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeepestPayload Clone() {
+      return new DeepestPayload(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_seven" field.</summary>
+    public const int DepthSevenFieldNumber = 2;
+    private global::GrpcServer.DepthSeven depthSeven_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthSeven DepthSeven {
+      get { return depthSeven_; }
+      set {
+        depthSeven_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_eight" field.</summary>
+    public const int DepthEightFieldNumber = 3;
+    private global::GrpcServer.DepthEight depthEight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthEight DepthEight {
+      get { return depthEight_; }
+      set {
+        depthEight_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_nine" field.</summary>
+    public const int DepthNineFieldNumber = 4;
+    private global::GrpcServer.DepthNine depthNine_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthNine DepthNine {
+      get { return depthNine_; }
+      set {
+        depthNine_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeepestPayload);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeepestPayload other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!object.Equals(DepthSeven, other.DepthSeven)) return false;
+      if (!object.Equals(DepthEight, other.DepthEight)) return false;
+      if (!object.Equals(DepthNine, other.DepthNine)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (depthSeven_ != null) hash ^= DepthSeven.GetHashCode();
+      if (depthEight_ != null) hash ^= DepthEight.GetHashCode();
+      if (depthNine_ != null) hash ^= DepthNine.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (depthSeven_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(DepthSeven);
+      }
+      if (depthEight_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(DepthEight);
+      }
+      if (depthNine_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DepthNine);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (depthSeven_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthSeven);
+      }
+      if (depthEight_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthEight);
+      }
+      if (depthNine_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthNine);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeepestPayload other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.depthSeven_ != null) {
+        if (depthSeven_ == null) {
+          DepthSeven = new global::GrpcServer.DepthSeven();
+        }
+        DepthSeven.MergeFrom(other.DepthSeven);
+      }
+      if (other.depthEight_ != null) {
+        if (depthEight_ == null) {
+          DepthEight = new global::GrpcServer.DepthEight();
+        }
+        DepthEight.MergeFrom(other.DepthEight);
+      }
+      if (other.depthNine_ != null) {
+        if (depthNine_ == null) {
+          DepthNine = new global::GrpcServer.DepthNine();
+        }
+        DepthNine.MergeFrom(other.DepthNine);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (depthSeven_ == null) {
+              DepthSeven = new global::GrpcServer.DepthSeven();
+            }
+            input.ReadMessage(DepthSeven);
+            break;
+          }
+          case 26: {
+            if (depthEight_ == null) {
+              DepthEight = new global::GrpcServer.DepthEight();
+            }
+            input.ReadMessage(DepthEight);
+            break;
+          }
+          case 34: {
+            if (depthNine_ == null) {
+              DepthNine = new global::GrpcServer.DepthNine();
+            }
+            input.ReadMessage(DepthNine);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthOne : pb::IMessage<DepthOne> {
+    private static readonly pb::MessageParser<DepthOne> _parser = new pb::MessageParser<DepthOne>(() => new DepthOne());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthOne> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthOne() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthOne(DepthOne other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthOne Clone() {
+      return new DepthOne(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthOne);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthOne other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthOne other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthTwo : pb::IMessage<DepthTwo> {
+    private static readonly pb::MessageParser<DepthTwo> _parser = new pb::MessageParser<DepthTwo>(() => new DepthTwo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthTwo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthTwo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthTwo(DepthTwo other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthOne_ = other.depthOne_ != null ? other.depthOne_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthTwo Clone() {
+      return new DepthTwo(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_one" field.</summary>
+    public const int DepthOneFieldNumber = 5;
+    private global::GrpcServer.DepthOne depthOne_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthOne DepthOne {
+      get { return depthOne_; }
+      set {
+        depthOne_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthTwo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthTwo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthOne, other.DepthOne)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthOne_ != null) hash ^= DepthOne.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthOne_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthOne);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthOne_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthOne);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthTwo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthOne_ != null) {
+        if (depthOne_ == null) {
+          DepthOne = new global::GrpcServer.DepthOne();
+        }
+        DepthOne.MergeFrom(other.DepthOne);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthOne_ == null) {
+              DepthOne = new global::GrpcServer.DepthOne();
+            }
+            input.ReadMessage(DepthOne);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthThree : pb::IMessage<DepthThree> {
+    private static readonly pb::MessageParser<DepthThree> _parser = new pb::MessageParser<DepthThree>(() => new DepthThree());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthThree> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthThree() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthThree(DepthThree other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthTwo_ = other.depthTwo_ != null ? other.depthTwo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthThree Clone() {
+      return new DepthThree(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_two" field.</summary>
+    public const int DepthTwoFieldNumber = 5;
+    private global::GrpcServer.DepthTwo depthTwo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthTwo DepthTwo {
+      get { return depthTwo_; }
+      set {
+        depthTwo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthThree);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthThree other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthTwo, other.DepthTwo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthTwo_ != null) hash ^= DepthTwo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthTwo_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthTwo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthTwo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthTwo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthThree other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthTwo_ != null) {
+        if (depthTwo_ == null) {
+          DepthTwo = new global::GrpcServer.DepthTwo();
+        }
+        DepthTwo.MergeFrom(other.DepthTwo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthTwo_ == null) {
+              DepthTwo = new global::GrpcServer.DepthTwo();
+            }
+            input.ReadMessage(DepthTwo);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthFour : pb::IMessage<DepthFour> {
+    private static readonly pb::MessageParser<DepthFour> _parser = new pb::MessageParser<DepthFour>(() => new DepthFour());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthFour> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFour() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFour(DepthFour other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthThree_ = other.depthThree_ != null ? other.depthThree_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFour Clone() {
+      return new DepthFour(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_three" field.</summary>
+    public const int DepthThreeFieldNumber = 5;
+    private global::GrpcServer.DepthThree depthThree_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthThree DepthThree {
+      get { return depthThree_; }
+      set {
+        depthThree_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthFour);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthFour other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthThree, other.DepthThree)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthThree_ != null) hash ^= DepthThree.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthThree_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthThree);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthThree_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthThree);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthFour other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthThree_ != null) {
+        if (depthThree_ == null) {
+          DepthThree = new global::GrpcServer.DepthThree();
+        }
+        DepthThree.MergeFrom(other.DepthThree);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthThree_ == null) {
+              DepthThree = new global::GrpcServer.DepthThree();
+            }
+            input.ReadMessage(DepthThree);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthFive : pb::IMessage<DepthFive> {
+    private static readonly pb::MessageParser<DepthFive> _parser = new pb::MessageParser<DepthFive>(() => new DepthFive());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthFive> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFive() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFive(DepthFive other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthFour_ = other.depthFour_ != null ? other.depthFour_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthFive Clone() {
+      return new DepthFive(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_four" field.</summary>
+    public const int DepthFourFieldNumber = 5;
+    private global::GrpcServer.DepthFour depthFour_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthFour DepthFour {
+      get { return depthFour_; }
+      set {
+        depthFour_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthFive);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthFive other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthFour, other.DepthFour)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthFour_ != null) hash ^= DepthFour.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthFour_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthFour);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthFour_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthFour);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthFive other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthFour_ != null) {
+        if (depthFour_ == null) {
+          DepthFour = new global::GrpcServer.DepthFour();
+        }
+        DepthFour.MergeFrom(other.DepthFour);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthFour_ == null) {
+              DepthFour = new global::GrpcServer.DepthFour();
+            }
+            input.ReadMessage(DepthFour);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthSix : pb::IMessage<DepthSix> {
+    private static readonly pb::MessageParser<DepthSix> _parser = new pb::MessageParser<DepthSix>(() => new DepthSix());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthSix> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSix() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSix(DepthSix other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthFive_ = other.depthFive_ != null ? other.depthFive_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSix Clone() {
+      return new DepthSix(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_five" field.</summary>
+    public const int DepthFiveFieldNumber = 5;
+    private global::GrpcServer.DepthFive depthFive_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthFive DepthFive {
+      get { return depthFive_; }
+      set {
+        depthFive_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthSix);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthSix other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthFive, other.DepthFive)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthFive_ != null) hash ^= DepthFive.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthFive_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthFive);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthFive_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthFive);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthSix other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthFive_ != null) {
+        if (depthFive_ == null) {
+          DepthFive = new global::GrpcServer.DepthFive();
+        }
+        DepthFive.MergeFrom(other.DepthFive);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthFive_ == null) {
+              DepthFive = new global::GrpcServer.DepthFive();
+            }
+            input.ReadMessage(DepthFive);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthSeven : pb::IMessage<DepthSeven> {
+    private static readonly pb::MessageParser<DepthSeven> _parser = new pb::MessageParser<DepthSeven>(() => new DepthSeven());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthSeven> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSeven() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSeven(DepthSeven other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthSix_ = other.depthSix_ != null ? other.depthSix_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthSeven Clone() {
+      return new DepthSeven(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_six" field.</summary>
+    public const int DepthSixFieldNumber = 5;
+    private global::GrpcServer.DepthSix depthSix_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthSix DepthSix {
+      get { return depthSix_; }
+      set {
+        depthSix_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthSeven);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthSeven other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthSix, other.DepthSix)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthSix_ != null) hash ^= DepthSix.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthSix_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthSix);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthSix_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthSix);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthSeven other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthSix_ != null) {
+        if (depthSix_ == null) {
+          DepthSix = new global::GrpcServer.DepthSix();
+        }
+        DepthSix.MergeFrom(other.DepthSix);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthSix_ == null) {
+              DepthSix = new global::GrpcServer.DepthSix();
+            }
+            input.ReadMessage(DepthSix);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthEight : pb::IMessage<DepthEight> {
+    private static readonly pb::MessageParser<DepthEight> _parser = new pb::MessageParser<DepthEight>(() => new DepthEight());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthEight> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthEight() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthEight(DepthEight other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthSeven_ = other.depthSeven_ != null ? other.depthSeven_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthEight Clone() {
+      return new DepthEight(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_seven" field.</summary>
+    public const int DepthSevenFieldNumber = 5;
+    private global::GrpcServer.DepthSeven depthSeven_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthSeven DepthSeven {
+      get { return depthSeven_; }
+      set {
+        depthSeven_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthEight);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthEight other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthSeven, other.DepthSeven)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthSeven_ != null) hash ^= DepthSeven.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthSeven_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthSeven);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthSeven_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthSeven);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthEight other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthSeven_ != null) {
+        if (depthSeven_ == null) {
+          DepthSeven = new global::GrpcServer.DepthSeven();
+        }
+        DepthSeven.MergeFrom(other.DepthSeven);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthSeven_ == null) {
+              DepthSeven = new global::GrpcServer.DepthSeven();
+            }
+            input.ReadMessage(DepthSeven);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DepthNine : pb::IMessage<DepthNine> {
+    private static readonly pb::MessageParser<DepthNine> _parser = new pb::MessageParser<DepthNine>(() => new DepthNine());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DepthNine> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcServer.PayloadsReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthNine() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthNine(DepthNine other) : this() {
+      id_ = other.id_;
+      stringValue_ = other.stringValue_;
+      intValue_ = other.intValue_;
+      doubleValue_ = other.doubleValue_;
+      depthEight_ = other.depthEight_ != null ? other.depthEight_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DepthNine Clone() {
+      return new DepthNine(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "string_value" field.</summary>
+    public const int StringValueFieldNumber = 2;
+    private string stringValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StringValue {
+      get { return stringValue_; }
+      set {
+        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "int_value" field.</summary>
+    public const int IntValueFieldNumber = 3;
+    private int intValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int IntValue {
+      get { return intValue_; }
+      set {
+        intValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "double_value" field.</summary>
+    public const int DoubleValueFieldNumber = 4;
+    private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double DoubleValue {
+      get { return doubleValue_; }
+      set {
+        doubleValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "depth_eight" field.</summary>
+    public const int DepthEightFieldNumber = 5;
+    private global::GrpcServer.DepthEight depthEight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::GrpcServer.DepthEight DepthEight {
+      get { return depthEight_; }
+      set {
+        depthEight_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DepthNine);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DepthNine other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (StringValue != other.StringValue) return false;
+      if (IntValue != other.IntValue) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DoubleValue, other.DoubleValue)) return false;
+      if (!object.Equals(DepthEight, other.DepthEight)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
+      if (IntValue != 0) hash ^= IntValue.GetHashCode();
+      if (DoubleValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DoubleValue);
+      if (depthEight_ != null) hash ^= DepthEight.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
+      if (StringValue.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(StringValue);
+      }
+      if (IntValue != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(DoubleValue);
+      }
+      if (depthEight_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(DepthEight);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
+      if (StringValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
+      }
+      if (IntValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
+      }
+      if (DoubleValue != 0D) {
+        size += 1 + 8;
+      }
+      if (depthEight_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DepthEight);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DepthNine other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.StringValue.Length != 0) {
+        StringValue = other.StringValue;
+      }
+      if (other.IntValue != 0) {
+        IntValue = other.IntValue;
+      }
+      if (other.DoubleValue != 0D) {
+        DoubleValue = other.DoubleValue;
+      }
+      if (other.depthEight_ != null) {
+        if (depthEight_ == null) {
+          DepthEight = new global::GrpcServer.DepthEight();
+        }
+        DepthEight.MergeFrom(other.DepthEight);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            StringValue = input.ReadString();
+            break;
+          }
+          case 24: {
+            IntValue = input.ReadInt32();
+            break;
+          }
+          case 33: {
+            DoubleValue = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (depthEight_ == null) {
+              DepthEight = new global::GrpcServer.DepthEight();
+            }
+            input.ReadMessage(DepthEight);
             break;
           }
         }

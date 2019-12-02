@@ -20,6 +20,7 @@ namespace GrpcServer.Services
             _db = new DatabaseConnection();
         }
 
+        //Get (id)
         public override Task<SmallPayload> GetSmallPayload(PayloadId request, ServerCallContext context)
         {
             SmallPayload sp = _db.GetSmallPayload(request.Id);
@@ -38,6 +39,25 @@ namespace GrpcServer.Services
             return Task.FromResult(lp);
         }
 
+        public override Task<DeepPayload> GetDeepPayload(PayloadId request, ServerCallContext context)
+        {
+            DeepPayload dp = _db.GetDeepPayload(request.Id);
+            return Task.FromResult(dp);
+        }
+
+        public override Task<DeeperPayload> GetDeeperPayload(PayloadId request, ServerCallContext context)
+        {
+            DeeperPayload dp = _db.GetDeeperPayload(request.Id);
+            return Task.FromResult(dp);
+        }
+
+        public override Task<DeepestPayload> GetDeepestPayload(PayloadId request, ServerCallContext context)
+        {
+            DeepestPayload dp = _db.GetDeepestPayload(request.Id);
+            return Task.FromResult(dp);
+        }
+
+        //Get All
         public override async Task GetAllSmallPayloads(EmptyRequest request, IServerStreamWriter<SmallPayload> responseStream, ServerCallContext context)
         {
             List<SmallPayload> sps = _db.GetAllSmallPayloads();
@@ -65,6 +85,36 @@ namespace GrpcServer.Services
             foreach (LargePayload lp in lps)
             {
                 await responseStream.WriteAsync(lp);
+            }
+        }
+
+        public override async Task GetAllDeepPayloads(EmptyRequest request, IServerStreamWriter<DeepPayload> responseStream, ServerCallContext context)
+        {
+            List<DeepPayload> dps = _db.GetAllDeepPayloads();
+
+            foreach (DeepPayload dp in dps)
+            {
+                await responseStream.WriteAsync(dp);
+            }
+        }
+
+        public override async Task GetAllDeeperPayloads(EmptyRequest request, IServerStreamWriter<DeeperPayload> responseStream, ServerCallContext context)
+        {
+            List<DeeperPayload> dps = _db.GetAllDeeperPayloads();
+
+            foreach (DeeperPayload dp in dps)
+            {
+                await responseStream.WriteAsync(dp);
+            }
+        }
+
+        public override async Task GetAllDeepestPayloads(EmptyRequest request, IServerStreamWriter<DeepestPayload> responseStream, ServerCallContext context)
+        {
+            List<DeepestPayload> dps = _db.GetAllDeepestPayloads();
+
+            foreach (DeepestPayload dp in dps)
+            {
+                await responseStream.WriteAsync(dp);
             }
         }
     }

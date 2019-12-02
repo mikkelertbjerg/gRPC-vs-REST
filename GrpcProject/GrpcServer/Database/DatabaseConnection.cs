@@ -872,6 +872,479 @@ namespace GrpcServer.Database
             return lp;
         }
 
+        public DeepPayload GetDeepPayload(int id)
+        {
+            string query = $"SELECT pd.id, " +
+                $"pd.depth_one_id, d1.string_value, d1.int_value, d1.double_value, " +
+                $"pd.depth_two_id, d2.string_value, d2.int_value, d2.double_value, " +
+                $"d2.depth_one_id, d2d1.string_value, d2d1.int_value, d2d1.double_value, " +
+                $"pd.depth_three_id, d3.string_value, d3.int_value, d3.double_value, " +
+                $"d3.depth_two_id, d3d2.string_value, d3d2.int_value, d3d2.double_value, " +
+                $"d3d2.depth_one_id, d3d1.string_value, d3d1.int_value, d3d1.double_value " +
+                $"FROM Payload_Deep pd " +
+                $"INNER JOIN Depth_One d1 ON pd.depth_one_id = d1.id " +
+                $"INNER JOIN Depth_Two d2 ON pd.depth_two_id = d2.id " +
+                $"INNER JOIN Depth_One d2d1 ON d2.depth_one_id = d2d1.id " +
+                $"INNER JOIN Depth_Three d3 ON pd.depth_three_id = d3.id " +
+                $"INNER JOIN Depth_Two d3d2 ON d3.depth_two_id = d3d2.id " +
+                $"INNER JOIN Depth_One d3d1 ON d3d2.depth_one_id = d3d1.id " +
+                $"WHERE pd.id = {id}";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            DeepPayload dp = new DeepPayload();
+            while (dataReader.Read())
+            {
+                dp.Id = dataReader.GetInt32(0);
+                //Depth one
+                dp.DepthOne = new DepthOne
+                {
+                    Id = dataReader.GetInt32(1),
+                    StringValue = dataReader.GetString(2),
+                    IntValue = dataReader.GetInt32(3),
+                    DoubleValue = dataReader.GetDouble(4)
+                };
+                //Depth two
+                dp.DepthTwo = new DepthTwo
+                {
+                    Id = dataReader.GetInt32(5),
+                    StringValue = dataReader.GetString(6),
+                    IntValue = dataReader.GetInt32(7),
+                    DoubleValue = dataReader.GetDouble(8),
+                    DepthOne = new DepthOne
+                    {
+                        //Depth two's depth one
+                        Id = dataReader.GetInt32(9),
+                        StringValue = dataReader.GetString(10),
+                        IntValue = dataReader.GetInt32(11),
+                        DoubleValue = dataReader.GetDouble(12)
+                    }
+                };
+                //Depth three
+                dp.DepthThree = new DepthThree
+                {
+                    Id = dataReader.GetInt32(13),
+                    StringValue = dataReader.GetString(14),
+                    IntValue = dataReader.GetInt32(15),
+                    DoubleValue = dataReader.GetDouble(16),
+                    DepthTwo = new DepthTwo
+                    {
+                        //Depth three's depth two
+                        Id = dataReader.GetInt32(17),
+                        StringValue = dataReader.GetString(18),
+                        IntValue = dataReader.GetInt32(19),
+                        DoubleValue = dataReader.GetDouble(20),
+                        DepthOne = new DepthOne
+                        {
+                            //Depth three's depth two's depth one
+                            Id = dataReader.GetInt32(21),
+                            StringValue = dataReader.GetString(22),
+                            IntValue = dataReader.GetInt32(23),
+                            DoubleValue = dataReader.GetDouble(24)
+                        }
+                    }
+
+                };
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dp;
+        }
+
+        public DeeperPayload GetDeeperPayload(int id)
+        {
+            string query = $"SELECT pd.id, " +
+                    $"pd.depth_four_id, d4.string_value, d4.int_value, d4.double_value, " +
+                    $"d4.depth_three_id, d4d3.string_value, d4d3.int_value, d4d3.double_value, " +
+                    $"d4d3.depth_two_id, d4d2.string_value, d4d2.int_value, d4d2.double_value, " +
+                    $"d4d2.depth_one_id, d4d1.string_value, d4d1.int_value, d4d1.double_value, " +
+                    $"pd.depth_five_id, d5.string_value, d5.int_value, d5.double_value, " +
+                    $"d5.depth_four_id, d5d4.string_value, d5d4.int_value, d5d4.double_value, " +
+                    $"d5d4.depth_three_id, d5d3.string_value, d5d3.int_value, d5d3.double_value, " +
+                    $"d5d3.depth_two_id, d5d2.string_value, d5d2.int_value, d5d2.double_value, " +
+                    $"d5d2.depth_one_id, d5d1.string_value, d5d1.int_value, d5d1.double_value, " +
+                    $"pd.depth_six_id, d6.string_value, d6.int_value, d6.double_value, " +
+                    $"d6.depth_five_id, d6d5.string_value, d6d5.int_value, d6d5.double_value, " +
+                    $"d6d5.depth_four_id, d6d4.string_value, d6d4.int_value, d6d4.double_value, " +
+                    $"d6d4.depth_three_id, d6d3.string_value, d6d3.int_value, d6d3.double_value, " +
+                    $"d6d3.depth_two_id, d6d2.string_value, d6d2.int_value, d6d2.double_value, " +
+                    $"d6d2.depth_one_id, d6d1.string_value, d6d1.int_value, d6d1.double_value " +
+                    $"FROM Payload_Deeper pd " +
+                    $"INNER JOIN Depth_Four d4 ON pd.depth_four_id = d4.id " +
+                    $"INNER JOIN Depth_Three d4d3 ON d4.depth_three_id = d4d3.id " +
+                    $"INNER JOIN Depth_Two d4d2 ON d4d3.depth_two_id = d4d2.id " +
+                    $"INNER JOIN Depth_One d4d1 ON d4d2.depth_one_id = d4d1.id " +
+                    $"INNER JOIN Depth_Five d5 ON pd.depth_five_id = d5.id " +
+                    $"INNER JOIN Depth_Four d5d4 ON d5.depth_four_id = d5d4.id " +
+                    $"INNER JOIN Depth_Three d5d3 ON d5d4.depth_three_id = d5d3.id " +
+                    $"INNER JOIN Depth_Two d5d2 ON d5d3.depth_two_id = d5d2.id " +
+                    $"INNER JOIN Depth_One d5d1 ON d5d2.depth_one_id = d5d1.id " +
+                    $"INNER JOIN Depth_Six d6 ON pd.depth_six_id = d6.id " +
+                    $"INNER JOIN Depth_Five d6d5 ON d6.depth_five_id = d6d5.id " +
+                    $"INNER JOIN Depth_Four d6d4 ON d6d5.depth_four_id = d6d4.id " +
+                    $"INNER JOIN Depth_Three d6d3 ON d6d4.depth_three_id = d6d3.id " +
+                    $"INNER JOIN Depth_Two d6d2 ON d6d3.depth_two_id = d6d2.id " +
+                    $"INNER JOIN Depth_One d6d1 ON d6d2.depth_one_id = d6d1.id " +
+                    $"WHERE pd.id = {id};";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            DeeperPayload dp = new DeeperPayload();
+            int i = 0;
+            while (dataReader.Read())
+            {
+                dp.Id = dataReader.GetInt32(i++);
+                //Depth Four
+                dp.DepthFour = new DepthFour
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    //Depth Four's Depth Three
+                    DepthThree = new DepthThree
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        //Depth Four's Depth Three's Depth Two
+                        DepthTwo = new DepthTwo
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            //Depth Four's Depth Three's Depth Two's Depth One
+                            DepthOne = new DepthOne
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++)
+                            }
+                        }
+                    }
+                };
+                dp.DepthFive = new DepthFive
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    DepthFour = new DepthFour
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthThree = new DepthThree
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthTwo = new DepthTwo
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthOne = new DepthOne
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++)
+                                }
+                            }
+                        }
+                    }
+                };
+                dp.DepthSix = new DepthSix
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    DepthFive = new DepthFive
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthFour = new DepthFour
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthThree = new DepthThree
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthTwo = new DepthTwo
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthOne = new DepthOne
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dp;
+        }
+
+        public DeepestPayload GetDeepestPayload(int id)
+        {
+            string query = $"SELECT pd.id, " +
+                $"pd.depth_seven_id, d7.string_value, d7.int_value, d7.double_value, " +
+                $"d7.depth_six_id, d7d6.string_value, d7d6.int_value, d7d6.double_value, " +
+                $"d7d6.depth_five_id, d7d5.string_value, d7d5.int_value, d7d5.double_value, " +
+                $"d7d5.depth_four_id, d7d4.string_value, d7d4.int_value, d7d4.double_value, " +
+                $"d7d4.depth_three_id, d7d3.string_value, d7d3.int_value, d7d3.double_value, " +
+                $"d7d3.depth_two_id, d7d2.string_value, d7d2.int_value, d7d2.double_value, " +
+                $"d7d2.depth_one_id, d7d1.string_value, d7d1.int_value, d7d1.double_value, " +
+                $"pd.depth_eight_id, d8.string_value, d8.int_value, d8.double_value, " +
+                $"d8.depth_seven_id, d8d7.string_value, d8d7.int_value, d8d7.double_value, " +
+                $"d8d7.depth_six_id, d8d6.string_value, d8d6.int_value, d8d6.double_value, " +
+                $"d8d6.depth_five_id, d8d5.string_value, d8d5.int_value, d8d5.double_value, " +
+                $"d8d5.depth_four_id, d8d4.string_value, d8d4.int_value, d8d4.double_value, " +
+                $"d8d4.depth_three_id, d8d3.string_value, d8d3.int_value, d8d3.double_value, " +
+                $"d8d3.depth_two_id, d8d2.string_value, d8d2.int_value, d8d2.double_value, " +
+                $"d8d2.depth_one_id, d8d1.string_value, d8d1.int_value, d8d1.double_value, " +
+                $"pd.depth_nine_id, d9.string_value, d9.int_value, d9.double_value, " +
+                $"d9.depth_eight_id, d9d8.string_value, d9d8.int_value, d9d8.double_value, " +
+                $"d9d8.depth_seven_id, d9d7.string_value, d9d7.int_value, d9d7.double_value, " +
+                $"d9d7.depth_six_id, d9d6.string_value, d9d6.int_value, d9d6.double_value, " +
+                $"d9d6.depth_five_id, d9d5.string_value, d9d5.int_value, d9d5.double_value, " +
+                $"d9d5.depth_four_id, d9d4.string_value, d9d4.int_value, d9d4.double_value, " +
+                $"d9d4.depth_three_id, d9d3.string_value, d9d3.int_value, d9d3.double_value, " +
+                $"d9d3.depth_two_id, d9d2.string_value, d9d2.int_value, d9d2.double_value, " +
+                $"d9d2.depth_one_id, d9d1.string_value, d9d1.int_value, d9d1.double_value " +
+                $"FROM Payload_Deepest pd " +
+                $"INNER JOIN Depth_Seven d7 ON pd.depth_seven_id = d7.id " +
+                $"INNER JOIN Depth_Six d7d6 ON d7.depth_six_id = d7d6.id " +
+                $"INNER JOIN Depth_Five d7d5 ON d7d6.depth_five_id = d7d5.id " +
+                $"INNER JOIN Depth_Four d7d4 ON d7d5.depth_four_id = d7d4.id " +
+                $"INNER JOIN Depth_Three d7d3 ON d7d4.depth_three_id = d7d3.id " +
+                $"INNER JOIN Depth_Two d7d2 ON d7d3.depth_two_id = d7d2.id " +
+                $"INNER JOIN Depth_One d7d1 ON d7d2.depth_one_id = d7d1.id " +
+                $"INNER JOIN Depth_Eight d8 on pd.depth_eight_id = d8.id " +
+                $"INNER JOIN Depth_Seven d8d7 ON d8.depth_seven_id = d8d7.id " +
+                $"INNER JOIN Depth_Six d8d6 ON d8d7.depth_six_id = d8d6.id " +
+                $"INNER JOIN Depth_Five d8d5 ON d8d6.depth_five_id = d8d5.id " +
+                $"INNER JOIN Depth_Four d8d4 ON d8d5.depth_four_id = d8d4.id " +
+                $"INNER JOIN Depth_Three d8d3 ON d8d4.depth_three_id = d8d3.id " +
+                $"INNER JOIN Depth_Two d8d2 ON d8d3.depth_two_id = d8d2.id " +
+                $"INNER JOIN Depth_One d8d1 ON d8d2.depth_one_id = d8d1.id " +
+                $"INNER JOIN Depth_Nine d9 on pd.depth_nine_id = d9.id " +
+                $"INNER JOIN Depth_Eight d9d8 on d9.depth_eight_id = d9d8.id " +
+                $"INNER JOIN Depth_Seven d9d7 ON d9d8.depth_seven_id = d9d7.id " +
+                $"INNER JOIN Depth_Six d9d6 ON d9d7.depth_six_id = d9d6.id " +
+                $"INNER JOIN Depth_Five d9d5 ON d9d6.depth_five_id = d9d5.id " +
+                $"INNER JOIN Depth_Four d9d4 ON d9d5.depth_four_id = d9d4.id " +
+                $"INNER JOIN Depth_Three d9d3 ON d9d4.depth_three_id = d9d3.id " +
+                $"INNER JOIN Depth_Two d9d2 ON d9d3.depth_two_id = d9d2.id " +
+                $"INNER JOIN Depth_One d9d1 ON d9d2.depth_one_id = d9d1.id " +
+                $"WHERE pd.id = '{id}';";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            DeepestPayload dp = new DeepestPayload();
+            int i = 0;
+            while (dataReader.Read())
+            {
+                dp.Id = dataReader.GetInt32(i++);
+                //Depth Four
+                dp.DepthSeven = new DepthSeven
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    DepthSix = new DepthSix
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthFive = new DepthFive
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthFour = new DepthFour
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthThree = new DepthThree
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthTwo = new DepthTwo
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthOne = new DepthOne
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+                dp.DepthEight = new DepthEight
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    DepthSeven = new DepthSeven
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthSix = new DepthSix
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthFive = new DepthFive
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthFour = new DepthFour
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthThree = new DepthThree
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthTwo = new DepthTwo
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++),
+                                            DepthOne = new DepthOne
+                                            {
+                                                Id = dataReader.GetInt32(i++),
+                                                StringValue = dataReader.GetString(i++),
+                                                IntValue = dataReader.GetInt32(i++),
+                                                DoubleValue = dataReader.GetDouble(i++)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+                dp.DepthNine = new DepthNine
+                {
+                    Id = dataReader.GetInt32(i++),
+                    StringValue = dataReader.GetString(i++),
+                    IntValue = dataReader.GetInt32(i++),
+                    DoubleValue = dataReader.GetDouble(i++),
+                    DepthEight = new DepthEight
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthSeven = new DepthSeven
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthSix = new DepthSix
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthFive = new DepthFive
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthFour = new DepthFour
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthThree = new DepthThree
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++),
+                                            DepthTwo = new DepthTwo
+                                            {
+                                                Id = dataReader.GetInt32(i++),
+                                                StringValue = dataReader.GetString(i++),
+                                                IntValue = dataReader.GetInt32(i++),
+                                                DoubleValue = dataReader.GetDouble(i++),
+                                                DepthOne = new DepthOne
+                                                {
+                                                    Id = dataReader.GetInt32(i++),
+                                                    StringValue = dataReader.GetString(i++),
+                                                    IntValue = dataReader.GetInt32(i++),
+                                                    DoubleValue = dataReader.GetDouble(i++)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dp;
+        }
+
         //Get All
         public List<SmallPayload> GetAllSmallPayloads()
         {
@@ -1705,6 +2178,486 @@ namespace GrpcServer.Database
             dataReader.Close();
             this.CloseConnection();
             return lps;
+        }
+
+        public List<DeepPayload> GetAllDeepPayloads()
+        {
+            string query = $"SELECT pd.id, " +
+                $"pd.depth_one_id, d1.string_value, d1.int_value, d1.double_value, " +
+                $"pd.depth_two_id, d2.string_value, d2.int_value, d2.double_value, " +
+                $"d2.depth_one_id, d2d1.string_value, d2d1.int_value, d2d1.double_value, " +
+                $"pd.depth_three_id, d3.string_value, d3.int_value, d3.double_value, " +
+                $"d3.depth_two_id, d3d2.string_value, d3d2.int_value, d3d2.double_value, " +
+                $"d3d2.depth_one_id, d3d1.string_value, d3d1.int_value, d3d1.double_value " +
+                $"FROM Payload_Deep pd " +
+                $"INNER JOIN Depth_One d1 ON pd.depth_one_id = d1.id " +
+                $"INNER JOIN Depth_Two d2 ON pd.depth_two_id = d2.id " +
+                $"INNER JOIN Depth_One d2d1 ON d2.depth_one_id = d2d1.id " +
+                $"INNER JOIN Depth_Three d3 ON pd.depth_three_id = d3.id " +
+                $"INNER JOIN Depth_Two d3d2 ON d3.depth_two_id = d3d2.id " +
+                $"INNER JOIN Depth_One d3d1 ON d3d2.depth_one_id = d3d1.id;";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            List<DeepPayload> dps = new List<DeepPayload>();
+            while (dataReader.Read())
+            {
+                dps.Add(new DeepPayload
+                {
+                    Id = dataReader.GetInt32(0),
+                    //Depth one
+                    DepthOne = new DepthOne
+                    {
+                        Id = dataReader.GetInt32(1),
+                        StringValue = dataReader.GetString(2),
+                        IntValue = dataReader.GetInt32(3),
+                        DoubleValue = dataReader.GetDouble(4)
+                    },
+                    //Depth two
+                    DepthTwo = new DepthTwo
+                    {
+                        Id = dataReader.GetInt32(5),
+                        StringValue = dataReader.GetString(6),
+                        IntValue = dataReader.GetInt32(7),
+                        DoubleValue = dataReader.GetDouble(8),
+                        DepthOne = new DepthOne
+                        {
+                            //Depth two's depth one
+                            Id = dataReader.GetInt32(9),
+                            StringValue = dataReader.GetString(10),
+                            IntValue = dataReader.GetInt32(11),
+                            DoubleValue = dataReader.GetDouble(12)
+                        }
+                    },
+                    //Depth three
+                    DepthThree = new DepthThree
+                    {
+                        Id = dataReader.GetInt32(13),
+                        StringValue = dataReader.GetString(14),
+                        IntValue = dataReader.GetInt32(15),
+                        DoubleValue = dataReader.GetDouble(16),
+                        DepthTwo = new DepthTwo
+                        {
+                            //Depth three's depth two
+                            Id = dataReader.GetInt32(17),
+                            StringValue = dataReader.GetString(18),
+                            IntValue = dataReader.GetInt32(19),
+                            DoubleValue = dataReader.GetDouble(20),
+                            DepthOne = new DepthOne
+                            {
+                                //Depth three's depth two's depth one
+                                Id = dataReader.GetInt32(21),
+                                StringValue = dataReader.GetString(22),
+                                IntValue = dataReader.GetInt32(23),
+                                DoubleValue = dataReader.GetDouble(24)
+                            }
+                        }
+
+                    }
+                });
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dps;
+        }
+
+        public List<DeeperPayload> GetAllDeeperPayloads()
+        {
+            string query = $"SELECT pd.id, " +
+                    $"pd.depth_four_id, d4.string_value, d4.int_value, d4.double_value, " +
+                    $"d4.depth_three_id, d4d3.string_value, d4d3.int_value, d4d3.double_value, " +
+                    $"d4d3.depth_two_id, d4d2.string_value, d4d2.int_value, d4d2.double_value, " +
+                    $"d4d2.depth_one_id, d4d1.string_value, d4d1.int_value, d4d1.double_value, " +
+                    $"pd.depth_five_id, d5.string_value, d5.int_value, d5.double_value, " +
+                    $"d5.depth_four_id, d5d4.string_value, d5d4.int_value, d5d4.double_value, " +
+                    $"d5d4.depth_three_id, d5d3.string_value, d5d3.int_value, d5d3.double_value, " +
+                    $"d5d3.depth_two_id, d5d2.string_value, d5d2.int_value, d5d2.double_value, " +
+                    $"d5d2.depth_one_id, d5d1.string_value, d5d1.int_value, d5d1.double_value, " +
+                    $"pd.depth_six_id, d6.string_value, d6.int_value, d6.double_value, " +
+                    $"d6.depth_five_id, d6d5.string_value, d6d5.int_value, d6d5.double_value, " +
+                    $"d6d5.depth_four_id, d6d4.string_value, d6d4.int_value, d6d4.double_value, " +
+                    $"d6d4.depth_three_id, d6d3.string_value, d6d3.int_value, d6d3.double_value, " +
+                    $"d6d3.depth_two_id, d6d2.string_value, d6d2.int_value, d6d2.double_value, " +
+                    $"d6d2.depth_one_id, d6d1.string_value, d6d1.int_value, d6d1.double_value " +
+                    $"FROM Payload_Deeper pd " +
+                    $"INNER JOIN Depth_Four d4 ON pd.depth_four_id = d4.id " +
+                    $"INNER JOIN Depth_Three d4d3 ON d4.depth_three_id = d4d3.id " +
+                    $"INNER JOIN Depth_Two d4d2 ON d4d3.depth_two_id = d4d2.id " +
+                    $"INNER JOIN Depth_One d4d1 ON d4d2.depth_one_id = d4d1.id " +
+                    $"INNER JOIN Depth_Five d5 ON pd.depth_five_id = d5.id " +
+                    $"INNER JOIN Depth_Four d5d4 ON d5.depth_four_id = d5d4.id " +
+                    $"INNER JOIN Depth_Three d5d3 ON d5d4.depth_three_id = d5d3.id " +
+                    $"INNER JOIN Depth_Two d5d2 ON d5d3.depth_two_id = d5d2.id " +
+                    $"INNER JOIN Depth_One d5d1 ON d5d2.depth_one_id = d5d1.id " +
+                    $"INNER JOIN Depth_Six d6 ON pd.depth_six_id = d6.id " +
+                    $"INNER JOIN Depth_Five d6d5 ON d6.depth_five_id = d6d5.id " +
+                    $"INNER JOIN Depth_Four d6d4 ON d6d5.depth_four_id = d6d4.id " +
+                    $"INNER JOIN Depth_Three d6d3 ON d6d4.depth_three_id = d6d3.id " +
+                    $"INNER JOIN Depth_Two d6d2 ON d6d3.depth_two_id = d6d2.id " +
+                    $"INNER JOIN Depth_One d6d1 ON d6d2.depth_one_id = d6d1.id;";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            int i = 0;
+            List<DeeperPayload> dps = new List<DeeperPayload>();
+            while (dataReader.Read())
+            {
+                dps.Add(new DeeperPayload
+                {
+                    Id = dataReader.GetInt32(i++),
+                    //Depth Four
+                    DepthFour = new DepthFour
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        //Depth Four's Depth Three
+                        DepthThree = new DepthThree
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            //Depth Four's Depth Three's Depth Two
+                            DepthTwo = new DepthTwo
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                //Depth Four's Depth Three's Depth Two's Depth One
+                                DepthOne = new DepthOne
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++)
+                                }
+                            }
+                        }
+                    },
+                    DepthFive = new DepthFive
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthFour = new DepthFour
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthThree = new DepthThree
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthTwo = new DepthTwo
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthOne = new DepthOne
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++)
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    DepthSix = new DepthSix
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthFive = new DepthFive
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthFour = new DepthFour
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthThree = new DepthThree
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthTwo = new DepthTwo
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthOne = new DepthOne
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                i = 0;
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dps;
+        }
+
+        public List<DeepestPayload> GetAllDeepestPayloads()
+        {
+            string query = $"SELECT pd.id, " +
+                $"pd.depth_seven_id, d7.string_value, d7.int_value, d7.double_value, " +
+                $"d7.depth_six_id, d7d6.string_value, d7d6.int_value, d7d6.double_value, " +
+                $"d7d6.depth_five_id, d7d5.string_value, d7d5.int_value, d7d5.double_value, " +
+                $"d7d5.depth_four_id, d7d4.string_value, d7d4.int_value, d7d4.double_value, " +
+                $"d7d4.depth_three_id, d7d3.string_value, d7d3.int_value, d7d3.double_value, " +
+                $"d7d3.depth_two_id, d7d2.string_value, d7d2.int_value, d7d2.double_value, " +
+                $"d7d2.depth_one_id, d7d1.string_value, d7d1.int_value, d7d1.double_value, " +
+                $"pd.depth_eight_id, d8.string_value, d8.int_value, d8.double_value, " +
+                $"d8.depth_seven_id, d8d7.string_value, d8d7.int_value, d8d7.double_value, " +
+                $"d8d7.depth_six_id, d8d6.string_value, d8d6.int_value, d8d6.double_value, " +
+                $"d8d6.depth_five_id, d8d5.string_value, d8d5.int_value, d8d5.double_value, " +
+                $"d8d5.depth_four_id, d8d4.string_value, d8d4.int_value, d8d4.double_value, " +
+                $"d8d4.depth_three_id, d8d3.string_value, d8d3.int_value, d8d3.double_value, " +
+                $"d8d3.depth_two_id, d8d2.string_value, d8d2.int_value, d8d2.double_value, " +
+                $"d8d2.depth_one_id, d8d1.string_value, d8d1.int_value, d8d1.double_value, " +
+                $"pd.depth_nine_id, d9.string_value, d9.int_value, d9.double_value, " +
+                $"d9.depth_eight_id, d9d8.string_value, d9d8.int_value, d9d8.double_value, " +
+                $"d9d8.depth_seven_id, d9d7.string_value, d9d7.int_value, d9d7.double_value, " +
+                $"d9d7.depth_six_id, d9d6.string_value, d9d6.int_value, d9d6.double_value, " +
+                $"d9d6.depth_five_id, d9d5.string_value, d9d5.int_value, d9d5.double_value, " +
+                $"d9d5.depth_four_id, d9d4.string_value, d9d4.int_value, d9d4.double_value, " +
+                $"d9d4.depth_three_id, d9d3.string_value, d9d3.int_value, d9d3.double_value, " +
+                $"d9d3.depth_two_id, d9d2.string_value, d9d2.int_value, d9d2.double_value, " +
+                $"d9d2.depth_one_id, d9d1.string_value, d9d1.int_value, d9d1.double_value " +
+                $"FROM Payload_Deepest pd " +
+                $"INNER JOIN Depth_Seven d7 ON pd.depth_seven_id = d7.id " +
+                $"INNER JOIN Depth_Six d7d6 ON d7.depth_six_id = d7d6.id " +
+                $"INNER JOIN Depth_Five d7d5 ON d7d6.depth_five_id = d7d5.id " +
+                $"INNER JOIN Depth_Four d7d4 ON d7d5.depth_four_id = d7d4.id " +
+                $"INNER JOIN Depth_Three d7d3 ON d7d4.depth_three_id = d7d3.id " +
+                $"INNER JOIN Depth_Two d7d2 ON d7d3.depth_two_id = d7d2.id " +
+                $"INNER JOIN Depth_One d7d1 ON d7d2.depth_one_id = d7d1.id " +
+                $"INNER JOIN Depth_Eight d8 on pd.depth_eight_id = d8.id " +
+                $"INNER JOIN Depth_Seven d8d7 ON d8.depth_seven_id = d8d7.id " +
+                $"INNER JOIN Depth_Six d8d6 ON d8d7.depth_six_id = d8d6.id " +
+                $"INNER JOIN Depth_Five d8d5 ON d8d6.depth_five_id = d8d5.id " +
+                $"INNER JOIN Depth_Four d8d4 ON d8d5.depth_four_id = d8d4.id " +
+                $"INNER JOIN Depth_Three d8d3 ON d8d4.depth_three_id = d8d3.id " +
+                $"INNER JOIN Depth_Two d8d2 ON d8d3.depth_two_id = d8d2.id " +
+                $"INNER JOIN Depth_One d8d1 ON d8d2.depth_one_id = d8d1.id " +
+                $"INNER JOIN Depth_Nine d9 on pd.depth_nine_id = d9.id " +
+                $"INNER JOIN Depth_Eight d9d8 on d9.depth_eight_id = d9d8.id " +
+                $"INNER JOIN Depth_Seven d9d7 ON d9d8.depth_seven_id = d9d7.id " +
+                $"INNER JOIN Depth_Six d9d6 ON d9d7.depth_six_id = d9d6.id " +
+                $"INNER JOIN Depth_Five d9d5 ON d9d6.depth_five_id = d9d5.id " +
+                $"INNER JOIN Depth_Four d9d4 ON d9d5.depth_four_id = d9d4.id " +
+                $"INNER JOIN Depth_Three d9d3 ON d9d4.depth_three_id = d9d3.id " +
+                $"INNER JOIN Depth_Two d9d2 ON d9d3.depth_two_id = d9d2.id " +
+                $"INNER JOIN Depth_One d9d1 ON d9d2.depth_one_id = d9d1.id;";
+            this.OpenConnection();
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            int i = 0;
+            List<DeepestPayload> dps = new List<DeepestPayload>();
+            while (dataReader.Read())
+            {
+                dps.Add(new DeepestPayload
+                {
+                    Id = dataReader.GetInt32(i++),
+                    DepthSeven = new DepthSeven
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthSix = new DepthSix
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthFive = new DepthFive
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthFour = new DepthFour
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthThree = new DepthThree
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthTwo = new DepthTwo
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++),
+                                            DepthOne = new DepthOne
+                                            {
+                                                Id = dataReader.GetInt32(i++),
+                                                StringValue = dataReader.GetString(i++),
+                                                IntValue = dataReader.GetInt32(i++),
+                                                DoubleValue = dataReader.GetDouble(i++)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    DepthEight = new DepthEight
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthSeven = new DepthSeven
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthSix = new DepthSix
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthFive = new DepthFive
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthFour = new DepthFour
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthThree = new DepthThree
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++),
+                                            DepthTwo = new DepthTwo
+                                            {
+                                                Id = dataReader.GetInt32(i++),
+                                                StringValue = dataReader.GetString(i++),
+                                                IntValue = dataReader.GetInt32(i++),
+                                                DoubleValue = dataReader.GetDouble(i++),
+                                                DepthOne = new DepthOne
+                                                {
+                                                    Id = dataReader.GetInt32(i++),
+                                                    StringValue = dataReader.GetString(i++),
+                                                    IntValue = dataReader.GetInt32(i++),
+                                                    DoubleValue = dataReader.GetDouble(i++)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    DepthNine = new DepthNine
+                    {
+                        Id = dataReader.GetInt32(i++),
+                        StringValue = dataReader.GetString(i++),
+                        IntValue = dataReader.GetInt32(i++),
+                        DoubleValue = dataReader.GetDouble(i++),
+                        DepthEight = new DepthEight
+                        {
+                            Id = dataReader.GetInt32(i++),
+                            StringValue = dataReader.GetString(i++),
+                            IntValue = dataReader.GetInt32(i++),
+                            DoubleValue = dataReader.GetDouble(i++),
+                            DepthSeven = new DepthSeven
+                            {
+                                Id = dataReader.GetInt32(i++),
+                                StringValue = dataReader.GetString(i++),
+                                IntValue = dataReader.GetInt32(i++),
+                                DoubleValue = dataReader.GetDouble(i++),
+                                DepthSix = new DepthSix
+                                {
+                                    Id = dataReader.GetInt32(i++),
+                                    StringValue = dataReader.GetString(i++),
+                                    IntValue = dataReader.GetInt32(i++),
+                                    DoubleValue = dataReader.GetDouble(i++),
+                                    DepthFive = new DepthFive
+                                    {
+                                        Id = dataReader.GetInt32(i++),
+                                        StringValue = dataReader.GetString(i++),
+                                        IntValue = dataReader.GetInt32(i++),
+                                        DoubleValue = dataReader.GetDouble(i++),
+                                        DepthFour = new DepthFour
+                                        {
+                                            Id = dataReader.GetInt32(i++),
+                                            StringValue = dataReader.GetString(i++),
+                                            IntValue = dataReader.GetInt32(i++),
+                                            DoubleValue = dataReader.GetDouble(i++),
+                                            DepthThree = new DepthThree
+                                            {
+                                                Id = dataReader.GetInt32(i++),
+                                                StringValue = dataReader.GetString(i++),
+                                                IntValue = dataReader.GetInt32(i++),
+                                                DoubleValue = dataReader.GetDouble(i++),
+                                                DepthTwo = new DepthTwo
+                                                {
+                                                    Id = dataReader.GetInt32(i++),
+                                                    StringValue = dataReader.GetString(i++),
+                                                    IntValue = dataReader.GetInt32(i++),
+                                                    DoubleValue = dataReader.GetDouble(i++),
+                                                    DepthOne = new DepthOne
+                                                    {
+                                                        Id = dataReader.GetInt32(i++),
+                                                        StringValue = dataReader.GetString(i++),
+                                                        IntValue = dataReader.GetInt32(i++),
+                                                        DoubleValue = dataReader.GetDouble(i++)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                i = 0;
+            };
+            dataReader.Close();
+            this.CloseConnection();
+            return dps;
         }
     }
 }

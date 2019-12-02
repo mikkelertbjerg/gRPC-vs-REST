@@ -9,6 +9,12 @@ service PayloadService {
 	rpc GetAllSmallPayloads (EmptyRequest) returns (stream SmallPayload);
 	rpc GetAllMediumPayloads (EmptyRequest) returns (stream MediumPayload);
 	rpc GetAllLargePayloads (EmptyRequest) returns (stream LargePayload);
+	rpc GetDeepPayload (PayloadId) returns (DeepPayload);
+	rpc GetDeeperPayload (PayloadId) returns (DeeperPayload);
+	rpc GetDeepestPayload (PayloadId) returns (DeepestPayload);
+	rpc GetAllDeepPayloads (EmptyRequest) returns (stream DeepPayload);
+	rpc GetAllDeeperPayloads (EmptyRequest) returns (stream DeeperPayload);
+	rpc GetAllDeepestPayloads (EmptyRequest) returns (stream DeepestPayload);
 }
 
 message EmptyRequest {
@@ -58,3 +64,94 @@ message LargePayload {
 	MediumPayload medium_payload_six = 10;
 }
 
+message DeepPayload {
+	int32 id = 1;
+	DepthOne depth_one = 2;
+	DepthTwo depth_two = 3;
+	DepthThree depth_three = 4;
+}
+
+message DeeperPayload {
+	int32 id = 1;
+	DepthFour depth_four = 2;
+	DepthFive depth_five = 3;
+	DepthSix depth_six = 4;
+}
+
+message DeepestPayload {
+	int32 id = 1;
+	DepthSeven depth_seven = 2;
+	DepthEight depth_eight = 3;
+	DepthNine depth_nine = 4;
+}
+
+message DepthOne {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+}
+
+message DepthTwo {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthOne depth_one = 5;
+}
+
+message DepthThree {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthTwo depth_two = 5;
+}
+
+message DepthFour {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthThree depth_three = 5;
+}
+
+message DepthFive {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthFour depth_four = 5;
+}
+
+message DepthSix {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthFive depth_five = 5;
+}
+
+message DepthSeven {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthSix depth_six = 5;
+}
+
+message DepthEight {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthSeven depth_seven = 5;
+}
+
+message DepthNine {
+	int32 id = 1;
+	string string_value = 2;
+	int32 int_value = 3;
+	double double_value = 4;
+	DepthEight depth_eight = 5;
+}

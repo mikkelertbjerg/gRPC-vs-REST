@@ -5812,19 +5812,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nikod\\.nuget\\packages\\": {}
+    "C:\\Users\\mwe1\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
+      "projectUniqueName": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
       "projectName": "GrpcServer",
-      "projectPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
-      "packagesPath": "C:\\Users\\nikod\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\obj\\",
+      "projectPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\GrpcServer.csproj",
+      "packagesPath": "C:\\Users\\mwe1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mwe1\\Desktop\\CPH0919\\gRPC-vs-REST\\GrpcProject\\GrpcServer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\nikod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mwe1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

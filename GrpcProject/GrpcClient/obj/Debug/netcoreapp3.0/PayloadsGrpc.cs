@@ -17,6 +17,9 @@ namespace GrpcServer {
     static readonly grpc::Marshaller<global::GrpcServer.MediumPayload> __Marshaller_MediumPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.MediumPayload.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.LargePayload> __Marshaller_LargePayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.LargePayload.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::GrpcServer.EmptyRequest> __Marshaller_EmptyRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.EmptyRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.DeepPayload> __Marshaller_DeepPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.DeepPayload.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.DeeperPayload> __Marshaller_DeeperPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.DeeperPayload.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GrpcServer.DeepestPayload> __Marshaller_DeepestPayload = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcServer.DeepestPayload.Parser.ParseFrom);
 
     static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload> __Method_GetSmallPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.SmallPayload>(
         grpc::MethodType.Unary,
@@ -59,6 +62,48 @@ namespace GrpcServer {
         "GetAllLargePayloads",
         __Marshaller_EmptyRequest,
         __Marshaller_LargePayload);
+
+    static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeepPayload> __Method_GetDeepPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeepPayload>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetDeepPayload",
+        __Marshaller_PayloadId,
+        __Marshaller_DeepPayload);
+
+    static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeeperPayload> __Method_GetDeeperPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeeperPayload>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetDeeperPayload",
+        __Marshaller_PayloadId,
+        __Marshaller_DeeperPayload);
+
+    static readonly grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeepestPayload> __Method_GetDeepestPayload = new grpc::Method<global::GrpcServer.PayloadId, global::GrpcServer.DeepestPayload>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetDeepestPayload",
+        __Marshaller_PayloadId,
+        __Marshaller_DeepestPayload);
+
+    static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeepPayload> __Method_GetAllDeepPayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeepPayload>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetAllDeepPayloads",
+        __Marshaller_EmptyRequest,
+        __Marshaller_DeepPayload);
+
+    static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeeperPayload> __Method_GetAllDeeperPayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeeperPayload>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetAllDeeperPayloads",
+        __Marshaller_EmptyRequest,
+        __Marshaller_DeeperPayload);
+
+    static readonly grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeepestPayload> __Method_GetAllDeepestPayloads = new grpc::Method<global::GrpcServer.EmptyRequest, global::GrpcServer.DeepestPayload>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetAllDeepestPayloads",
+        __Marshaller_EmptyRequest,
+        __Marshaller_DeepestPayload);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -160,6 +205,78 @@ namespace GrpcServer {
       public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.LargePayload> GetAllLargePayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GetAllLargePayloads, null, options, request);
+      }
+      public virtual global::GrpcServer.DeepPayload GetDeepPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeepPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GrpcServer.DeepPayload GetDeepPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetDeepPayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeepPayload> GetDeepPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeepPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeepPayload> GetDeepPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetDeepPayload, null, options, request);
+      }
+      public virtual global::GrpcServer.DeeperPayload GetDeeperPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeeperPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GrpcServer.DeeperPayload GetDeeperPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetDeeperPayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeeperPayload> GetDeeperPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeeperPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeeperPayload> GetDeeperPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetDeeperPayload, null, options, request);
+      }
+      public virtual global::GrpcServer.DeepestPayload GetDeepestPayload(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeepestPayload(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::GrpcServer.DeepestPayload GetDeepestPayload(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetDeepestPayload, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeepestPayload> GetDeepestPayloadAsync(global::GrpcServer.PayloadId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeepestPayloadAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::GrpcServer.DeepestPayload> GetDeepestPayloadAsync(global::GrpcServer.PayloadId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetDeepestPayload, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeepPayload> GetAllDeepPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllDeepPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeepPayload> GetAllDeepPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllDeepPayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeeperPayload> GetAllDeeperPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllDeeperPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeeperPayload> GetAllDeeperPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllDeeperPayloads, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeepestPayload> GetAllDeepestPayloads(global::GrpcServer.EmptyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetAllDeepestPayloads(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::GrpcServer.DeepestPayload> GetAllDeepestPayloads(global::GrpcServer.EmptyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GetAllDeepestPayloads, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override PayloadServiceClient NewInstance(ClientBaseConfiguration configuration)
