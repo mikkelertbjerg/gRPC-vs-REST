@@ -146,33 +146,33 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 
 
 ## References
-[1]: https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711
+[1]: https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711 
 1. `blog` <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> 
-[2]:https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4
+[2]: https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4 
 2. `blog` <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4> 
-[3]: https://www.yonego.com/nl/why-milliseconds-matter/#gref
+[3]: https://www.yonego.com/nl/why-milliseconds-matter/#gref 
 3. `blog` <https://www.yonego.com/nl/why-milliseconds-matter/#gref> 
-[4]: https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da
+[4]: https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da 
 4. `blog` <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da>
-[5]: https://blog.ndepend.com/rest-vs-restful/
+[5]: https://blog.ndepend.com/rest-vs-restful/ 
 5. `rest` <https://blog.ndepend.com/rest-vs-restful/>
-[6]: https://restfulapi.net/statelessness/
+[6]: https://restfulapi.net/statelessness/ 
 6. `rest` <https://restfulapi.net/statelessness/>
-[7]: https://www.restapitutorial.com/lessons/httpmethods.html
+[7]: https://www.restapitutorial.com/lessons/httpmethods.html 
 7. `rest` <https://www.restapitutorial.com/lessons/httpmethods.html>
-[8]: https://grpc.io/
+[8]: https://grpc.io/ 
 8. `grpc` <https://grpc.io/> 
-[9]: https://en.wikipedia.org/wiki/HTTP/2
+[9]: https://en.wikipedia.org/wiki/HTTP/2 
 9. `wiki` <https://en.wikipedia.org/wiki/HTTP/2>
-[10]: https://packages.grpc.io/
+[10]: https://packages.grpc.io/ 
 10. `grpc` <https://packages.grpc.io/>
-[11]: https://en.wikipedia.org/wiki/Design_by_contract
+[11]: https://en.wikipedia.org/wiki/Design_by_contract 
 11. `wiki` <https://en.wikipedia.org/wiki/Design_by_contract>
-[12]: https://developers.google.com/protocol-buffers
+[12]: https://developers.google.com/protocol-buffers 
 12. `grpc` <https://developers.google.com/protocol-buffers>
-[13]: https://en.wikipedia.org/wiki/Serialization
+[13]: https://en.wikipedia.org/wiki/Serialization 
 13. `wiki` <https://en.wikipedia.org/wiki/Serialization>
-[14]: https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/
+[14]: https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/ 
 14. `blog` <https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/> 
 
 ## Technology used
