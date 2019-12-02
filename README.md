@@ -154,23 +154,23 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 [MySql Database][17]
 
 ## References
-1. `blog` [Battle of the APIs][1]
-2. `blog` [gRPC/REST perfromance simplified][2]
-3. `blog` [Why milliseconds matter][3]
-4. `blog` [gRPC/REST evaluating perfromance][4]
-5. `rest` [REST vs RESTful][5]
-6. `rest` [Statelessness][6]
-7. `rest` [Http Methods][7]
-8. `grpc` [gRPC][8]
-9. `wiki` [HTTP/2][9]
-10. `grpc` [Suported gRPC languages][10]
-11. `wiki` [Design by Contract][11]
-12. `grpc` [Google proto buffers][12]
-13. `wiki` [Serialization][13]
-14. `blog` [Website should load in 4 seconds][14]
-15. `technology` [.NET Web API][15]
-16. `technology` [.NET Console App][16]
-17. `technology` [MySQL][17]
+1. [Battle of the APIs][1] `blog` 
+2. [gRPC/REST perfromance simplified][2] `blog` 
+3. [Why milliseconds matter][3] `blog` 
+4. [gRPC/REST evaluating perfromance][4] `blog` 
+5. [REST vs RESTful][5] `rest` 
+6. [Statelessness][6] `rest` 
+7. [Http Methods][7] `rest` 
+8. [gRPC][8] `grpc` 
+9. [HTTP/2][9] `wiki`
+10. [Suported gRPC languages][10] `grpc`
+11. [Design by Contract][11] `wiki`
+12. [Google proto buffers][12] `grpc`
+13. [Serialization][13] `wiki`
+14. [Website should load in 4 seconds][14] `blog`
+15. [.NET Web API][15] `technology` 
+16. [.NET Console App][16] `technology`
+17. [MySQL][17] `technology`
 
 [1]: <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> "Battle of the APIs"
 [2]: <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>   "gRPC/REST perfromance simplified"
