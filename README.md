@@ -54,11 +54,11 @@ The key features to take note of when using rest:
  * Both server and client are aware of methods available.
 
 **Statelessness**
- * [Stateless](https://restfulapi.net/statelessness/) means that the server is not required to know the current state of the client and vice versa.
+ * [Stateless][6]`6` means that the server is not required to know the current state of the client and vice versa.
  * Either end can understand any method calls, without knowing the previous called methods.
     
 **Invocation**
-* We invoke a method on the server via [HTTP operations](https://www.restapitutorial.com/lessons/httpmethods.html)
+* We invoke a method on the server via [HTTP operations][7]`7`
    * GET
    * POST
    * PUT
@@ -84,25 +84,25 @@ When we compare collections, the difference becomes very apparent. A small colle
 
 ## gRPC
 ### What is gRPC?
-[gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
+[gRPC][8]`8` is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
 Some key features we would like to highlight:
 
 **HTTP/2 support**
 
-[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works.
+[HTTP/2][9]`9` is HTTP/1's sucessor, which is what most website and frameworks utilize today. In many ways HTTP/2 is an imporved version of HTTP/1, and HTTP/3 is already in the works.
 
 **Language independant**
 
-gRPC is language independant, which means it doesn't matter which language you develop in. The framework supports a handfull of [popular languages](https://packages.grpc.io/). This is quite an advantage when you're developing microservices, which might have services developed in different languages and frameworks.
+gRPC is language independant, which means it doesn't matter which language you develop in. The framework supports a handfull of [popular languages][10]`10`. This is quite an advantage when you're developing microservices, which might have services developed in different languages and frameworks.
 
 **Contract First**
 
-gRPC is strictly [contract first](https://en.wikipedia.org/wiki/Design_by_contract) which is a design approach that works esecially well in larger development teams. It also excels when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file](https://developers.google.com/protocol-buffers), which is also where gRPC gains some of its speed from, seeing as .proto files are...
+gRPC is strictly [contract first][11]`11` which is a design approach that works esecially well in larger development teams. It also excels when developing microservices, as a contract has exsist, before any actual implementations can be done. The contract is deisgned in the [.proto file][12]`12`, which is also where gRPC gains some of its speed from, seeing as .proto files are...
 
 **Strongly typed**
 
-As a byproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serializing](https://en.wikipedia.org/wiki/Serialization) structured data. 
+As a byproduct of a strongly typed proto file, which is used as contract between client and server, but also used as an extensible mechanism for [serializing][13]`13` structured data. 
 
 ## Setting up the gRPC project
 For the gRPC architecture we use the same as the rest, we have a client and a server running locally. The client calls the methods exposed by the proto file. The method then gets executed on the server and query the database, once the data has been obtained it replies to the client. When the client has received all the data, we stop and log the time elapsed since the call started.
@@ -136,7 +136,7 @@ We hypothesized that gRPC would be faster than rest, based on the numerous blogs
 
 Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
 
-These results might not seem as much, but it has been [proven](https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/) that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
+These results might not seem as much, but it has been [proven][14]`14` that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
 
 this prompts the question: **When to use gRPC and when to use REST**
 
@@ -154,6 +154,24 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 [MySql Database][17]
 
 ## References
+1. `blog` [Battle of the APIs][1]
+2. `blog` [gRPC/REST perfromance simplified][2]
+3. `blog` [Why milliseconds matter][3]
+4. `blog` [gRPC/REST evaluating perfromance][4]
+5. `rest` [REST vs RESTful][5]
+6. `rest` [Statelessness][6]
+7. `rest` [Http Methods][7]
+8. `grpc` [gRPC][8]
+9. `wiki` [HTTP/2][9]
+10. `grpc` [Suported gRPC languages][10]
+11. `wiki` [Design by Contract][11]
+12. `grpc` [Google proto buffers][12]
+13. `wiki` [Serialization][13]
+14. `blog` [Website should load in 4 seconds][14]
+15. `technology` [.NET Web API][15]
+16. `technology` [.NET Console App][16]
+17. `technology` [MySQL][17]
+
 [1]: <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> "Battle of the APIs"
 [2]: <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>   "gRPC/REST perfromance simplified"
 [3]: <https://www.yonego.com/nl/why-milliseconds-matter/#gref>   "Why milliseconds matter"
@@ -161,7 +179,7 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 [5]: <https://blog.ndepend.com/rest-vs-restful/>  "REST vs RESTful"
 [6]: <https://restfulapi.net/statelessness/>   "Statelessness"
 [7]: <https://www.restapitutorial.com/lessons/httpmethods.html> "Http Methods"
-[8]: <https://grpc.io/> "gRPC.io"
+[8]: <https://grpc.io/> "gRPC"
 [9]: <https://en.wikipedia.org/wiki/HTTP/2> "HTTP/2"
 [10]: <https://packages.grpc.io/> "Suported gRPC languages"
 [11]: <https://en.wikipedia.org/wiki/Design_by_contract> "Design by Contract"
@@ -169,26 +187,8 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 [13]: <https://en.wikipedia.org/wiki/Serialization> "Serialization"
 [14]: <https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/>  "Website should load in 4 seconds"
 [15]: <https://dotnet.microsoft.com/apps/aspnet/apis>  ".NET Web API"
-[16]: <https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019>
-[17]: <https://www.mysql.com/>
-
-1. `blog` 
-2. `blog` 
-3. `blog` 
-4. `blog` 
-5. `rest`
-6. `rest` 
-7. `rest` 
-8. `grpc` 
-9. `wiki` 
-10. `grpc` 
-11. `wiki` 
-12. `grpc` 
-13. `wiki` 
-14. `blog` 
-15. `technology`
-16. `technology`
-17. `technology` 
+[16]: <https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019>   ".NET Console App"
+[17]: <https://www.mysql.com/>   "MySQL"
 
 ## About the authors
 **Mikkel Wexøe Ertbjerg**
