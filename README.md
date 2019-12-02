@@ -144,32 +144,33 @@ We would argue that gRPC fit into a setting, where you need to have multiple pro
 
 A rest on the other hand operates on the four aforementioned HTTP operations, these operations indicated data transfers of one sort or the other. While a rest can execute the same actions as gRPC, the action TurnOnTheWater() doesn't fit into what a REST API was designed for. We would instead use REST where we required data transfers and other typical CRUD mechanics.
 
+## Technologies used
+[gRPC][8]
+
+[.Net Web Api][15]
+
+[.Net console app][16]
+
+[MySql Database][17]
 
 ## References
-1. `blog` <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> 
-2. `blog` <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>
-3. `blog` <https://www.yonego.com/nl/why-milliseconds-matter/#gref>
-4. `blog` <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da>
-5. `rest` <https://blog.ndepend.com/rest-vs-restful/>
-6. `rest` <https://restfulapi.net/statelessness/>
-7. `rest` <https://www.restapitutorial.com/lessons/httpmethods.html>
-8. `grpc` <https://grpc.io/> 
-9. `wiki` <https://en.wikipedia.org/wiki/HTTP/2>
-10. `grpc` <https://packages.grpc.io/>
-11. `wiki` <https://en.wikipedia.org/wiki/Design_by_contract>
-12. `grpc` <https://developers.google.com/protocol-buffers>
-13. `wiki` <https://en.wikipedia.org/wiki/Serialization>
-14. `blog` <https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/> 
-
-## Technology used
-
-[gRPC](https://gRPC.io/)
-
-[.Net Web Api](https://dotnet.microsoft.com/apps/aspnet/apis)
-
-[.Net console app](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019)
-
-[MySql Database](https://www.mysql.com/)
+1. `blog` [1]: <https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711> "Battle of the APIs"
+2. `blog` [2]: <https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4>   "gRPC/REST perfromance simplified"
+3. `blog` [3]: <https://www.yonego.com/nl/why-milliseconds-matter/#gref>   "Why milliseconds matter"
+4. `blog` [4]: <https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da>  "gRPC/REST evaluating perfromance"
+5. `rest` [5]: <https://blog.ndepend.com/rest-vs-restful/>  "REST vs RESTful"
+6. `rest` [6]: <https://restfulapi.net/statelessness/>   "Statelessness"
+7. `rest` [7]: <https://www.restapitutorial.com/lessons/httpmethods.html> "Http Methods"
+8. `grpc` [8]: <https://grpc.io/> "gRPC.io"
+9. `wiki` [9]: <https://en.wikipedia.org/wiki/HTTP/2> "HTTP/2"
+10. `grpc` [10]: <https://packages.grpc.io/> "Suported gRPC languages"
+11. `wiki` [11]: <https://en.wikipedia.org/wiki/Design_by_contract> "Design by Contract"
+12. `grpc` [12]: <https://developers.google.com/protocol-buffers> "Google proto buffers"
+13. `wiki` [13]: <https://en.wikipedia.org/wiki/Serialization> "Serialization"
+14. `blog` [14]: <https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/>  "Website should load in 4 seconds"
+15. `technology` [15]: <https://dotnet.microsoft.com/apps/aspnet/apis>  ".NET Web API"
+16. `technology` [16]: <https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019>
+17. `technology` [17]: <https://www.mysql.com/>
 
 ## About the authors
 **Mikkel Wexøe Ertbjerg**
