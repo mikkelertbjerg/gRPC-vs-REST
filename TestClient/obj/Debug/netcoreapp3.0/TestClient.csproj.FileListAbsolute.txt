@@ -9,3 +9,14 @@ C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestCli
 C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.AssemblyInfo.cs
 C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.dll
 C:\Users\nikod\Documents\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.pdb
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.exe
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.deps.json
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.runtimeconfig.json
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.runtimeconfig.dev.json
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.dll
+D:\Code\gRPC-vs-REST\TestClient\bin\Debug\netcoreapp3.0\TestClient.pdb
+D:\Code\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.csprojAssemblyReference.cache
+D:\Code\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.AssemblyInfoInputs.cache
+D:\Code\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.AssemblyInfo.cs
+D:\Code\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.dll
+D:\Code\gRPC-vs-REST\TestClient\obj\Debug\netcoreapp3.0\TestClient.pdb

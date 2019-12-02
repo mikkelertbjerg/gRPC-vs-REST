@@ -172,18 +172,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\DeepController.cs" />
+    <Compile Include="Controllers\DeeperController.cs" />
+    <Compile Include="Controllers\DeepestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LargePayloadController.cs" />
     <Compile Include="Controllers\MediumPayloadController.cs" />
     <Compile Include="Controllers\SmallPayloadController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DatabaseConnection.cs" />
+    <Compile Include="Models\DeeperPayload.cs" />
+    <Compile Include="Models\DeepestPayload.cs" />
+    <Compile Include="Models\DeepPayload.cs" />
     <Compile Include="Models\LargePayload.cs" />
     <Compile Include="Models\MediumPayload.cs" />
     <Compile Include="Models\ObjectModel.cs" />
+    <Compile Include="Models\PayloadDepths\DepthNine.cs" />
+    <Compile Include="Models\PayloadDepths\DepthEight.cs" />
+    <Compile Include="Models\PayloadDepths\DepthSeven.cs" />
+    <Compile Include="Models\PayloadDepths\DepthSix.cs" />
+    <Compile Include="Models\PayloadDepths\DepthFive.cs" />
+    <Compile Include="Models\PayloadDepths\DepthFour.cs" />
+    <Compile Include="Models\PayloadDepths\DepthThree.cs" />
+    <Compile Include="Models\PayloadDepths\DepthOne.cs" />
+    <Compile Include="Models\PayloadDepths\DepthTwo.cs" />
     <Compile Include="Models\SmallPayload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -67,6 +67,42 @@ namespace TestClient
                         }
                     }
                     break;
+                case 4:
+                    for (int i = 1; i < 101; i++)
+                    {
+                        HttpResponseMessage response = Client.GetAsync(_url + "Deep").Result;
+
+                        Console.WriteLine($"Sending REST Request: {i}");
+                        if (response != null)
+                        {
+                            Console.WriteLine($"Received REST Response: {i}");
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int i = 1; i < 101; i++)
+                    {
+                        HttpResponseMessage response = Client.GetAsync(_url + "Deeper").Result;
+
+                        Console.WriteLine($"Sending REST Request: {i}");
+                        if (response != null)
+                        {
+                            Console.WriteLine($"Received REST Response: {i}");
+                        }
+                    }
+                    break;
+                case 6:
+                    for (int i = 1; i < 101; i++)
+                    {
+                        HttpResponseMessage response = Client.GetAsync(_url + "Deepest").Result;
+                        
+                        Console.WriteLine($"Sending REST Request: {i}");
+                        if (response != null)
+                        {
+                            Console.WriteLine($"Received REST Response: {i}");
+                        }
+                    }
+                    break;
                 default:
                     Console.WriteLine("N/A Level selected.");
                     break;
@@ -101,6 +137,30 @@ namespace TestClient
                     for (int i = 1; i < 101; i++)
                     {
                         response = Client.GetAsync(_url + "LargePayload/" + payloadLevel.ToString()).Result;
+                    }
+                    Console.WriteLine("Requested REST Service 100 times.");
+                    break;
+                case 4:
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
+                    {
+                        response = Client.GetAsync(_url + "Deep/" + payloadLevel.ToString()).Result;
+                    }
+                    Console.WriteLine("Requested REST Service 100 times.");
+                    break;
+                case 5:
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
+                    {
+                        response = Client.GetAsync(_url + "Deeper/" + payloadLevel.ToString()).Result;
+                    }
+                    Console.WriteLine("Requested REST Service 100 times.");
+                    break;
+                case 6:
+                    Console.WriteLine("Requesting REST Service 100 times.");
+                    for (int i = 1; i < 101; i++)
+                    {
+                        response = Client.GetAsync(_url + "Deepest/" + payloadLevel.ToString()).Result;
                     }
                     Console.WriteLine("Requested REST Service 100 times.");
                     break;

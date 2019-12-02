@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\TestClient\\TestClient.csproj": {}
+    "D:\\Code\\gRPC-vs-REST\\TestClient\\TestClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\TestClient\\TestClient.csproj": {
+    "D:\\Code\\gRPC-vs-REST\\TestClient\\TestClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\TestClient\\TestClient.csproj",
+        "projectUniqueName": "D:\\Code\\gRPC-vs-REST\\TestClient\\TestClient.csproj",
         "projectName": "TestClient",
-        "projectPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\TestClient\\TestClient.csproj",
-        "packagesPath": "C:\\Users\\nikod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nikod\\Documents\\gRPC-vs-REST\\TestClient\\obj\\",
+        "projectPath": "D:\\Code\\gRPC-vs-REST\\TestClient\\TestClient.csproj",
+        "packagesPath": "C:\\Users\\Fridai\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\gRPC-vs-REST\\TestClient\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nikod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fridai\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

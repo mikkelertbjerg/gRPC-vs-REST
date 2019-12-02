@@ -21,10 +21,7 @@ namespace RestClient
 
             HttpResponseMessage response = client.GetAsync(urlParameters).Result;
 
-            if (response.IsSuccessStatusCode)
-            {
-                var dataObjects = response.Content. ReadAsAsync<IEnumerable<ObjectModel>>().Result;
-            }
+           
         }
     }
 }
