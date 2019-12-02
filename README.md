@@ -84,7 +84,7 @@ When we compare collections, the difference becomes very apparent. A small colle
 
 ## gRPC
 ### What is gRPC?
-[gRPC](https://grpc.io/) is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
+[gRPC][1] is an open source RPC framework, that can run in any environment. gRPC was recently included in the .Net core platform thereby easily accessible by thousands of developers.
 
 Some key features we would like to highlight:
 
@@ -158,7 +158,7 @@ A rest on the other hand operates on the four aforementioned HTTP operations, th
 3. <https://www.restapitutorial.com/lessons/httpmethods.html>
 
 ### gRPC
-1. <https://grpc.io/>
+1. [1]: https://grpc.io/
 2. <https://packages.grpc.io/>
 3. <https://developers.google.com/protocol-buffers>
 
