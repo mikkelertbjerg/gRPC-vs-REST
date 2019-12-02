@@ -4,7 +4,7 @@
 In a world with an ever growing amount of application utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependent on each other, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster.
 
 ## Introduction
-**gRPC is a superior technology to REST!** At least that is what [this](https://code.tutsplus.com/tutorials/rest-vs-grpc-battle-of-the-apis--cms-30711), [this](https://medium.com/@bimeshde/grpc-vs-rest-performance-simplified-fd35d01bbd4), [this](https://www.yonego.com/nl/why-milliseconds-matter/#gref) and [this blog](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da) claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
+**gRPC is a superior technology to REST!** At least that is what [this][1]`1`, [this][2]`2`, [this][3]`3` and [this blog][4]`4` claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how fast a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses.
 
 ### Problem statement
 *Is gRPC faster than REST?*
@@ -43,7 +43,7 @@ NVIDIA GeForce GTX 1070
 
 ## REST
 ### What is REST?
-We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.](https://blog.ndepend.com/rest-vs-restful/)
+We have decided to work with the common implementation of REST and not the full implementation of a RESTful API; the differences can be found in [this blog.][5]`5`
 
 The key features to take note of when using rest:
 
