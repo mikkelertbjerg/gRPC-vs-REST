@@ -17,12 +17,14 @@ To test the Hypothesis two experiments, one utlizing gRPC and one utilizing REST
 These experiments have to adhere to the following:
 
 **Rules**
+
 * To ensure accurate measurements, the results must be obtained from the same computer.
 * Multiple data structures will be tested.
 * The setup for both APIs has to be as similar as possible.
 * The time used for measuring should be obtained from the client.
 
 **Set up**
+
 * to adhere to the multiple data structures rule, a database has been created, this database will provide a single instances of an object, as well as multiple instances of objects that will be stored in a list.
 * Each API will have six methods to call. 
     * three for a single instance which takes a parameter of Id.
@@ -35,6 +37,7 @@ These experiments have to adhere to the following:
 * To minimize anomalies and outliers, each operation will be executed 100 times, and the average call speed will be evaluated.
 
 **Specs**
+
 I7-9700k, 8 core, _4.6GHz_
 
 Samsung SSD 840 EVO 250GB
