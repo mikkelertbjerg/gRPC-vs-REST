@@ -143,6 +143,9 @@ We would argue that gRPC fit into a setting, where you need to have multiple pro
 
 A rest on the other hand operates on the four aforementioned HTTP operations, these operations indicated data transfers of one sort or the other. While a rest can execute the same actions as gRPC, the action TurnOnTheWater() doesn't fit into what a REST API was designed for. We would instead use REST where we required data transfers and other typical CRUD mechanics.
 
+## What's next?
+This blog has been only been about the differences in speed between REST and gRPC, but in reality, many other factors are present, if we were to truly compare the two frameworks. gRPC has claimed to not only be faster, but also more reliable, stable and secure, and all of these metrics, as well as other metrics, would be interesting to cover, they are however out of scope in this particular blog.
+
 ## Technologies used
 [gRPC][8]
 
