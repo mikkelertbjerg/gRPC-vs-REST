@@ -1,11 +1,9 @@
 # gRPC vs. REST - Which is faster?
-
-## Introduction
 _In a world with an ever growing amount of applications utilizing Microservices, gRPC claims to be faster and more stable than REST. Microservices can be heavily dependent on each other, which means speed and stability is key. When gRPC claims to be faster than REST, why isn't it the de facto standard? In this blog we will put gRPC and REST head to head, to see which is actually faster._
 
 **gRPC is a superior technology to REST!** At least that is what [this][1]`1`, [this][2]`2`, [this][3]`3` and [this blog][4]`4` claims. According to all the mentioned blogs, gRPC performs better and faster than a REST on several metrics. In this blog we will test specifically, how **_fast_** a REST client can handle different request and responses, and compare it to how fast a similar gRPC client handles the same requests and responses. This begs the question...
 
-```_**Is gRPC faster than REST?**_```
+_**```Is gRPC faster than REST?```**_
 
 *We hypothosize that gRPC is able to send and recieve requests faster than a traditional REST.* To test this, the following experiments have been developed.
 
