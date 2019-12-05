@@ -4,6 +4,7 @@ using GrpcServer;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace GrpcClient
@@ -26,7 +27,15 @@ namespace GrpcClient
             TimeSpan dts;
             string elapsedTime;
 
-            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var httpClientHandler = new HttpClientHandler();
+            // Return `true` to allow certificates that are untrusted/invalid
+            httpClientHandler.ServerCertificateCustomValidationCallback =
+                HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            var httpClient = new HttpClient(httpClientHandler);
+
+
+            var channel = GrpcChannel.ForAddress("https://80.198.94.195:5001",
+                new GrpcChannelOptions { HttpClient = httpClient });
             var payloadClient = new PayloadService.PayloadServiceClient(channel);
 
             //Verify payload objects

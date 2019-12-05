@@ -6,7 +6,7 @@ namespace TestClient
 {
     public class RestConsumer
     {
-        private string _url = "http://localhost:60264/api/";
+        private string _url = "http://faraday.fridai.dk/api/";
         public HttpClient Client { get; set; }
 
         public string URL
