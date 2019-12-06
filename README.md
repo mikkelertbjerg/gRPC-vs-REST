@@ -20,12 +20,16 @@ These experiments have to adhere to the following:
 
 **Set up**
 
-* to adhere to the multiple data structures rule, a database has been created, this database will provide a single instances of an object, as well as multiple instances of objects that will be stored in a list.
-* Each API will have six methods to call. 
+* to adhere to the multiple data structures rule, a local database has been created, this database will provide a single instances of an object, as well as multiple instances of objects that will be stored in a list.
+* Each API will have 12 methods to call. 
     * three for a single instance which takes a parameter of Id.
         * each one with a larger payload
+    * three for a single instance which takes a parameter of Id.
+        * each one with a deeper payload
     * three for a collection of 100 instances, which takes no parameters.
         * each one with a larger payload
+    * three for a collection of 100 instances, which takes no parameters.
+        * each one with a deeper payload
 * Each API will be tested with a client written in C#, as a console app.
     * Time will be measured with [.NET Stopwatch][18]`18`.
     * the stopwatch will begin when the method is called and end when the API returns the full data.
@@ -71,16 +75,110 @@ The architecture for this experiment is a simple one:
 ## Sample project and metrics
 If you want to replicate this experiment yourself, database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and source code for the rest-api can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/RestForBlog2)
 
-Running our setup yielded these results:
+Running our setup yielded the following results:
 
-![Rest Results](Graphics/rest_average.png)
+**Single payload**
 
-The difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of 0.0198 whilst a single large payload has a mean response time of 0.0206 seconds. But in relation to each other it's a 33% increase in response time. 
+The difference between a single small payload and a single large payload is small in the context of a daily task. A single small payload has a mean response time of 0.0181 whilst a single large payload has a mean response time of 0.0204 seconds. But in relation to each other it's a 12.7% increase in response time.
+
+![Rest Wide Pyaload Results](Graphics/rest_wide_payload.png)
 
 To put this into perspective a small payload contains 10 values of data.
-A large payload contains (4+(6\*9))\*6+4 or 352 values. This means that we have requested 3420% more data and it only took 4.04% longer.
+A large payload contains (4+(6\*9))\*6+4 or 352 values. This means that we have requested 3420% more data and it only took 12.7% longer.
+
+To test different scenarios we also created a "deep" payload which contains a different amount of nested objects. The deepest payload contains a total of eight nested objects, however the total amount of values is far less in comparison to the previous payload. The previously mentioned payload peaked at 352 values where as the deepest payload peaks at (4+(6\*4))+(4+(7\*4))+(4+(8\*4)) values, or 96 values in total. In other words the deep payloads are much smaller in size, but different in structure.
+
+To give a concrete example, a large payload is structured like so:
+```
+large_payload {
+    id,
+    string_Value,
+    int_value,
+    double_value,
+    medium_payload {
+        id,
+        string_value,
+        int_value,
+        double value,
+        small_payload {
+                id,
+                string_value,
+                int_value,
+                double_value
+            },
+        small_payload {
+                ...
+            },
+        ...
+        },
+    medium_payload {
+            ...
+        },
+    ...
+}
+```
+and the deepest_payload is structured like so:
+```
+deepest_payload {
+    id,
+    depth_seven {
+        ...
+    },
+    depth_eight {
+        ...
+    },
+    depth_nine {
+        id,
+        string_value,
+        int_value,
+        double_value,
+        depth_eight {
+            id,
+            string_value,
+            int_value,
+            double_value,
+            depth_seven {
+                ...
+                depth_six {
+                    ...
+                    dpeth_five {
+                        ...
+                        depth_four {
+                            ...
+                            depth_three {
+                                ...
+                                depth_two {
+                                    ...
+                                    depth_one {
+                                        ...
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+```
+
+Much to our suprise, the more values, the faster the response, which might indicate possible errors during our tests, such as network outage.
+
+![Rest Deep Pyaload Results](Graphics/rest_deep_payload.png)
+
+To put things into perspective, a deep payload, which contains a total of 4+(4+4)+(4+4\*2) values, or 24 values in total. Averaged at 0.0173 seconds, where as the deepest payload, which carries a total of 96 values, which means it's 300% larger in size, averaged at 0.015 seconds. In other words, 300% more data was transfered 15.3% faster on average.
+
+**Collection of payloads**
 
 When we compare collections, the difference becomes very apparent. A small collection payload averaged at 0.0256 seconds and a large averaged at 0.1006 seconds, That is an increase of 293%. It is apparent that when it comes to moving large collections of data over the REST API, it takes a considerate amount of time compared to smaller collections.
+
+![Rest Wide Pyaload Collection Results](Graphics/rest_wide_payload_collection.png)
+
+The results are very much a like when we tested on collections of deep payloads.
+
+![Rest Deep Pyaload Collection Results](Graphics/rest_deep_payload_collection.png)
 
 ## gRPC
 ### What is gRPC?
@@ -111,37 +209,54 @@ For the gRPC architecture we use the same as the rest, we have a client and a se
 ### Sample project and metrics
 If you want to replicate this experiment yourself database setup can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/Database-scripts) and source code for the grpc-project can be found [here](https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/https://github.com/mikkelertbjerg/gRPC-vs-REST/tree/master/GrpcProject)
 
-Running our setup yielded us these results:
-![gRPC Results](Graphics/grpc_average.png)
+Running our setup yielded the following results results:
 
-The average difference between a single small payload and a single large payload, is 0.0048. Specifically the small payload took 0.02303 seconds and the large took 0.02789 seconds, that is an increase of 21.1%. 
+**Single payloads**
 
-Collections paint a different picture, a small payload collection took on average 0.02389 seconds to complete, while a collection of large payloads took 0.10405 seconds to complete. The difference between the large and small collection being 10 milliseconds or a 335.54% increase. 
+![gRPC Wide Paylod Results](Graphics/grpc_wide_payload.png)
 
+The test on single payloads yielded quite wierd results, where the medium paylod proved to be the fastest on average, and the largest payload only being slightly slower than the smallest. Just to recap the numbers; a larger payload contains 3400% more data than a small payload, and yet it only took 2.36% longer to get that data.
 
-## possible errors
-* Both the client and server was running on the same computer, potentially competing for resources.
-* We have been able to get better results if we disabled server side logging in the gRPC project.
+![gRPC Wide Paylod Results](Graphics/grpc_deep_payload.png)
 
-This was run locally it is possible that the results would be different if they were run against a server on the internet.
+Even more wierd were the results of the deep payloads. Once again the payload containing a "medium" amount of data, was the fastest, just like previously. But unlike previously, the deepest payload was significantly faster than the deep payload, to be precise; the deepest payload, which contains 300% more data than a deep payload was 28.63% faster. As the results are rather unexpected we have to take a close look at [possible errors](#possible-errors) that could have occured.
+
+**Collection of payloads**
+
+![gRPC Wide Paylod Results](Graphics/grpc_wide_payload_collection.png)
+
+Collections paint a different picture, a small payload collection averaged at 0.01911 seconds, while a collection of large payloads took 0.7025. Which means a large payload on average took 267.6% longer to get. These results are much closer to what we would expect. We did the same test with a collection of deep payloads.
+
+![gRPC Wide Paylod Results](Graphics/grpc_deep_payload_collection.png)
+
+The results of this test, were as you would expect, as the payloads incrementally increase in size, they also increase incrementally in response time.
 
 ## Conclusion
 
-When we put the two charts next to each other, it's easy to see which one has an edge, albeit being a small one.
+When we put the two charts next to each other, it's easy to see which one has an edge.
 
-![Comparison of results](Graphics/average_grpc_rest.png)
+![Comparison of results](Graphics/both_wide_payload.png)
+![Comparison of results](Graphics/both_deep_payload.png)
+
+This is the case for both single instances of objects as well as collections of objects.
+
+![Comparison of results](Graphics/both_wide_payload_collection.png)
+![Comparison of results](Graphics/both_deep_payload_collection.png)
 
 We hypothesized that gRPC would be faster than rest, based on the numerous blogs claiming this to be true, with their own tests. Our tests adds to the opposite being true.
 
-Specifically when calling single instances of payloads REST was on average 13% faster. When calling collections Rest was on average 11% faster.
+These results might not seem as much, but it has been [proven][14]`14` that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. When moving large amounts of data, a small amount of time can be the difference between keeping or loosing a customer.
 
-These results might not seem as much, but it has been [proven][14]`14` that people on average don't wait around for data to load and will abandon a web page or program if loading times are too long. So when moving large amounts of data, those 11% can make the difference between keeping or loosing a customer.
-
-this prompts the question: **When to use gRPC and when to use REST**
+this prompts the question: **_When to use gRPC and when to use REST_**
 
 We would argue that gRPC fit into a setting, where you need to have multiple programs or services talking to each other across different languages, especially when the tasks that needs to connected to an endpoint is an action that needs to be executed; one such action could be TurnOnTheWater().
+This argument is based on the research made into gRPC, rather than the results of these particular tests.
 
 A rest on the other hand operates on the four aforementioned HTTP operations, these operations indicated data transfers of one sort or the other. While a rest can execute the same actions as gRPC, the action TurnOnTheWater() doesn't fit into what a REST API was designed for. We would instead use REST where we required data transfers and other typical CRUD mechanics.
+
+## possible errors
+* Network outage during some of the tests
+* gRPC serverside logging was set to critical, tweaking this option might yield different results.
 
 ## What's next?
 This blog has been only been about the differences in speed between REST and gRPC, but in reality, many other factors are present, if we were to truly compare the two frameworks. gRPC has claimed to not only be faster, but also more reliable, stable and secure, and all of these metrics, as well as other metrics, would be interesting to cover, they are however out of scope in this particular blog.
