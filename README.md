@@ -271,10 +271,10 @@ This blog has been only been about the differences in speed between REST and gRP
 [MySql Database][17]
 
 ## References
-1. [Battle of the APIs][1] `blog` 
-2. [gRPC/REST perfromance simplified][2] `blog` 
-3. [Why milliseconds matter][3] `blog` 
-4. [gRPC/REST evaluating perfromance][4] `blog` 
+1. [Battle of the APIs][1] `gRPC v REST` 
+2. [gRPC/REST perfromance simplified][2] `gRPC v REST` 
+3. [Why milliseconds matter][3] `gRPC v REST` 
+4. [gRPC/REST evaluating perfromance][4] `gRPC v REST` 
 5. [REST vs RESTful][5] `REST` 
 6. [Statelessness][6] `REST` 
 7. [Http Methods][7] `REST` 
