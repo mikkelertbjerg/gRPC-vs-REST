@@ -233,7 +233,7 @@ The results of this test, were as you would expect, as the payloads incrementall
 
 ## Conclusion
 
-When we put the two charts next to each other, it's easy to see which one has an edge.
+When we put the two charts next to each other, it's easy to see which one has an edge. The REST API is represented by the blue blocks, whilst gRPC is represented by the red blocks, just like previously.
 
 ![Comparison of results](Graphics/both_wide_payload.png)
 ![Comparison of results](Graphics/both_deep_payload.png)
